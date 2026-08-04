@@ -36,7 +36,7 @@ class AIClient:
         max_tokens: int | None = None,
         temperature: float | None = None,
     ):
-        self.api_key = api_key or settings.deepseek_api_key
+        self.api_key = (api_key or settings.deepseek_api_key).strip()
         self.base_url = (base_url or settings.deepseek_base_url).rstrip("/")
         self.model = model or settings.deepseek_model
         self.max_tokens = max_tokens or settings.deepseek_max_tokens
