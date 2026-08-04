@@ -1,0 +1,20 @@
+# Caddy 配置 —— jiuneng.space 后端 API 反代
+# 前端在 Vercel（https://jiuneng.space），API 走 https://jiuneng.space/api/*
+# Caddy 在本服务器上只处理 /api/ 路径，其余流量 Vercel 直接服务
+
+jiuneng.space {
+    # 根路径重定向到 Vercel 前端（可选，防止直接访问服务器 80 端口）
+    @api path /api/*
+    handle @api {
+        reverse_proxy backend:8000
+    }
+
+    handle {
+        redir https://jiuneng.space 302
+    }
+
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+    }
+}

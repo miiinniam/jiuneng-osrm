@@ -1,3 +1,4 @@
+import os
 import time
 from contextlib import asynccontextmanager
 
@@ -26,14 +27,15 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# CORS 白名单：默认本地开发地址；生产环境通过 CORS_ORIGINS 环境变量注入（逗号分隔）
+ALLOWED_ORIGINS = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:47820,http://127.0.0.1:47820,http://localhost:3000,http://127.0.0.1:3000,https://jiuneng.space,https://www.jiuneng.space",
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:47820",
-        "http://127.0.0.1:47820",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )

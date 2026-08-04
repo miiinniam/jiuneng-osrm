@@ -1,0 +1,58 @@
+# OSRM++ 生产部署 —— 仅后端服务（前端部署在 Vercel）
+# 用法:
+#   1. 上传代码 + 数据到 VPS
+#   2. cp .env.production .env && 填入真实密钥
+#   3. docker compose -f docker-compose.prod.yml up -d --build
+#   4. 访问 https://jiuneng.space
+
+services:
+  osrm:
+    image: ghcr.io/project-osrm/osrm-backend:latest
+    container_name: osrm-routing
+    command: osrm-routed --algorithm mld /data/vietnam-latest.osrm
+    ports:
+      - "127.0.0.1:5001:5000"  # 仅本地访问，不暴露公网
+    volumes:
+      - osrm_data:/data:ro
+    restart: unless-stopped
+    mem_limit: 7g  # OSRM 内存限制（8GB VPS 留 1GB 给其余服务）
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: osrm-backend
+    ports:
+      - "127.0.0.1:8000:8000"  # 仅 Caddy 反代访问
+    volumes:
+      - backend_data:/app/data              # 持久化 exchange_rate.json, osrm_plus.db
+      - vehicle_registry:/vehicle_registry:ro  # 车辆型号库 CSV
+    environment:
+      - PYTHONIOENCODING=utf-8
+      - OSRM_BASE_URL=http://osrm:5000
+      - VEHICLE_REGISTRY_CSV_PATH=/vehicle_registry/车辆型号库.csv
+      - CORS_ORIGINS=${CORS_ORIGINS}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEEPSEEK_BASE_URL=${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+    depends_on:
+      - osrm
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: osrm-caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+
+volumes:
+  osrm_data:        # OSRM 地图数据（4.5GB，需手动上传）
+  backend_data:     # exchange_rate.json, osrm_plus.db
+  vehicle_registry: # 车辆型号库 CSV
+  caddy_data:       # SSL 证书
+  caddy_config:     # Caddy 配置
