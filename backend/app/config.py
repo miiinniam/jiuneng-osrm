@@ -11,7 +11,9 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     # ── OSRM ──
-    osrm_base_url: str = "http://localhost:5001"
+    # 默认使用公共 OSRM 服务器（免费，~1 req/s，适合询价场景）。
+    # 生产环境自建 OSRM 时通过 OSRM_BASE_URL 环境变量覆盖。
+    osrm_base_url: str = "https://router.project-osrm.org"
     # 当前本地 OSRM 数据只按默认 car profile 编译，truck profile 待办（§5.2 / §11）。
     osrm_profile: str = "driving"
 
