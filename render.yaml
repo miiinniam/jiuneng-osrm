@@ -1,0 +1,22 @@
+# Render 声明式部署配置 —— OSRM++ 后端（免费层）
+# 用法：Render Dashboard → New → Blueprint → 选择本仓库
+# 或：render deploy（CLI）
+services:
+  - type: web
+    name: osrm-backend
+    runtime: docker
+    repo: https://github.com/miiinniam/jiuneng-osrm
+    rootDir: backend
+    dockerfilePath: Dockerfile
+    plan: free
+    envVars:
+      - key: PYTHONIOENCODING
+        value: utf-8
+      - key: OSRM_BASE_URL
+        value: https://router.project-osrm.org
+      - key: CORS_ORIGINS
+        value: https://jiuneng-osrm.vercel.app,https://jiuneng.space,https://www.jiuneng.space
+      - key: DEEPSEEK_API_KEY
+        sync: false  # 在 Render 面板手动填写
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com

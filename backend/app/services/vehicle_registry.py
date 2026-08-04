@@ -43,6 +43,10 @@ def _resolve_csv_path() -> Path:
     env_override = os.getenv("VEHICLE_REGISTRY_CSV_PATH")
     if env_override:
         return Path(env_override)
+    # Docker 镜像内：backend/Dockerfile 已 COPY 车辆型号库.csv 到 /app/
+    docker_candidate = Path("/app/车辆型号库.csv")
+    if docker_candidate.exists():
+        return docker_candidate
     # 原生运行：backend/app/services/vehicle_registry.py -> parents[3] == OSRM++/
     # 车辆型号库是正算/反算共用的车辆主数据，不属于"反算专属"，单独放在 车辆型号库/
     # 目录（不在 公式反算文件/ 里，那个目录只放反算相关的技能文档和样本数据）。
