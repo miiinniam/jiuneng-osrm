@@ -104,7 +104,7 @@ export function useAIChat(
 
       // 处理残留 buffer
       if (buffer.trim()) {
-        const m = buffer.match(/^event: (.+)\ndata: (.+)$/s);
+        const m = buffer.match(/^event: (.+)\ndata: ([\s\S]+)$/);
         if (m) {
           try {
             const data = JSON.parse(m[2]);
