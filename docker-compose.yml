@@ -1,0 +1,67 @@
+# OSRM++ 越南运输费用预测 —— Docker Compose (全部在 Docker Desktop 中运行)
+# 用法:
+#   启动全部:  docker compose up -d
+#   仅 OSRM:   docker compose up -d osrm
+#   查看日志:  docker compose logs -f
+#   停止:      docker compose down
+#
+# OSRM 路由引擎现在是 compose 的一部分，不再依赖 WSL2 Docker。
+
+services:
+  osrm:
+    image: ghcr.io/project-osrm/osrm-backend:latest
+    container_name: osrm-routing
+    command: osrm-routed --algorithm mld /data/vietnam-latest.osrm
+    ports:
+      - "5001:5000"
+      - "9966:9966"
+    volumes:
+      - type: bind
+        source: D:/01_业务/玖能/OSRM/data
+        target: /data
+        read_only: true
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: osrm-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      # 车辆型号库 CSV（用户在 Excel 维护，不在 backend/ 下，需要单独挂载）
+      - type: bind
+        source: D:/01_业务/玖能/OSRM/OSRM++/车辆型号库
+        target: /vehicle_registry
+        read_only: false
+    environment:
+      - WATCHFILES_FORCE_POLLING=true
+      - PYTHONIOENCODING=utf-8
+      - OSRM_BASE_URL=http://osrm:5000
+      - VEHICLE_REGISTRY_CSV_PATH=/vehicle_registry/车辆型号库.csv
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - osrm
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: osrm-frontend
+    ports:
+      - "47820:47820"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+      - WATCHPACK_POLLING=true
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -1,0 +1,1613 @@
+[
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 1700000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2000000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 2200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 2600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 3200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 4100000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2100000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2400000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 3400000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 3700000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 4200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2000000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 2600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 3300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 3600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 4300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 3600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 3900000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 4400000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 3500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 3800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 4400000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 3600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 3900000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 4400000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6000000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 3200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 3900000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 4300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 4800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 3000000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 3300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 3600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 4600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 5200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 6800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 1500,
+    "actual_cost_vnd": 2800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 1.5T 列（报价单车型标注吨位 1.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 2500,
+    "actual_cost_vnd": 3300000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 2.5T 列（报价单车型标注吨位 2.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 3500,
+    "actual_cost_vnd": 3600000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 3.5T 列（报价单车型标注吨位 3.5T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_5t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 5000,
+    "actual_cost_vnd": 4500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 5T 列（报价单车型标注吨位 5.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 8000,
+    "actual_cost_vnd": 5000000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 8T 列（报价单车型标注吨位 8.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_10t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 10000,
+    "actual_cost_vnd": 5800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 10T 列（报价单车型标注吨位 10.0T，作为假设载重）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Giang, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 6500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 124.2,
+    "source_duration_h": 1.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Giang, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 10000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 124.2,
+    "source_duration_h": 1.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Yên Phong, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 7500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.2103128,
+      "lng": 105.9757782
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 159.4,
+    "source_duration_h": 2.04
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Yên Phong, Bắc Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.2103128,
+      "lng": 105.9757782
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 159.4,
+    "source_duration_h": 2.04
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN Thuận Thành, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 8000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0450097,
+      "lng": 106.0733952
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 163.3,
+    "source_duration_h": 2.08
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN Thuận Thành, Bắc Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0450097,
+      "lng": 106.0733952
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 163.3,
+    "source_duration_h": 2.08
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN VSIP, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 7500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0799208,
+      "lng": 105.9807154
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 161.8,
+    "source_duration_h": 2.07
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN VSIP, Bắc Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0799208,
+      "lng": 105.9807154
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 161.8,
+    "source_duration_h": 2.07
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Đình Vũ, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.84253,
+      "lng": 106.7517998
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 221.4,
+    "source_duration_h": 2.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Đình Vũ, Hải Phòng, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 18000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.84253,
+      "lng": 106.7517998
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 221.4,
+    "source_duration_h": 2.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Cát Hải, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.7317982,
+      "lng": 107.0463818
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 264.7,
+    "source_duration_h": 3.71
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Cát Hải, Hải Phòng, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 19000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.7317982,
+      "lng": 107.0463818
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 264.7,
+    "source_duration_h": 3.71
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 8800000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 206.0,
+    "source_duration_h": 2.66
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 13000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 206.0,
+    "source_duration_h": 2.66
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hải Hậu, Nam Định, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 12000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.1226228,
+      "lng": 106.2767771
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 297.9,
+    "source_duration_h": 3.83
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hải Hậu, Nam Định, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 18000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.1226228,
+      "lng": 106.2767771
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 297.9,
+    "source_duration_h": 3.83
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Sông Khoai, Quảng Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.986164,
+      "lng": 106.82024
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 193.9,
+    "source_duration_h": 2.56
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Sông Khoai, Quảng Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 18000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.986164,
+      "lng": 106.82024
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 193.9,
+    "source_duration_h": 2.56
+  }
+]

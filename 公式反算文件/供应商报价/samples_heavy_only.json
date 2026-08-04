@@ -1,0 +1,743 @@
+[
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 4100000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Bắc Ninh, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nội, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nội, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.0283334,
+      "lng": 105.854041
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Thái Nguyên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5500000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Thái Nguyên, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.9610968,
+      "lng": 105.8440789
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Dương, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.9602884,
+      "lng": 106.3604393
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 5800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Vĩnh Phúc, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hưng Yên, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6000000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hưng Yên, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.6589314,
+      "lng": 106.0619857
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hà Nam, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6200000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hà Nam, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.5340294,
+      "lng": 105.9810248
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Hải Phòng, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 20.8830967,
+      "lng": 106.6790381
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Thôn Đồng Lạc, Xã Đồng Lạc, Huyện Lạng Giang, Tỉnh Bắc Giang, Việt Nam",
+    "dest_address": "Phú Thọ, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 6800000,
+    "notes": "Báo Giá Fushida/Duy Anh 2026-07 — Bắc Giang→Phú Thọ, 报价单 XE 3 CHAN 列（3轴车吨位报价单未注明，假设18吨）；报价不含VAT/超限费；按 CK Hữu Nghị 路线基准价（脚注：走 Tân Thanh 口岸另加500,000）；起点用省级坐标近似（乡镇级地址地理编码不稳定）",
+    "origin": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "destination": {
+      "lat": 21.4144881,
+      "lng": 105.2293463
+    },
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Giang, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 6500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bắc Giang, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Giang, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 10000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bắc Giang, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hợp Hòa, Bắc Giang, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 6800000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Hợp Hòa, Bắc Giang (tọa độ dùng Bắc Giang city làm fallback), Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hợp Hòa, Bắc Giang, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 10500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Hợp Hòa, Bắc Giang (tọa độ dùng Bắc Giang city làm fallback), Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 7000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bắc Ninh (khu vực 1), Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 11000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bắc Ninh (khu vực 1), Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 7500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bắc Ninh (khu vực 2), Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 11000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3282166,
+      "lng": 106.4625257
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bắc Ninh (khu vực 2), Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Thuận Thành, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 8000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.038218,
+      "lng": 106.0778019
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→CN Thuận Thành, Bắc Ninh, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Thuận Thành, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 11500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.038218,
+      "lng": 106.0778019
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→CN Thuận Thành, Bắc Ninh, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "VSIP Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 7500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0827313,
+      "lng": 105.9884226
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→VSIP Bắc Ninh, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "VSIP Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 11000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0827313,
+      "lng": 105.9884226
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→VSIP Bắc Ninh, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Kế Tắt, Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 9200000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.830003,
+      "lng": 106.6865494
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Kế Tắt, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Kế Tắt, Hải Dương, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 15000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.830003,
+      "lng": 106.6865494
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Kế Tắt, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Tràng Duệ, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 10000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.8619428,
+      "lng": 106.5619529
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Tràng Duệ, Hải Phòng, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Tràng Duệ, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 15000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.8619428,
+      "lng": 106.5619529
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Tràng Duệ, Hải Phòng, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bình Vị, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 11500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.8755451,
+      "lng": 106.6677637
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bình Vị, Hải Phòng (OCR đọc là Bình Võ), Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bình Vị, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 18000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.8755451,
+      "lng": 106.6677637
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Bình Vị, Hải Phòng (OCR đọc là Bình Võ), Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Cát Hải, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 11500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.7317982,
+      "lng": 107.0463818
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Cát Hải, Hải Phòng, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Cát Hải, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 19000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.7317982,
+      "lng": 107.0463818
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Cát Hải, Hải Phòng, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Thanh Hóa, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 14000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 19.9781573,
+      "lng": 105.4816107
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Thanh Hóa, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Thanh Hóa, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 21000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 19.9781573,
+      "lng": 105.4816107
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Thanh Hóa, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 8800000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Vĩnh Phúc, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 13000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Vĩnh Phúc, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hải Hậu, Nam Định, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 12000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.1226228,
+      "lng": 106.2767771
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Hải Hậu/Giao Thủy, Nam Định, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hải Hậu, Nam Định, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 18000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.1226228,
+      "lng": 106.2767771
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Hải Hậu/Giao Thủy, Nam Định, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Quảng Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 10500000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.1718046,
+      "lng": 107.2012742
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Quảng Ninh, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Quảng Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 18000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.1718046,
+      "lng": 107.2012742
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Quảng Ninh, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Sông Khoai, Quảng Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 25000,
+    "actual_cost_vnd": 11000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.986164,
+      "lng": 106.82024
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Sông Khoai, Quảng Ninh, Moóc sàn/rào (平板挂车, heavy_truck/flatbed, giả định 25T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "high_side_18t",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Sông Khoai, Quảng Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 18000,
+    "actual_cost_vnd": 18000000,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.986164,
+      "lng": 106.82024
+    },
+    "notes": "Báo giá CK Hữu Nghị 2026-07 — Hữu Nghị→Sông Khoai, Quảng Ninh, Hoà Fooc 18 (18T truck, heavy_truck/high_side, giả định 18T); 普通车，不超重，不超高；giá chưa VAT",
+    "volume_m3": null
+  }
+]

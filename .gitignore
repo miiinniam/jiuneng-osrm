@@ -1,0 +1,14 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.env
+.env.local
+.DS_Store
+*.log
+.firecrawl/
+nul
+批量报价结果.xlsx
+批量报价模板2.xlsx
+osrm-data.tar.gz
+frontend/tmp/

@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/* ===== OSRM++ Design System ===== */
+:root {
+  /* Brand — 深蓝底（800-950）+ 青绿交互色（500-700），统一 K&N 风格 */
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #06b58a;
+  --brand-600: #089b6f;
+  --brand-700: #067a57;
+  --brand-800: #1e3a5f;
+  --brand-900: #0f2b4a;
+  --brand-950: #0a1a2e;
+
+  /* Accent */
+  --accent-50: #fffbeb;
+  --accent-100: #fef3c7;
+  --accent-200: #fde68a;
+  --accent-300: #fcd34d;
+  --accent-400: #fbbf24;
+  --accent-500: #f59e0b;
+  --accent-600: #d97706;
+
+  /* Brand accent — Kuehne+Nagel 风格青绿（瑞士极简国际物流） */
+  --teal-50: #e9faf4;
+  --teal-100: #c8f5e6;
+  --teal-200: #93ebd0;
+  --teal-300: #57dcb5;
+  --teal-400: #22c79b;
+  --teal-500: #08c792;
+  --teal-600: #06a87c;
+  --teal-700: #078a68;
+  --teal-800: #0a6d55;
+  --teal-900: #0b5a47;
+
+  /* Surface */
+  --surface-0: #ffffff;
+  --surface-50: #fafafa;
+  --surface-100: #f4f4f5;
+  --surface-200: #e4e4e7;
+  --surface-300: #d4d4d8;
+  --surface-400: #a1a1aa;
+  --surface-500: #71717a;
+  --surface-600: #52525b;
+  --surface-700: #3f3f46;
+  --surface-800: #27272a;
+  --surface-900: #18181b;
+
+  /* Semantic */
+  --success: #16a34a;
+  --success-bg: #f0fdf4;
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --info: #2563eb;
+  --info-bg: #eff6ff;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Base */
+  --background: var(--surface-50);
+  --foreground: var(--surface-900);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand-600);
+  --color-brand-hover: var(--brand-700);
+  --color-brand-light: var(--brand-50);
+  --color-accent: var(--accent-500);
+  --color-surface: var(--surface-0);
+  --color-surface-muted: var(--surface-50);
+  --color-border: var(--surface-200);
+  --color-border-hover: var(--surface-300);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ===== Global Resets ===== */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== 官网锚点平滑滚动 ===== */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-300);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-400);
+}
+
+/* ===== Focus ring ===== */
+*:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ===== Leaflet overrides ===== */
+.leaflet-container {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+/* Hide Leaflet default attribution (cleaner look, keep on hover) */
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  opacity: 0.5;
+}
+
+/* ===== Animations ===== */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in-fade {
+  animation: fade-in 0.25s ease-out both;
+}
+
+.animate-in-slide-up {
+  animation: slide-up 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2) both;
+}
+
+/* Custom leaflet marker (overrides) */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Push top-right controls below header bar */
+.leaflet-top.leaflet-right {
+  top: 52px !important;
+}

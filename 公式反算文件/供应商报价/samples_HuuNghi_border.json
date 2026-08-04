@@ -1,0 +1,416 @@
+[
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Giang, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 6500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 124.2,
+    "source_duration_h": 1.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Bắc Giang, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 10000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3740092,
+      "lng": 106.4663176
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 124.2,
+    "source_duration_h": 1.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Yên Phong, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 7500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.2103128,
+      "lng": 105.9757782
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 159.4,
+    "source_duration_h": 2.04
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Yên Phong, Bắc Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.2103128,
+      "lng": 105.9757782
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 159.4,
+    "source_duration_h": 2.04
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN Thuận Thành, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 8000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0450097,
+      "lng": 106.0733952
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 163.3,
+    "source_duration_h": 2.08
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN Thuận Thành, Bắc Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0450097,
+      "lng": 106.0733952
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 163.3,
+    "source_duration_h": 2.08
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN VSIP, Bắc Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 7500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0799208,
+      "lng": 105.9807154
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 161.8,
+    "source_duration_h": 2.07
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "KCN VSIP, Bắc Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.0799208,
+      "lng": 105.9807154
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 161.8,
+    "source_duration_h": 2.07
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Đình Vũ, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.84253,
+      "lng": 106.7517998
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 221.4,
+    "source_duration_h": 2.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Đình Vũ, Hải Phòng, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 18000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.84253,
+      "lng": 106.7517998
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 221.4,
+    "source_duration_h": 2.69
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Cát Hải, Hải Phòng, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11500000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.7317982,
+      "lng": 107.0463818
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 264.7,
+    "source_duration_h": 3.71
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Cát Hải, Hải Phòng, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 19000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.7317982,
+      "lng": 107.0463818
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 264.7,
+    "source_duration_h": 3.71
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 8800000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 206.0,
+    "source_duration_h": 2.66
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Vĩnh Phúc, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 13000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 21.3080002,
+      "lng": 105.5926359
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 206.0,
+    "source_duration_h": 2.66
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hải Hậu, Nam Định, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 12000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.1226228,
+      "lng": 106.2767771
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 297.9,
+    "source_duration_h": 3.83
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Hải Hậu, Nam Định, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 18000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.1226228,
+      "lng": 106.2767771
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 297.9,
+    "source_duration_h": 3.83
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_13m",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Sông Khoai, Quảng Ninh, Việt Nam",
+    "cargo_type": "normal",
+    "weight_kg": 26000,
+    "volume_m3": null,
+    "actual_cost_vnd": 11000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.986164,
+      "lng": 106.82024
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:普通平板 13米(货箱14×2.35×2.65m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_13m(长度最近似)。假设满载26.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 193.9,
+    "source_duration_h": 2.56
+  },
+  {
+    "loading_mode": "full_truck",
+    "vehicle_model_id": "flatbed_low_17m5",
+    "origin_address": "Cửa khẩu Hữu Nghị, Lạng Sơn, Việt Nam",
+    "dest_address": "Sông Khoai, Quảng Ninh, Việt Nam",
+    "cargo_type": "oversized",
+    "weight_kg": 38000,
+    "volume_m3": null,
+    "actual_cost_vnd": 18000000,
+    "empty_return": false,
+    "need_loading": false,
+    "origin": {
+      "lat": 21.9711036,
+      "lng": 106.7108794
+    },
+    "destination": {
+      "lat": 20.986164,
+      "lng": 106.82024
+    },
+    "notes": "AI提取自CopyQ截图 2026-07-02。报价方:Hoà Phát 18。车型:低平板 17.5米(货箱18×3.3×3.5m)。Xe đủ khô đủ tải(满载)。映射:货箱→flatbed_low_17m5(长度最近似)。假设满载38.0吨。报价不含VAT/超限费。AI置信度:中",
+    "source_distance_km": 193.9,
+    "source_duration_h": 2.56
+  }
+]
