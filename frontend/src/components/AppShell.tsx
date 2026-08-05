@@ -61,7 +61,7 @@ function Header({
         )}
         {/* 语言切换：≥lg 显示；移动端移入汉堡菜单 */}
         <div className="hidden lg:block">
-          <LanguageSwitcher />
+          <LanguageSwitcher dark={dark} />
         </div>
         {/* 移动端汉堡菜单：<lg 显示 */}
         <MobileMenu variant={dark ? "dark" : "light"} />

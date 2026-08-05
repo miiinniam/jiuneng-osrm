@@ -154,8 +154,8 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
                     onClick={() => setLocale(code)}
                     className={`flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
                       locale === code
-                        ? "bg-[var(--teal-500)] text-[#06281f]"
-                        : "bg-white/5 text-[var(--brand-100)]/70 hover:bg-white/10"
+                        ? "bg-[var(--teal-500)] text-[#06281f] shadow-lg shadow-[#08c792]/20"
+                        : "border border-white/15 bg-white/10 text-white hover:bg-white/20"
                     }`}
                   >
                     {LOCALE_NAMES[code]}
