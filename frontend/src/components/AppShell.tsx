@@ -6,6 +6,7 @@ import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import MobileMenu from "@/components/MobileMenu";
+import AIChatFAB from "@/components/site/AIChatFAB";
 import TemplateBar from "@/components/TemplateBar";
 import { LocaleProvider, useLocale } from "@/lib/i18n/LocaleContext";
 import type { QuoteFormState, TemplateOut } from "@/lib/types";
@@ -100,6 +101,8 @@ export default function AppShell({
           dark={dark && !scrolled}
         />
         <div className="relative flex-1 w-full">{children}</div>
+        {/* 移动端 AI 悬浮气泡：仅官网首页（组件自身 lg:hidden，桌面不受影响） */}
+        {pathname === "/" && <AIChatFAB />}
       </div>
     </LocaleProvider>
   );

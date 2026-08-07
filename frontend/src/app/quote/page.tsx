@@ -3,8 +3,10 @@
 import dynamic from "next/dynamic";
 import { useState, useCallback, useRef, useEffect } from "react";
 import { useQuoteForm } from "@/hooks/useQuoteForm";
+import { useIsMobile } from "@/hooks/useMediaQuery";
 import FloatingPanel from "@/components/FloatingPanel";
 import ResultsPanel from "@/components/ResultsPanel";
+import BottomDrawer from "@/components/BottomDrawer";
 import type { ChatRouteCoords } from "@/hooks/useAIChat";
 import type { RouteGeometry, LatLng } from "@/lib/types";
 import { API_BASE } from "@/lib/api";
@@ -13,7 +15,10 @@ const MapView = dynamic(() => import("@/components/MapView"), { ssr: false });
 
 export default function HomePage() {
   const q = useQuoteForm();
+  const isMobile = useIsMobile();
   const [resultsCollapsed, setResultsCollapsed] = useState(false);
+  // 移动端结果抽屉：提交出结果后收起表单、打开结果抽屉（桌面用 ResultsPanel 不涉及）
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const [chatOrigin, setChatOrigin] = useState<LatLng | null>(null);
   const [chatDest, setChatDest] = useState<LatLng | null>(null);
@@ -68,6 +73,11 @@ export default function HomePage() {
       bumpRoute();
     }
   }, [result, bumpRoute]);
+
+  // 移动端出结果 → 自动打开结果抽屉（并收起表单面板）
+  useEffect(() => {
+    if (result && isMobile) setDrawerOpen(true);
+  }, [result, isMobile]);
 
   const handleSelectAlt = useCallback((i: number) => {
     setSelectedAltIndex(i);
@@ -125,7 +135,7 @@ export default function HomePage() {
         routeVersion={routeVersion}
         pickMode={pickMode}
         onPick={handleMapPick}
-        hasDrawer={false}
+        hasDrawer={isMobile && drawerOpen}
       />
 
       <FloatingPanel
@@ -146,9 +156,15 @@ export default function HomePage() {
         onQuoteModeChange={setQuoteMode}
         error={error}
         setError={q.setError}
+        collapsed={isMobile && drawerOpen}
+        onCollapsedChange={(c) => {
+          // 用户主动展开表单 → 收起结果抽屉，避免两个底部面板重叠
+          if (!c) setDrawerOpen(false);
+        }}
       />
 
-      {result && (
+      {/* 桌面：右侧 ResultsPanel；移动端：BottomDrawer 结果抽屉 */}
+      {!isMobile && result && (
         <ResultsPanel
           result={result}
           alternatives={alternatives}
@@ -160,6 +176,18 @@ export default function HomePage() {
           ddpFullResult={ddpFullResult}
           ddpFullLoading={ddpFullLoading}
           isDDPFull={quoteMode === "ddp_full"}
+        />
+      )}
+
+      {/* 移动端：结果抽屉（可拖动 80px/50vh/85vh 快照） */}
+      {isMobile && drawerOpen && result && (
+        <BottomDrawer
+          result={result}
+          alternatives={alternatives}
+          selectedAltIndex={selectedAltIndex}
+          onSelectAlt={handleSelectAlt}
+          loadingMode={form.loadingMode}
+          onClose={() => setDrawerOpen(false)}
         />
       )}
 

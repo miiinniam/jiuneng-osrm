@@ -12,9 +12,13 @@ const SUGGESTIONS = [
   { icon: "💡", label: "拼车分析", text: "8吨货从友谊关到北宁，拼车和整车哪个更划算？" },
 ];
 
-export default function AIChatPanel({ onRouteFound, onAction }: {
+export default function AIChatPanel({ onRouteFound, onAction, autoFocus, hideHeader }: {
   onRouteFound?: (coords: ChatRouteCoords) => void;
   onAction?: (action: import("@/lib/chatTypes").ChatAction) => void;
+  /** 父组件在用户主动进入聊天（切 tab / 打开面板）时传 true，才聚焦输入框 */
+  autoFocus?: boolean;
+  /** 全屏容器自带标题栏时隐藏内部 header（AIChatFAB 全屏模式） */
+  hideHeader?: boolean;
 }) {
   const [input, setInput] = useState("");
   const [isPopout, setIsPopout] = useState(false);
@@ -24,9 +28,22 @@ export default function AIChatPanel({ onRouteFound, onAction }: {
   const { messages, loading, error, messagesEndRef, sendMessage, stopGeneration, clearChat } =
     useAIChat(onRouteFound);
 
+  // ⚠️ 不在挂载时自动聚焦：页面加载即滚动到聊天区并弹出键盘（官网首页实测）
+  // 只在父组件明确传入 autoFocus（用户切到 AI tab）时聚焦
   useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+    if (autoFocus) {
+      const id = window.setTimeout(() => inputRef.current?.focus(), 50);
+      return () => window.clearTimeout(id);
+    }
+  }, [autoFocus]);
+
+  // 弹出放大时聚焦（用户主动点击）
+  useEffect(() => {
+    if (isPopout) {
+      const id = window.setTimeout(() => inputRef.current?.focus(), 80);
+      return () => window.clearTimeout(id);
+    }
+  }, [isPopout]);
 
   const handleSend = useCallback(() => {
     if (!input.trim() || loading) return;
@@ -77,6 +94,7 @@ export default function AIChatPanel({ onRouteFound, onAction }: {
   const chatContent = (
     <div className="flex flex-col h-full">
       {/* Header */}
+      {!hideHeader && (
       <div className="flex items-center justify-between shrink-0 mb-1">
         <div className="flex items-center gap-2">
           <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--brand-100)] to-[var(--brand-50)]">
@@ -99,6 +117,7 @@ export default function AIChatPanel({ onRouteFound, onAction }: {
           </svg>
         </button>
       </div>
+      )}
 
       {/* Messages */}
       <div data-chat-scroll className="flex-1 overflow-y-auto overscroll-contain rounded-lg">

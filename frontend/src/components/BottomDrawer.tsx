@@ -19,6 +19,8 @@ interface BottomDrawerProps {
   selectedAltIndex: number;
   onSelectAlt: (i: number) => void;
   loadingMode: LoadingMode;
+  /** 关闭抽屉（父组件收起结果、恢复表单） */
+  onClose?: () => void;
 }
 
 function CostBarRow({ label, value, pct, color }: { label: string; value: number; pct: number; color: string }) {
@@ -44,6 +46,7 @@ export default function BottomDrawer({
   selectedAltIndex,
   onSelectAlt,
   loadingMode,
+  onClose,
 }: BottomDrawerProps) {
   const { t } = useLocale();
   const isFullTruck = loadingMode === "full_truck";
@@ -135,14 +138,29 @@ export default function BottomDrawer({
       className="absolute bottom-0 left-0 right-0 z-[800] bg-white rounded-t-3xl shadow-2xl shadow-black/15 flex flex-col border-t border-[var(--border)]"
       style={{ height, transition: snap ? "height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2)" : undefined }}
     >
-      {/* Drag handle */}
-      <div
-        className="flex flex-col items-center py-2.5 cursor-grab active:cursor-grabbing touch-none shrink-0"
-        onPointerDown={onDragStart}
-        onPointerMove={onDragMove}
-        onPointerUp={onDragEnd}
-      >
-        <div className="w-8 h-1 rounded-full bg-[var(--surface-300)]" />
+      {/* Drag handle + 关闭按钮 */}
+      <div className="relative shrink-0">
+        <div
+          className="flex flex-col items-center py-2.5 cursor-grab active:cursor-grabbing touch-none"
+          onPointerDown={onDragStart}
+          onPointerMove={onDragMove}
+          onPointerUp={onDragEnd}
+        >
+          <div className="w-8 h-1 rounded-full bg-[var(--surface-300)]" />
+        </div>
+        {onClose && snap !== "collapsed" && (
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label={t.site.aiAssistant.fabClose}
+            className="absolute right-3 top-1.5 flex h-7 w-7 items-center justify-center rounded-lg text-[var(--surface-400)] transition-colors hover:bg-[var(--surface-100)] hover:text-[var(--surface-600)]"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* Collapsed: mini summary */}
@@ -156,15 +174,30 @@ export default function BottomDrawer({
               {route.distance_km.toFixed(0)}km · {formatHours(timing.total_duration_h, t.costPanel.hours)}
             </span>
           </div>
-          <button onClick={() => expandTo("half")} className="text-xs text-[var(--brand-600)] font-medium hover:underline">
-            {t.costPanel.expandDetail}
-          </button>
+          <div className="flex items-center gap-2">
+            <button onClick={() => expandTo("half")} className="text-xs text-[var(--brand-600)] font-medium hover:underline">
+              {t.costPanel.expandDetail}
+            </button>
+            {onClose && (
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label={t.site.aiAssistant.fabClose}
+                className="flex h-7 w-7 items-center justify-center rounded-lg text-[var(--surface-400)] transition-colors hover:bg-[var(--surface-100)] hover:text-[var(--surface-600)]"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
         </div>
       )}
 
       {/* Half / Full: route cards + breakdown */}
       {snap !== "collapsed" && (
-        <div className="flex-1 overflow-y-auto px-4 pb-6 space-y-4">
+        <div className="flex-1 overflow-y-auto px-4 pb-6 space-y-4" style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom))" }}>
           {/* Route cards slider */}
           {alternatives.length > 1 && (
             <div>

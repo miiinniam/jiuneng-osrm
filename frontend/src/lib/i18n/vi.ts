@@ -119,6 +119,9 @@ export const vi: Translations = {
       hint2: "So sánh tuyến đường & xe",
       hint3: "Tra cứu tỷ giá hôm nay",
       example: "Thử: Từ Hữu Nghị Quan đến Hà Nội, xe flatbed 13m, 25 tấn hàng thường, phí bao nhiêu?",
+      fabLabel: "Trợ lý AI Logistics",
+      fabOpen: "Mở Trợ lý AI",
+      fabClose: "Đóng",
     },
     cases: {
       eyebrow: "Dự án tiêu biểu",

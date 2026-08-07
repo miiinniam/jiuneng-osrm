@@ -119,6 +119,9 @@ export const en: Translations = {
       hint2: "Route & vehicle comparison",
       hint3: "Today's exchange rate",
       example: "Try: From Huu Nghi Pass to Hanoi, 13m flatbed, 25 tons general cargo, how much?",
+      fabLabel: "AI Logistics Assistant",
+      fabOpen: "Open AI Assistant",
+      fabClose: "Close",
     },
     cases: {
       eyebrow: "Representative Projects",

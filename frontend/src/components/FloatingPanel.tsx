@@ -26,6 +26,9 @@ interface FloatingPanelProps {
   onQuoteModeChange: (v: QuoteMode) => void;
   error: string | null;
   setError: (err: string | null) => void;
+  /** 受控折叠（移动端出结果时由父组件收起表单面板）；不传则内部自管 */
+  collapsed?: boolean;
+  onCollapsedChange?: (c: boolean) => void;
 }
 
 type Tab = "quote" | "chat";
@@ -40,12 +43,19 @@ export default function FloatingPanel({
   pickMode, onSetPickMode, onSubmit, onCompareAlternatives,
   submitting, comparing, onLoadTemplate, onChatRouteFound,
   quoteMode, onQuoteModeChange, error, setError, onAIAction,
+  collapsed: collapsedProp, onCollapsedChange,
 }: FloatingPanelProps) {
   const { t } = useLocale();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsedInternal, setCollapsedInternal] = useState(false);
   const [tab, setTab] = useState<Tab>("quote");
   const [panelWidth, setPanelWidth] = useState(QUOTE_DEFAULT);
   const resizeRef = useRef<{ startX: number; startWidth: number } | null>(null);
+
+  const collapsed = collapsedProp !== undefined ? collapsedProp : collapsedInternal;
+  const setCollapsed = useCallback((c: boolean) => {
+    setCollapsedInternal(c);
+    onCollapsedChange?.(c);
+  }, [onCollapsedChange]);
 
   const handleResizeStart = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -132,7 +142,7 @@ export default function FloatingPanel({
           />
         </div>
         <div className={`h-full flex flex-col p-3 ${tab === "chat" ? "" : "hidden"}`}>
-          <AIChatPanel onRouteFound={onChatRouteFound} onAction={onAIAction} />
+          <AIChatPanel onRouteFound={onChatRouteFound} onAction={onAIAction} autoFocus={tab === "chat"} />
         </div>
       </div>
 

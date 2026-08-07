@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { geocodeAddress, getVehicleModels, quoteCost, type GeocodeResult } from "@/lib/api";
 import { useLocale } from "@/lib/i18n/LocaleContext";
+import { useIsMobile } from "@/hooks/useMediaQuery";
 import { formatVnd } from "@/lib/format";
 import type { QuoteResponse, VehicleModelsByCategory, LatLng, RouteGeometry } from "@/lib/types";
 
@@ -116,6 +117,7 @@ function AddressPicker({
 
 export default function QuickQuote() {
   const { t } = useLocale();
+  const isMobile = useIsMobile();
   const [tab, setTab] = useState<TabKey>("quote");
 
   const [origin, setOrigin] = useState<GeocodeResult | null>(null);
@@ -256,8 +258,8 @@ export default function QuickQuote() {
 
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-white/15 bg-[#0f2b4a]/90 shadow-2xl backdrop-blur-md">
-      {/* Tab 栏 */}
-      <div className="flex items-stretch border-b border-white/10">
+      {/* Tab 栏（移动端隐藏：AI 由悬浮气泡承担，地图并入 /quote 工具页） */}
+      <div className={`items-stretch border-b border-white/10 ${isMobile ? "hidden" : "flex"}`}>
         {(
           [
             { key: "quote", icon: "🧮", label: s.tabQuote },
@@ -283,7 +285,7 @@ export default function QuickQuote() {
 
       <div className="p-5 sm:p-6">
         {/* ═══════ 报价表单 ═══════ */}
-        <div className={tab === "quote" ? "" : "hidden"}>
+        <div className={isMobile || tab === "quote" ? "" : "hidden"}>
           <div className="mb-4 flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-[var(--teal-500)]" />
               <div>
@@ -407,13 +409,15 @@ export default function QuickQuote() {
                   >
                     {s.fullTool} →
                   </Link>
-                  <button
-                    type="button"
-                    onClick={() => setTab("map")}
-                    className="flex-1 rounded-lg bg-[var(--teal-500)]/15 py-2 text-center text-sm font-semibold text-[var(--teal-300)] transition-colors hover:bg-[var(--teal-500)]/25"
-                  >
-                    🗺️ {s.tabMap} →
-                  </button>
+                  {!isMobile && (
+                    <button
+                      type="button"
+                      onClick={() => setTab("map")}
+                      className="flex-1 rounded-lg bg-[var(--teal-500)]/15 py-2 text-center text-sm font-semibold text-[var(--teal-300)] transition-colors hover:bg-[var(--teal-500)]/25"
+                    >
+                      🗺️ {s.tabMap} →
+                    </button>
+                  )}
                 </div>
               </div>
             )}
@@ -421,13 +425,13 @@ export default function QuickQuote() {
             <p className="mt-3.5 text-xs leading-relaxed text-[var(--brand-100)]/50">{s.note}</p>
         </div>
 
-        {/* ═══════ AI 聊天 ═══════ */}
-        <div className={tab === "ai" ? "h-[380px]" : "hidden"}>
-          <AIChatPanel onRouteFound={handleChatRoute} />
+        {/* ═══════ AI 聊天（移动端隐藏，由悬浮气泡承担） ═══════ */}
+        <div className={tab === "ai" && !isMobile ? "h-[380px]" : "hidden"}>
+          <AIChatPanel onRouteFound={handleChatRoute} autoFocus={tab === "ai"} />
         </div>
 
-        {/* ═══════ 地图小窗 ═══════ */}
-        <div className={tab === "map" ? "" : "hidden"}>
+        {/* ═══════ 地图小窗（移动端隐藏，并入 /quote 工具页） ═══════ */}
+        <div className={tab === "map" && !isMobile ? "" : "hidden"}>
           <div className="mb-3 flex items-center justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-[var(--teal-400)]">

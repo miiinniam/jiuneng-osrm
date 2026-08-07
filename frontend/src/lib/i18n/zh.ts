@@ -119,6 +119,9 @@ export const zh: Translations = {
       hint2: "路线与车型对比",
       hint3: "今日汇率查询",
       example: "试试：从友谊关到河内，13米平板车，25吨普通货，运费多少？",
+      fabLabel: "AI 物流助手",
+      fabOpen: "打开 AI 助手",
+      fabClose: "关闭",
     },
     cases: {
       eyebrow: "代表项目",

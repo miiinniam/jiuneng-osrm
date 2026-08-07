@@ -88,6 +88,9 @@ export interface Translations {
       hint2: string;
       hint3: string;
       example: string;
+      fabLabel: string;
+      fabOpen: string;
+      fabClose: string;
     };
     cases: {
       eyebrow: string;
