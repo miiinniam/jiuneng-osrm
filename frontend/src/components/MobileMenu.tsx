@@ -4,14 +4,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "@/lib/i18n/LocaleContext";
-import { LOCALES, LOCALE_NAMES } from "@/lib/i18n";
 
 /**
- * 移动端汉堡菜单 — 全屏抽屉：官网锚点 + 工具入口 + 语言切换
+ * 移动端汉堡菜单 — 全屏抽屉：官网锚点 + 工具入口（语言切换已迁移至 header 右上角）
  * variant: dark 用于官网首页（深蓝 hero），light 用于工具页（浅色 header）
  */
 export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "dark" }) {
-  const { t, locale, setLocale } = useLocale();
+  const { t } = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -139,29 +138,6 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
                   </Link>
                 ))}
               </nav>
-            </div>
-
-            {/* 底部：语言切换 */}
-            <div className="border-t border-white/10 px-5 py-4">
-              <p className="pb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--brand-100)]/40">
-                语言 / Language
-              </p>
-              <div className="flex gap-1.5">
-                {LOCALES.map((code) => (
-                  <button
-                    key={code}
-                    type="button"
-                    onClick={() => setLocale(code)}
-                    className={`flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
-                      locale === code
-                        ? "bg-[var(--teal-500)] text-[#06281f] shadow-lg shadow-[#08c792]/20"
-                        : "border border-white/30 bg-[#16345c] text-white hover:bg-[#1e4470]"
-                    }`}
-                  >
-                    {LOCALE_NAMES[code]}
-                  </button>
-                ))}
-              </div>
             </div>
           </div>
         </div>
