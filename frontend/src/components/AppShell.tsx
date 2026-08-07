@@ -60,8 +60,8 @@ function Header({
             <TemplateBar form={form} onLoad={onLoadTemplate} compact />
           </div>
         )}
-        {/* 语言切换：≥lg 显示；移动端移入汉堡菜单 */}
-        <div className="hidden lg:block">
+        {/* 语言切换：全端显示（移动端紧凑国旗版，实色高对比） */}
+        <div className="block">
           <LanguageSwitcher dark={dark} />
         </div>
         {/* 移动端汉堡菜单：<lg 显示 */}

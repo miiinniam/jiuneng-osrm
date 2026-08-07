@@ -57,7 +57,7 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
         className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors lg:hidden ${
           light
             ? "border border-[var(--surface-200)] bg-white text-[var(--surface-600)] shadow-sm hover:bg-[var(--surface-50)]"
-            : "border border-white/15 bg-white/5 text-white backdrop-blur-sm hover:bg-white/10"
+            : "border border-white/30 bg-[#16345c] text-white shadow-md shadow-black/10 hover:bg-[#1e4470]"
         }`}
         aria-label="打开菜单"
       >
@@ -155,7 +155,7 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
                     className={`flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
                       locale === code
                         ? "bg-[var(--teal-500)] text-[#06281f] shadow-lg shadow-[#08c792]/20"
-                        : "border border-white/15 bg-white/10 text-white hover:bg-white/20"
+                        : "border border-white/30 bg-[#16345c] text-white hover:bg-[#1e4470]"
                     }`}
                   >
                     {LOCALE_NAMES[code]}
