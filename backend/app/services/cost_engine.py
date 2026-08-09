@@ -263,6 +263,7 @@ def compute_cost_full_truck(
     misc_cost_vnd: float = 0.0,
     loading_rate_vnd_per_ton: float,
     insurance_rate: float,
+    cargo_items: list[dict] | None = None,  # 🆕 单件货物明细（长件/面积约束）
 ) -> CostResult:
     """整车一口价模式：距离 × 全包基价 + 各项附加费。
 
@@ -373,6 +374,41 @@ def compute_cost_full_truck(
     return CostResult(distance_km=d_km, timing=timing, breakdown=breakdown, suggestions=suggestions)
 
 
+def compute_vehicle_count(
+    *,
+    model: VehicleModel,
+    cargo_weight_ton: float,
+    cargo_volume_m3: float | None = None,
+    cargo_items: list[dict] | None = None,
+) -> int:
+    """🆕 计算运输这批货物需要几辆车（四约束取最大值）。
+
+    权重/体积/长件/面积 四约束见 费用计算公式.所需车辆数()。
+    使用车型的：
+    - max_load_ton（载重）
+    - effective_volume_m3（有效容积：厢式=volume_capacity；平板=面积×堆高）
+    - floor_area_m2（地板面积）
+    - length_m（地板长）
+    - loading_efficiency（装载效率）
+    """
+    max_len, footprint = 公式.货物载荷特征(
+        货物总重量吨=cargo_weight_ton,
+        货物总体积立方米=cargo_volume_m3,
+        单件货物=cargo_items,
+    )
+    return 公式.所需车辆数(
+        货物总重量吨=cargo_weight_ton,
+        货物总体积立方米=cargo_volume_m3,
+        最大单件长度米=max_len,
+        货物总占地面积平方米=footprint,
+        车型最大载重吨=model.max_load_ton,
+        车型容积立方米=model.effective_volume_m3,
+        车型地板长米=model.length_m,
+        车型地板面积平方米=model.floor_area_m2,
+        装载效率=model.loading_efficiency,
+    )
+
+
 def match_consolidated_model(
     *,
     cargo_weight_ton: float,
@@ -386,6 +422,7 @@ def match_consolidated_model(
     avoid_construction_zones: bool = False,
     via_mountain_road: bool = False,
     via_port: bool = False,
+    cargo_items: list[dict] | None = None,  # 🆕 单件货物明细（长件/面积约束）
     fuel_price_vnd: float,
     wage_hourly_vnd: float,
     cargo_value_vnd: float | None = None,
@@ -397,7 +434,7 @@ def match_consolidated_model(
     """拼货自动匹配的核心循环——独立导出，calibration.py 复用同一个函数，
     避免正算和反算各写一份匹配算法后来跑偏。
 
-    在所有能装下这批货物（重量和体积都不超限）的车型里，选总价最低的一个。
+    在所有能装下这批货物的车型里，选总价最低的一个。
     复杂度 O(N)，N=车型库行数，纯内存计算，distance/duration 是外部一次性传入的路由结果，
     不会在循环里重复调用 OSRM。
     """
@@ -405,11 +442,23 @@ def match_consolidated_model(
     if cargo is None:
         raise UnknownCargoType(cargo_type)
 
+    # 🆕 单件载荷特征：最大单件长 + 不可堆叠件占地面积
+    最大单件长, 占地面积 = 公式.货物载荷特征(
+        货物总重量吨=cargo_weight_ton,
+        货物总体积立方米=cargo_volume_m3,
+        单件货物=cargo_items,
+    )
+
     candidates = [
         m
         for m in VEHICLE_MODELS
         if cargo_weight_ton <= m.max_load_ton
-        and (m.volume_capacity_m3 is None or cargo_volume_m3 <= m.volume_capacity_m3)
+        and (m.effective_volume_m3 is None or cargo_volume_m3 <= m.effective_volume_m3 * m.loading_efficiency)
+        # 🆕 长件约束：单件最长 > 地板长 → 排除
+        and (最大单件长 is None or m.length_m is None or 最大单件长 <= m.length_m)
+        # 🆕 面积约束：不可堆叠件占地 > 地板面积×效率 → 排除
+        and (占地面积 is None or m.floor_area_m2 is None
+             or 占地面积 <= m.floor_area_m2 * m.loading_efficiency)
     ]
     if not candidates:
         raise NoFittingVehicleModel(
@@ -463,6 +512,7 @@ def compute_cost_consolidated(
     avoid_construction_zones: bool = False,
     via_mountain_road: bool = False,
     via_port: bool = False,
+    cargo_items: list[dict] | None = None,  # 🆕 单件货物明细（长件/面积约束）
     fuel_price_vnd: float,
     wage_hourly_vnd: float,
     cargo_value_vnd: float | None = None,
@@ -483,6 +533,7 @@ def compute_cost_consolidated(
         avoid_construction_zones=avoid_construction_zones,
         via_mountain_road=via_mountain_road,
         via_port=via_port,
+        cargo_items=cargo_items,
         fuel_price_vnd=fuel_price_vnd,
         wage_hourly_vnd=wage_hourly_vnd,
         cargo_value_vnd=cargo_value_vnd,

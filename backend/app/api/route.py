@@ -1,5 +1,3 @@
-import math
-
 from fastapi import APIRouter, HTTPException, Query
 
 from app.config import settings
@@ -17,6 +15,7 @@ from app.services.cost_engine import (
     UnknownVehicleModel,
     compute_cost_consolidated,
     compute_cost_full_truck,
+    compute_vehicle_count,
 )
 from app.services.osrm_client import OSRMClient, OSRMError, RouteResult
 from app.services.vehicle_registry import get_model
@@ -79,13 +78,19 @@ def _compute_from_request(request: QuoteRequest, route_result: RouteResult) -> t
     """计算单车费用，返回 (单车CostResult, 需要车辆数)。"""
     cost_params = request.cost_params
     weight_ton = request.cargo.weight_kg / 1000
+    cargo_items = [i.model_dump() for i in request.cargo.items]
 
-    # 整车模式：计算需要几辆车
+    # 整车模式：计算需要几辆车（🆕 四约束：重量/体积/长件/面积）
     vehicle_count = 1
     if request.vehicle.loading_mode == "full_truck" and request.vehicle.vehicle_model_id:
         model = get_model(request.vehicle.vehicle_model_id)
-        if model and weight_ton > model.max_load_ton:
-            vehicle_count = max(1, math.ceil(weight_ton / model.max_load_ton))
+        if model:
+            vehicle_count = compute_vehicle_count(
+                model=model,
+                cargo_weight_ton=weight_ton,
+                cargo_volume_m3=request.cargo.volume_m3,
+                cargo_items=cargo_items,
+            )
 
     # 用单车重量计算
     per_vehicle_weight_ton = weight_ton / vehicle_count
@@ -101,6 +106,7 @@ def _compute_from_request(request: QuoteRequest, route_result: RouteResult) -> t
         avoid_construction_zones=request.vehicle.avoid_construction_zones,
         via_mountain_road=request.vehicle.via_mountain_road,
         via_port=request.vehicle.via_port,
+        cargo_items=cargo_items,
         fuel_price_vnd=cost_params.fuel_price_vnd or settings.default_fuel_price_vnd,
         wage_hourly_vnd=cost_params.wage_hourly_vnd or settings.default_wage_hourly_vnd,
         cargo_value_vnd=request.cargo.value_vnd,

@@ -1,6 +1,7 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "JIUNENG 官网 + OSRM++ 2026-08 载荷版（车辆载荷能力数据库 + 四约束车辆数 + 报价工具）",
   "private": true,
   "scripts": {
     "dev": "next dev -p 47820",

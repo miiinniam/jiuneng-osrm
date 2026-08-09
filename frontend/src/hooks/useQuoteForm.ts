@@ -31,6 +31,7 @@ function buildDefaultForm(): QuoteFormState {
     volumeM3: "",
     cargoType: "normal",
     cargoValueVnd: "",
+    items: [],
     loadingMode: "full_truck",
     vehicleModelId: "",
     emptyReturn: false,
@@ -131,6 +132,18 @@ export function useQuoteForm() {
           volume_m3: fm.volumeM3 ? parseFloat(fm.volumeM3) : undefined,
           type: fm.cargoType,
           value_vnd: fm.cargoValueVnd ? parseFloat(fm.cargoValueVnd) : undefined,
+          // 🆕 单件货物明细：过滤掉无效行，转换 snake_case
+          items: fm.items
+            .filter((i) => i.lengthM > 0 && i.widthM > 0)
+            .map((i) => ({
+              name: i.name || undefined,
+              count: i.count,
+              length_m: i.lengthM,
+              width_m: i.widthM,
+              height_m: i.heightM ?? undefined,
+              weight_kg: i.weightKg ?? undefined,
+              stackable: i.stackable,
+            })),
         },
         vehicle: {
           loading_mode: fm.loadingMode,

@@ -184,6 +184,20 @@ export interface Translations {
       typeLabel: string;
       rateSuffix: (rate: number) => string;
       valueLabel: string;
+      itemsTitle: string;          // 🆕 单件货物明细
+      itemsCollapse: string;       // 🆕 收起明细
+      itemsExpand: string;         // 🆕 展开明细
+      itemsHint: string;           // 🆕 提示文案
+      itemsAdd: string;            // 🆕 添加一件
+      itemsRemove: string;         // 🆕 删除
+      itemsName: string;           // 🆕 名称
+      itemsCount: string;          // 🆕 数量
+      itemsLength: string;         // 🆕 长 (m)
+      itemsWidth: string;          // 🆕 宽 (m)
+      itemsHeight: string;         // 🆕 高 (m)
+      itemsStackable: string;      // 🆕 可堆叠
+      itemsSplitWarn: (n: number) => string;  // 🆕 超长将拆分 N 辆
+      itemsAutoExpandHint: string; // 🆕 超大件/重设备提示展开
     };
     vehicle: {
       loadingModeLabel: string;

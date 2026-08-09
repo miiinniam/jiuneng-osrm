@@ -22,11 +22,27 @@ class RouteInput(BaseModel):
     waypoints: list[LatLng] = Field(default_factory=list)
 
 
+class CargoItemInput(BaseModel):
+    """🆕 单件货物明细（可选）——用于长件/面积约束精确计算车辆数。
+
+    不填则回退到 Level 1（仅重量+总体积判断）。
+    stackable=False 表示不可堆叠（如变压器/设备），按地板面积计。
+    """
+    name: str = ""
+    count: int = Field(default=1, ge=1)
+    length_m: float = Field(gt=0)
+    width_m: float = Field(gt=0)
+    height_m: float | None = None
+    weight_kg: float | None = None
+    stackable: bool = True
+
+
 class CargoInput(BaseModel):
     weight_kg: float = Field(gt=0)
     volume_m3: float | None = None
     type: str = "normal"
     value_vnd: float | None = None  # 用于保险费计算
+    items: list[CargoItemInput] = Field(default_factory=list)  # 🆕 单件明细
 
 
 class VehicleInput(BaseModel):
@@ -150,6 +166,7 @@ class BatchRowInput(BaseModel):
     avoid_construction_zones: bool = False
     via_mountain_road: bool = False
     via_port: bool = False
+    cargo_items: list[dict] = Field(default_factory=list)  # 🆕 单件明细（长件/面积约束）
     cargo_value_vnd: float | None = None
     fuel_price_vnd: float | None = None
     wage_hourly_vnd: float | None = None

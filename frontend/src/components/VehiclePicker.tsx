@@ -62,6 +62,11 @@ export default function VehiclePicker({
                       <span className="text-[11px] font-bold text-[var(--brand-700)] bg-[var(--brand-50)] rounded-md px-2 py-0.5">
                         {m.max_load_ton}t
                       </span>
+                      {m.length_m != null && (
+                        <span className="text-[10px] text-[var(--surface-400)] tabular-nums" title="地板长度">
+                          {m.length_m}m
+                        </span>
+                      )}
                       <span className="text-[10px] text-[var(--surface-400)] tabular-nums w-16 text-right">
                         ¥{m.base_rate_vnd_per_km.toLocaleString()}/km
                       </span>

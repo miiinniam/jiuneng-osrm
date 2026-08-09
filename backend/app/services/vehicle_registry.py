@@ -33,6 +33,26 @@ class VehicleModel:
     osrm_profile: str
     suitable_cargo_types: tuple[str, ...]
     notes: str
+    # 🆕 载荷能力字段（2026-08-09）——带默认值，向后兼容旧构造方式
+    max_cargo_height_m: float | None = None  # 货物最大堆高（平板=道路限高-货台；厢式=内高）
+    loading_efficiency: float = 0.90         # 装载效率系数（0-1）
+
+    @property
+    def floor_area_m2(self) -> float | None:
+        """地板面积 = 长 × 宽（用于平板车/长件面积约束）。"""
+        if self.length_m and self.width_m:
+            return self.length_m * self.width_m
+        return None
+
+    @property
+    def effective_volume_m3(self) -> float | None:
+        """有效容积：厢式车用 volume_capacity_m3；平板车用 面积×堆高×效率。"""
+        if self.volume_capacity_m3:
+            return self.volume_capacity_m3
+        area = self.floor_area_m2
+        if area and self.max_cargo_height_m:
+            return area * self.max_cargo_height_m
+        return None
 
 
 class VehicleRegistryError(ValueError):
@@ -97,6 +117,8 @@ def _load_registry(csv_path: Path) -> list[VehicleModel]:
                     length_m=_parse_float(row["length_m"]),
                     width_m=_parse_float(row["width_m"]),
                     height_m=_parse_float(row["height_m"]),
+                    max_cargo_height_m=_parse_float(row.get("max_cargo_height_m")),
+                    loading_efficiency=float(row.get("loading_efficiency") or 0.90),
                     base_rate_vnd_per_km=float(row["base_rate_vnd_per_km"]),
                     fuel_l_per_100km=float(row["fuel_l_per_100km"]),
                     fuel_penalty=float(row["fuel_penalty"] or 0),

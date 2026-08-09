@@ -151,7 +151,13 @@ export function useAIChat(
           if (data.name === "calculate_freight_cost" && data.result) {
             actions.push({ label: "📊 查看明细", tool: "view_quote", payload: data.result });
             if (data.result.vehicle_model_id) {
-              actions.push({ label: "🚛 填入车型", tool: "apply_vehicle", payload: { vehicle_model_id: data.result.vehicle_model_id } });
+              // 🆕 多车时按钮带车辆数（对齐四约束车辆数）
+              const vcLabel = (data.result.vehicle_count as number | undefined) ?? 1;
+              actions.push({
+                label: vcLabel > 1 ? `🚛 填入车型 ×${vcLabel}辆` : "🚛 填入车型",
+                tool: "apply_vehicle",
+                payload: { vehicle_model_id: data.result.vehicle_model_id, vehicle_count: vcLabel },
+              });
             }
           } else if (data.name === "query_vehicle_models" && data.result) {
             const vehicles = (data.result as Record<string, unknown>).vehicles as Array<Record<string, unknown>> | undefined;

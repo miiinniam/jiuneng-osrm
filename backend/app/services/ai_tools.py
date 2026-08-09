@@ -91,6 +91,29 @@ TOOLS = [
                         "type": "number",
                         "description": "货物体积（立方米）。拼货模式（consolidated）时必须提供。",
                     },
+                    "items": {
+                        "type": "array",
+                        "description": (
+                            "🆕 单件货物明细（可选）。用于精确判断车辆数（长件/不可堆叠货物）。"
+                            "格式: [{\"name\": \"变压器\", \"count\": 1, \"length_m\": 8, "
+                            "\"width_m\": 2.5, \"height_m\": 3.2, \"weight_kg\": 18000, "
+                            "\"stackable\": false}]。"
+                            "单件长度超过车厢地板长的货物、或不可堆叠设备必须提供此字段。"
+                        ),
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {"type": "string"},
+                                "count": {"type": "integer", "minimum": 1},
+                                "length_m": {"type": "number"},
+                                "width_m": {"type": "number"},
+                                "height_m": {"type": "number"},
+                                "weight_kg": {"type": "number"},
+                                "stackable": {"type": "boolean", "description": "是否可堆叠，默认 true"},
+                            },
+                            "required": ["length_m", "width_m"],
+                        },
+                    },
                 },
                 "required": ["origin", "destination", "cargo_weight_ton"],
             },
@@ -351,8 +374,15 @@ async def _calc_cost(args: dict) -> str:
             }, ensure_ascii=False)
 
         model = get_model(vehicle_id)
-        if model and weight_ton > model.max_load_ton:
-            vehicle_count = max(1, math.ceil(weight_ton / model.max_load_ton))
+        if model:
+            # 🆕 四约束车辆数（重量/体积/长件/面积）
+            from app.services.cost_engine import compute_vehicle_count
+            vehicle_count = compute_vehicle_count(
+                model=model,
+                cargo_weight_ton=weight_ton,
+                cargo_volume_m3=args.get("volume_m3"),
+                cargo_items=args.get("items"),
+            )
 
         per_vehicle_weight_ton = weight_ton / vehicle_count
 
@@ -381,6 +411,7 @@ async def _calc_cost(args: dict) -> str:
             cargo_weight_ton=weight_ton, cargo_volume_m3=volume_m3,
             cargo_type=cargo_type, empty_return=empty_return,
             need_loading=need_loading,
+            cargo_items=args.get("items"),
             fuel_price_vnd=settings.default_fuel_price_vnd,
             wage_hourly_vnd=settings.default_wage_hourly_vnd,
             loading_rate_vnd_per_ton=settings.loading_rate_vnd_per_ton,

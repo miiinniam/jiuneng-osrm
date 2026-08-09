@@ -64,7 +64,15 @@ export default function RouteOptions({ options, selectedIndex, onSelect }: Route
                 </div>
               </div>
               <div className="flex items-center justify-between px-1">
-                <span className="text-lg font-bold text-[var(--surface-900)]">{formatVnd(option.breakdown.cost_total)}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-bold text-[var(--surface-900)]">{formatVnd(option.breakdown.cost_total)}</span>
+                  {/* 🆕 车数徽标（不同车型可能车数不同） */}
+                  {(option.breakdown.vehicle_count ?? option.vehicle_count ?? 1) > 1 && (
+                    <span className="rounded-md bg-[var(--brand-100)] px-1.5 py-0.5 text-[10px] font-bold text-[var(--brand-700)]">
+                      {option.breakdown.vehicle_count ?? option.vehicle_count}辆
+                    </span>
+                  )}
+                </div>
                 <span className="text-xs text-[var(--surface-400)]">
                   {t.routeOptions.distanceAndTime(
                     `${option.route.distance_km.toFixed(1)} km`,

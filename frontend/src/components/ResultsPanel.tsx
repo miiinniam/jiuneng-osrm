@@ -176,7 +176,7 @@ export default function ResultsPanel(p: Props) {
           )}
 
           {/* ──── 2. 总价 Hero ──── */}
-          <div className="rounded-xl bg-gradient-to-br from-[var(--brand-800)] to-[var(--brand-950)] p-4">
+          <div key={`${cur.breakdown.cost_total}-${vc}`} className="rounded-xl bg-gradient-to-br from-[var(--brand-800)] to-[var(--brand-950)] p-4 animate-pop-in">
             <div className="flex items-center justify-between mb-1">
               <p className="text-xs font-medium text-[var(--brand-300)]">
                 {p.isDDPFull ? "DDP 到门总价" : "总运费"}

@@ -15,8 +15,10 @@ from app.services.cost_engine import (
     UnknownVehicleModel,
     compute_cost_consolidated,
     compute_cost_full_truck,
+    compute_vehicle_count,
 )
 from app.services.osrm_client import OSRMClient, OSRMError
+from app.services.vehicle_registry import get_model
 
 router = APIRouter()
 
@@ -84,6 +86,7 @@ async def _process_row(index: int, raw_row: dict, client: OSRMClient, semaphore:
             avoid_construction_zones=row.avoid_construction_zones,
             via_mountain_road=row.via_mountain_road,
             via_port=row.via_port,
+            cargo_items=row.cargo_items,
             fuel_price_vnd=row.fuel_price_vnd or settings.default_fuel_price_vnd,
             wage_hourly_vnd=row.wage_hourly_vnd or settings.default_wage_hourly_vnd,
             cargo_value_vnd=row.cargo_value_vnd,
@@ -93,14 +96,29 @@ async def _process_row(index: int, raw_row: dict, client: OSRMClient, semaphore:
             insurance_rate=settings.insurance_rate,
         )
         try:
+            vehicle_count = 1
             if row.loading_mode == "full_truck":
+                # 🆕 四约束车辆数（重量/体积/长件/面积）
+                model = get_model(row.vehicle_model_id)
+                if model:
+                    vehicle_count = compute_vehicle_count(
+                        model=model,
+                        cargo_weight_ton=row.weight_kg / 1000,
+                        cargo_volume_m3=row.volume_m3,
+                        cargo_items=row.cargo_items,
+                    )
+                per_vehicle_weight = (row.weight_kg / 1000) / vehicle_count
+                common_kwargs["cargo_weight_ton"] = per_vehicle_weight
                 result = compute_cost_full_truck(vehicle_model_id=row.vehicle_model_id, **common_kwargs)
             else:
                 result = compute_cost_consolidated(cargo_volume_m3=row.volume_m3, **common_kwargs)
         except (UnknownVehicleModel, UnknownCargoType, NoFittingVehicleModel) as exc:
             return BatchRowResult(row_index=index, success=False, error=str(exc))
 
-        return BatchRowResult(row_index=index, success=True, quote=build_quote_response(route_result, result))
+        return BatchRowResult(
+            row_index=index, success=True,
+            quote=build_quote_response(route_result, result, vehicle_count),
+        )
 
 
 @router.post("/batch/quote", response_model=BatchResponse)

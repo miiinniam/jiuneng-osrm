@@ -14,6 +14,10 @@ export interface VehicleModel {
   length_m: number | null;
   width_m: number | null;
   height_m: number | null;
+  max_cargo_height_m: number | null;
+  loading_efficiency: number;
+  floor_area_m2: number | null;
+  effective_volume_m3: number | null;
   base_rate_vnd_per_km: number;
   fuel_l_per_100km: number;
   fuel_penalty: number;
@@ -22,6 +26,29 @@ export interface VehicleModel {
   osrm_profile: string;
   suitable_cargo_types: string[];
   notes: string;
+}
+
+/** 🆕 单件货物明细（可选）——用于长件/面积约束精确计算车辆数 */
+export interface CargoItem {
+  id: string;            // 前端唯一 id（增删用）
+  name: string;
+  count: number;
+  lengthM: number;       // 米
+  widthM: number;
+  heightM: number | null;
+  weightKg: number | null;
+  stackable: boolean;    // 是否可堆叠（false=按地板面积计）
+}
+
+/** 🆕 提交给后端的单件货物格式（snake_case，对应 CargoItemInput） */
+export interface CargoApiItem {
+  name?: string;
+  count: number;
+  length_m: number;
+  width_m: number;
+  height_m?: number;
+  weight_kg?: number;
+  stackable: boolean;
 }
 
 export type VehicleModelsByCategory = Record<string, VehicleModel[]>;
@@ -42,6 +69,7 @@ export interface QuoteRequest {
     volume_m3?: number;
     type: string;
     value_vnd?: number;
+    items?: CargoApiItem[];
   };
   vehicle: {
     loading_mode: LoadingMode;
@@ -76,6 +104,7 @@ export interface QuoteFormState {
   volumeM3: string;
   cargoType: string;
   cargoValueVnd: string;
+  items: CargoItem[];        // 🆕 单件货物明细
   loadingMode: LoadingMode;
   vehicleModelId: string;
   emptyReturn: boolean;
