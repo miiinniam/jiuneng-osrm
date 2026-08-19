@@ -45,8 +45,8 @@ function Header({
     <header
       className={`absolute top-0 left-0 right-0 z-[1000] flex items-center justify-between px-4 py-2.5 transition-colors duration-200 ${
         dark
-          ? "border-b border-white/10 bg-gradient-to-b from-[#0a1a2e]/95 to-[#0a1a2e]/70 backdrop-blur-md"
-          : "border-b border-[var(--border)]/40 bg-white/85 shadow-sm backdrop-blur-xl"
+          ? "border-b border-white/10 bg-gradient-to-b from-[#001030]/95 to-[#001030]/70 backdrop-blur-md"
+          : "border-b border-[var(--border)]/40 bg-white/90 shadow-sm backdrop-blur-xl"
       }`}
     >
       <BrandLogo dark={dark} />
@@ -100,7 +100,7 @@ export default function AppShell({
           onLoadTemplate={onLoadTemplate}
           dark={dark && !scrolled}
         />
-        <div className="relative flex-1 w-full">{children}</div>
+        <div id="main" className="relative flex-1 w-full">{children}</div>
         {/* 移动端 AI 悬浮气泡：仅官网首页（组件自身 lg:hidden，桌面不受影响） */}
         {pathname === "/" && <AIChatFAB />}
       </div>

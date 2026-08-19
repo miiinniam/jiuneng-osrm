@@ -116,13 +116,13 @@ export default function FloatingPanel({
             className={`flex-1 rounded-md px-2.5 py-1 text-[11px] font-medium transition-all ${
               tab === "quote" ? "bg-white text-[var(--surface-800)] shadow-sm" : "text-[var(--surface-400)] hover:text-[var(--surface-600)]"
             }`}>
-            📋 {t.costPanel.settingsTitle}
+            {t.costPanel.settingsTitle}
           </button>
           <button onClick={() => handleTabChange("chat")}
             className={`flex-1 rounded-md px-2.5 py-1 text-[11px] font-medium transition-all ${
               tab === "chat" ? "bg-white text-[var(--brand-700)] shadow-sm" : "text-[var(--surface-400)] hover:text-[var(--surface-600)]"
             }`}>
-            💬 AI 助手
+            {t.site.aiAssistant.eyebrow}
           </button>
         </div>
       </div>

@@ -29,8 +29,8 @@ export default function LanguageSwitcher({ dark = false }: { dark?: boolean }) {
           className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-all duration-150 ${
             locale === code
               ? dark
-                ? "bg-[var(--teal-500)] text-[#06281f] shadow-[var(--shadow-sm)]"
-                : "bg-white text-[var(--surface-800)] shadow-[var(--shadow-sm)]"
+                ? "bg-white text-[var(--navy)] shadow-[var(--shadow-sm)]"
+                : "bg-[var(--navy)] text-white shadow-[var(--shadow-sm)]"
               : dark
                 ? "text-white hover:bg-white/20"
                 : "text-[var(--surface-400)] hover:text-[var(--surface-600)]"

@@ -89,19 +89,13 @@ const ArrowIcon = () => (
 /* ── 数字统计带（K&N 风格：大数字 + 小标签） ── */
 function StatsBar() {
   const { t } = useLocale();
-  const stats = [
-    { value: "02", label: t.site.hero.stats[0].label, sub: "中国·越南双主体" },
-    { value: "03", label: t.site.hero.stats[1].label, sub: "工程物流·报关·贸易" },
-    { value: "30+", label: t.site.hero.stats[2].label, sub: "特种车·平板·冷链" },
-    { value: "2024", label: t.site.hero.stats[3].label, sub: "越南公司登记" },
-  ];
+  const stats = t.site.hero.stats;
   return (
-    <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--teal-500)]/20 bg-[var(--teal-500)]/10 sm:grid-cols-4 lg:grid-cols-4">
+    <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/15 bg-white/5 sm:grid-cols-4">
       {stats.map((s, i) => (
-        <div key={i} className="bg-[#0a1a2e] px-5 py-4 sm:px-6 sm:py-5">
-          <p className="text-2xl font-bold tabular-nums tracking-tight text-[var(--teal-400)] sm:text-3xl">{s.value}</p>
-          <p className="mt-1 text-sm font-semibold text-white">{s.label}</p>
-          <p className="mt-0.5 text-xs text-[var(--brand-100)]/50">{s.sub}</p>
+        <div key={s.label} className={`bg-[#001030]/70 px-5 py-4 sm:px-6 sm:py-5 ${i < stats.length - 1 ? "border-r border-white/10" : ""}`}>
+          <p className="text-2xl font-semibold tabular-nums tracking-tight text-white sm:text-3xl">{s.value}</p>
+          <p className="mt-1 text-sm text-white/70">{s.label}</p>
         </div>
       ))}
     </div>
@@ -158,9 +152,13 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* ═══════════ HERO — K&N 风格全屏 ═══════════ */}
-      <section className="relative overflow-hidden bg-[#0a1a2e]">
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[1000px] -translate-x-1/2 rounded-full bg-[#1d4ed8]/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#08c792]/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-[var(--navy)]">
+        <img
+          src="/assets/hero-wind-tower.webp"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(0,16,48,0.94)_0%,rgba(0,16,48,0.78)_46%,rgba(0,16,48,0.42)_100%),linear-gradient(180deg,rgba(0,16,48,0.18)_0%,rgba(0,16,48,0.88)_100%)]" />
 
         <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-20 sm:px-8 lg:pb-20 lg:pt-28">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
@@ -174,7 +172,7 @@ export default function HomePage() {
               />
               <div className="flex items-center gap-3">
                 <span className="h-0.5 w-8 bg-[var(--teal-500)] sm:w-10" />
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--teal-400)] sm:text-xs sm:tracking-[0.22em]">{s.hero.eyebrow}</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--cyan)] sm:text-xs sm:tracking-[0.22em]">{s.hero.eyebrow}</p>
               </div>
               <h1 className="mt-4 text-3xl font-bold leading-[1.14] tracking-tight text-white sm:mt-5 sm:text-4xl lg:text-[3.2rem]">
                 {s.hero.title}
@@ -186,7 +184,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-3.5">
                 <Link
                   href="#quote"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-[var(--teal-500)] px-5 py-3 text-sm font-bold text-[#06281f] shadow-lg shadow-[#08c792]/25 transition-all hover:-translate-y-0.5 hover:bg-[var(--teal-400)] sm:px-7 sm:py-3.5"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-[var(--blue)] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0040c0]/30 transition-all hover:-translate-y-0.5 hover:bg-[var(--blue-hover)] sm:px-7 sm:py-3.5"
                 >
                   {s.hero.primary}
                   <ArrowIcon />
@@ -204,9 +202,9 @@ export default function HomePage() {
                 {[s.hero.badge1, s.hero.badge2, s.hero.badge3].map((b, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-2 rounded-full border border-[var(--teal-500)]/25 bg-[var(--teal-500)]/8 px-3 py-1.5 text-[11px] font-medium text-[var(--teal-300)] sm:px-3.5 sm:text-xs"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 sm:px-3.5 sm:text-xs"
                   >
-                    <span className="h-1 w-1 rounded-full bg-[var(--teal-500)]" />
+                    <span className="h-1 w-1 rounded-full bg-[var(--cyan)]" />
                     {b}
                   </span>
                 ))}
@@ -222,6 +220,55 @@ export default function HomePage() {
           {/* 数字统计带 */}
           <div className="mt-14">
             <StatsBar />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 关于玖能 ═══════════ */}
+      <section id="about" className="scroll-mt-16 py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <SectionHeading eyebrow={s.about.eyebrow} title={s.about.title} />
+          <div className="mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              {s.about.body.map((p) => (
+                <p key={p} className="mb-4 text-[15px] leading-relaxed text-[var(--surface-500)]">{p}</p>
+              ))}
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {[s.about.mission, s.about.vision].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-[var(--surface-200)] bg-white p-5 shadow-sm">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--blue)]">{item.label}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--navy)]">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-[var(--surface-200)] shadow-md">
+              <img src="/assets/case-02-transformer-inspection-C1NrNOUB.webp" alt="" className="h-72 w-full object-cover sm:h-full" />
+            </div>
+          </div>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {s.about.values.map((v) => (
+              <div key={v.name} className="rounded-2xl border border-[var(--surface-200)] bg-white p-5 shadow-sm">
+                <p className="font-semibold text-[var(--navy)]">{v.name}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{v.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 报价流程 ═══════════ */}
+      <section id="how-it-works" className="scroll-mt-16 bg-[var(--surface-50)] py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <SectionHeading eyebrow={s.howItWorks.eyebrow} title={s.howItWorks.title} intro={s.howItWorks.intro} />
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {s.howItWorks.steps.map((step, i) => (
+              <div key={step.title} className="rounded-2xl border border-[var(--surface-200)] bg-white p-6 shadow-sm">
+                <p className="text-2xl font-semibold tabular-nums text-[var(--cyan)]">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-3 text-base font-semibold text-[var(--navy)]">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{step.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -258,8 +305,8 @@ export default function HomePage() {
                   alt={s.services.items[activeService].title}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a2e]/50 to-transparent md:bg-gradient-to-r" />
-                <div className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--teal-500)] text-[#06281f] shadow-lg md:hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001030]/50 to-transparent md:bg-gradient-to-r" />
+                <div className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--blue)] text-white shadow-lg md:hidden">
                   {(() => {
                     const I = serviceIcons[activeService] ?? TruckIcon;
                     return <I />;
@@ -268,7 +315,7 @@ export default function HomePage() {
               </div>
               {/* 内容侧 */}
               <div className="flex flex-col justify-center p-7 sm:p-9">
-                <div className="mb-3 hidden h-12 w-12 items-center justify-center rounded-xl bg-[var(--teal-500)]/10 text-[var(--teal-600)] md:flex">
+                <div className="mb-3 hidden h-12 w-12 items-center justify-center rounded-xl bg-[var(--blue)]/10 text-[var(--blue)] md:flex">
                   {(() => {
                     const I = serviceIcons[activeService] ?? TruckIcon;
                     return <I />;
@@ -286,7 +333,7 @@ export default function HomePage() {
                       key={j}
                       className="inline-flex items-center gap-2 rounded-lg bg-[var(--surface-50)] px-3.5 py-2 text-sm font-medium text-[var(--surface-600)]"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--teal-500)]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--blue)]" />
                       {p}
                     </li>
                   ))}
@@ -298,7 +345,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ 解决方案（深蓝区） ═══════════ */}
-      <section id="solutions" className="scroll-mt-16 bg-[#0a1a2e] py-20">
+      <section id="solutions" className="scroll-mt-16 bg-[var(--navy)] py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading eyebrow={s.solutions.eyebrow} title={s.solutions.title} intro={s.solutions.intro} light />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -308,7 +355,7 @@ export default function HomePage() {
               return (
                 <div
                   key={i}
-                  className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0f2b4a]/60 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-[var(--teal-500)]/40 hover:bg-[#122f52]"
+                  className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-[var(--cyan)]/40 hover:bg-white/8"
                 >
                   <div className="relative h-28 overflow-hidden">
                     <img
@@ -316,19 +363,41 @@ export default function HomePage() {
                       alt={item.title}
                       className="h-full w-full object-cover opacity-70 transition-all duration-300 group-hover:scale-105 group-hover:opacity-90"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a2e] via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--teal-500)] text-[#06281f] shadow-lg">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#001030] via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--blue)] text-white shadow-lg">
                       <Icon />
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--teal-500)]">
+                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
                       {item.sector}
                     </p>
                     <h3 className="mt-1.5 text-base font-bold text-white">{item.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-[var(--brand-100)]/60">{item.body}</p>
                   </div>
                 </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ 设备资源 ═══════════ */}
+      <section id="vehicles" className="scroll-mt-16 py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <SectionHeading eyebrow={s.vehicles.eyebrow} title={s.vehicles.title} intro={s.vehicles.intro} />
+          <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {s.vehicles.items.map((item, i) => {
+              const imgs = ["/assets/hero-wind-tower.webp", "/assets/sol-tower.webp", "/assets/sol-infra.webp"];
+              return (
+                <article key={item.title} className="overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+                  <img src={imgs[i]} alt={item.title} className="h-44 w-full object-cover" />
+                  <div className="p-5">
+                    <h3 className="text-base font-semibold text-[var(--navy)]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{item.body}</p>
+                    <span className="mt-4 inline-block rounded-full border border-[var(--surface-200)] bg-[var(--surface-50)] px-3 py-1 text-xs font-medium text-[var(--surface-500)]">{item.spec}</span>
+                  </div>
+                </article>
               );
             })}
           </div>
@@ -349,19 +418,19 @@ export default function HomePage() {
               alt="中越跨境物流"
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a2e]/85 via-[#0a1a2e]/40 to-[#0a1a2e]/85" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001030]/88 via-[#001030]/42 to-[#001030]/88" />
             <div className="absolute inset-0 flex items-center justify-between px-8 sm:px-14">
               <div className="text-center">
-                <p className="text-2xl font-bold text-white sm:text-3xl">🇨🇳</p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-[var(--brand-100)]/70">China</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-white sm:text-base">China</p>
+                <p className="mt-1 text-xs text-white/70">CN origin</p>
               </div>
               <div className="text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--teal-400)]">CN — VN</p>
-                <p className="mt-1 text-xs text-[var(--brand-100)]/60">跨境运输 · 口岸协同</p>
+                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--cyan)]">CN — VN</p>
+                <p className="mt-1 text-xs text-white/60">跨境运输 · 口岸协同</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-white sm:text-3xl">🇻🇳</p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-[var(--brand-100)]/70">Vietnam</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-white sm:text-base">Vietnam</p>
+                <p className="mt-1 text-xs text-white/70">VN delivery</p>
               </div>
             </div>
           </div>
@@ -369,7 +438,7 @@ export default function HomePage() {
             {[s.network.china, s.network.vietnam].map((side, i) => (
               <div key={i} className="rounded-2xl border border-[var(--surface-200)] bg-white p-7 shadow-sm">
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-[var(--teal-500)]/10 px-3.5 py-1.5 text-xs font-bold text-[var(--teal-700)]">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[var(--blue)]/10 px-3.5 py-1.5 text-xs font-bold text-[var(--blue)]">
                     <PinIcon />
                     {side.flag}
                   </span>
@@ -379,7 +448,7 @@ export default function HomePage() {
                 <ul className="mt-4 space-y-2">
                   {side.points.map((p, j) => (
                     <li key={j} className="flex items-center gap-2.5 text-sm text-[var(--surface-600)]">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--teal-500)]/15 text-[var(--teal-600)]">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--blue)]/10 text-[var(--blue)]">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
                           <path d="m5 12 5 5 9-10" />
                         </svg>
@@ -404,7 +473,7 @@ export default function HomePage() {
               <Link
                 key={i}
                 href={`/cases/${item.id}`}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--teal-500)]/40 hover:shadow-md"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-md"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img
@@ -412,7 +481,7 @@ export default function HomePage() {
                     alt={item.title}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a2e]/70 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#001030]/70 via-transparent to-transparent" />
                   <span className="absolute left-4 top-3 text-xs font-bold uppercase tracking-widest text-white/90 drop-shadow">
                     {item.type}
                   </span>
@@ -425,11 +494,11 @@ export default function HomePage() {
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--surface-500)]">{item.body}</p>
                   <div className="mt-4 flex flex-wrap items-center gap-1.5">
                     {item.tags.map((tag, j) => (
-                      <span key={j} className="rounded-md bg-[var(--teal-500)]/10 px-2 py-1 text-xs font-medium text-[var(--teal-700)]">
+                      <span key={j} className="rounded-md bg-[var(--blue)]/10 px-2 py-1 text-xs font-medium text-[var(--blue)]">
                         {tag}
                       </span>
                     ))}
-                    <span className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[var(--teal-600)] transition-colors group-hover:text-[var(--teal-500)]">
+                    <span className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[var(--blue)] transition-colors group-hover:text-[var(--cyan)]">
                       查看详情
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                         <path d="M5 12h14" />
@@ -458,13 +527,13 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ 联系我们 ═══════════ */}
-      <section id="contact" className="scroll-mt-16 bg-[#0a1a2e] py-20">
+      <section id="contact" className="scroll-mt-16 bg-[var(--navy)] py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div>
               <div className="flex items-center gap-3">
                 <span className="h-0.5 w-10 bg-[var(--teal-500)]" />
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--teal-500)]">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--cyan)]">
                   {s.contact.eyebrow}
                 </p>
               </div>
@@ -477,7 +546,7 @@ export default function HomePage() {
               <div className="mt-8 space-y-5">
                 {s.contact.details.map((d, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--teal-500)]/15 text-[var(--teal-400)]">
+                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[var(--cyan)]">
                       {i === 0 ? <MailIcon /> : i === 1 ? <PhoneIcon /> : <PinIcon />}
                     </div>
                     <div>
@@ -490,14 +559,14 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0f2b4a]/60 backdrop-blur-sm">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
               <div className="relative h-56">
                 <img
                   src="/assets/case-01-night-heavy-haul-D7KdM_lM.webp"
                   alt="JIUNENG 大件设备运输"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a2e]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001030]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-6">
                   <img
                     src="/assets/logo/logo-horizontal-white.png"
@@ -509,7 +578,7 @@ export default function HomePage() {
               <div className="p-6 text-center">
                 <Link
                   href="/quote"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-[var(--teal-500)] px-8 py-3.5 text-sm font-bold text-[#06281f] shadow-lg shadow-[#08c792]/25 transition-all hover:-translate-y-0.5 hover:bg-[var(--teal-400)]"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-[var(--blue)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0040c0]/30 transition-all hover:-translate-y-0.5 hover:bg-[var(--blue-hover)]"
                 >
                   {s.contact.cta}
                   <ArrowIcon />
@@ -521,7 +590,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ 页脚 ═══════════ */}
-      <footer className="border-t border-white/10 bg-[#0a1a2e] py-12">
+      <footer className="border-t border-white/10 bg-[var(--navy)] py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
             {/* 品牌 */}
@@ -549,7 +618,7 @@ export default function HomePage() {
                   { href: "/#contact", label: s.nav.contact },
                 ].map((l, i) => (
                   <li key={i}>
-                    <Link href={l.href} className="text-sm text-[var(--brand-100)]/70 transition-colors hover:text-[var(--teal-400)]">
+                    <Link href={l.href} className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
                       {l.label}
                     </Link>
                   </li>
@@ -563,18 +632,18 @@ export default function HomePage() {
               </h4>
               <ul className="mt-4 space-y-2.5">
                 <li>
-                  <Link href="/quote" className="text-sm text-[var(--brand-100)]/70 transition-colors hover:text-[var(--teal-400)]">
-                    🧮 {s.nav.quote}
+                  <Link href="/quote" className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                    {s.nav.quote}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/batch" className="text-sm text-[var(--brand-100)]/70 transition-colors hover:text-[var(--teal-400)]">
-                    📊 {t.nav.batch}
+                  <Link href="/batch" className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                    {t.nav.batch}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#ai-assistant" className="text-sm text-[var(--brand-100)]/70 transition-colors hover:text-[var(--teal-400)]">
-                    💬 {s.aiAssistant.eyebrow}
+                  <Link href="/#ai-assistant" className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                    {s.aiAssistant.eyebrow}
                   </Link>
                 </li>
               </ul>
@@ -586,9 +655,9 @@ export default function HomePage() {
               </h4>
               <ul className="mt-4 space-y-2.5">
                 {s.contact.details.map((d, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-[var(--brand-100)]/70">
-                    <span className="mt-0.5 text-[var(--teal-400)]">
-                      {i === 0 ? "✉" : i === 1 ? "☎" : "📍"}
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
+                    <span className="mt-0.5 text-[var(--cyan)]">
+                      {i === 0 ? <MailIcon /> : i === 1 ? <PhoneIcon /> : <PinIcon />}
                     </span>
                     <span>{d.value}</span>
                   </li>

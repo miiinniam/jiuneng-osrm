@@ -43,8 +43,8 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
     { href: "/#contact", label: t.site.nav.contact },
   ];
   const toolItems = [
-    { href: "/quote", label: t.site.nav.quote, icon: "🧮" },
-    { href: "/batch", label: t.nav.batch, icon: "📊" },
+    { href: "/quote", label: t.site.nav.quote },
+    { href: "/batch", label: t.nav.batch },
   ];
 
   return (
@@ -74,7 +74,7 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute right-0 top-0 bottom-0 flex w-[84%] max-w-[340px] flex-col bg-[#0a1a2e] shadow-2xl">
+          <div className="absolute right-0 top-0 bottom-0 flex w-[84%] max-w-[340px] flex-col bg-[var(--navy)] shadow-2xl">
             {/* 头部 */}
             <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
               <div className="flex items-center gap-2">
@@ -129,11 +129,10 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
                     onClick={() => setOpen(false)}
                     className={`flex items-center gap-2.5 rounded-xl px-3 py-3 text-sm font-semibold transition-colors ${
                       pathname === item.href
-                        ? "bg-[var(--teal-500)]/15 text-[var(--teal-300)]"
+                        ? "bg-[var(--blue)] text-white"
                         : "text-white hover:bg-white/5"
                     }`}
                   >
-                    <span>{item.icon}</span>
                     {item.label}
                   </Link>
                 ))}

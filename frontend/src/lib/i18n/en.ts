@@ -34,6 +34,33 @@ export const en: Translations = {
       badge2: "Automatic vehicle matching",
       badge3: "Transparent border fees",
     },
+    about: {
+      eyebrow: "About JIUNENG",
+      title: "Connecting China–Vietnam resources through an engineering logistics platform",
+      body: [
+        "JIUNENG logistics is an engineering logistics platform for Chinese enterprises, supporting engineering projects and cross-border trade in Vietnam.",
+        "The platform focuses on engineering logistics, customs clearance and international trade, managing inquiry, planning, quotation, execution and delivery through a digital system.",
+      ],
+      mission: { label: "Mission", text: "Connect China–Vietnam resources through digital engineering logistics, making complex project execution more efficient and reliable." },
+      vision: { label: "Vision", text: "Build a professional engineering logistics platform and become a trusted partner for Chinese enterprises on China–Vietnam projects." },
+      values: [
+        { name: "Reliable", body: "Clear and accountable on service scope, progress and client needs." },
+        { name: "Professional", body: "Understand the key links in engineering logistics, customs and trade." },
+        { name: "Collaborative", body: "Connect China and Vietnam resources to cut communication cost." },
+        { name: "Practical", body: "Solve real problems with executable plans." },
+      ],
+    },
+    howItWorks: {
+      eyebrow: "How it works",
+      title: "Four steps to make complex transport clear",
+      intro: "From address to vehicle to a formal plan: the system first produces a checkable estimate, then a project manager reviews it.",
+      steps: [
+        { title: "Enter route & cargo", body: "Origin, destination, weight and cargo type — then match available vehicles." },
+        { title: "Real-time routing", body: "OSRM calculates distance, transit time and alternative routes." },
+        { title: "Cost breakdown", body: "Freight, fuel, tolls and border fees are itemized by project conditions." },
+        { title: "Manager review", body: "Formal quotes still require human confirmation of site and documents." },
+      ],
+    },
     quickQuote: {
       eyebrow: "Online Quote",
       title: "Enter origin & destination for an instant freight estimate",
@@ -91,6 +118,16 @@ export const en: Translations = {
         { sector: "Infrastructure", title: "Engineering equipment & materials", body: "Cross-border transport and on-site handover of engineering equipment and materials for roads, bridges and infrastructure." },
         { sector: "Power Projects", title: "Power equipment transport", body: "Transport of large power equipment such as transformers with on-site coordination for thermal power and auxiliary works." },
         { sector: "Renewable Energy", title: "Wind blades & towers", body: "Specialized-vehicle transport of wind turbine blades, towers and large components for wind power projects." },
+      ],
+    },
+    vehicles: {
+      eyebrow: "Equipment",
+      title: "Specialized equipment for complex transport",
+      intro: "For new-energy and large engineering equipment, JIUNENG provides specialized vehicles and matches resources to route, size and site conditions.",
+      items: [
+        { title: "Wind-turbine transport vehicle", body: "For turbine equipment and large components.", spec: "For: turbines / large parts" },
+        { title: "Wind-blade lifting vehicle", body: "Handles blade transport on complex roads.", spec: "For: blades / complex roads" },
+        { title: "Supporting transport resources", body: "Match vehicles and resources by route, equipment size and site conditions.", spec: "Matched per project" },
       ],
     },
     network: {

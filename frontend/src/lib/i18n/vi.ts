@@ -34,6 +34,33 @@ export const vi: Translations = {
       badge2: "Tự động khớp xe chuyên dụng",
       badge3: "Minh bạch chi phí cửa khẩu",
     },
+    about: {
+      eyebrow: "Về JIUNENG",
+      title: "Kết nối nguồn lực Trung–Việt bằng nền tảng logistics kỹ thuật",
+      body: [
+        "JIUNENG logistics là nền tảng logistics kỹ thuật dành cho doanh nghiệp Trung Quốc, hỗ trợ triển khai dự án kỹ thuật và thương mại xuyên biên giới tại Việt Nam.",
+        "Nền tảng tập trung ba mảng: logistics kỹ thuật, khai báo hải quan và thương mại quốc tế; quản lý yêu cầu, phương án, báo giá, triển khai và bàn giao bằng hệ thống số.",
+      ],
+      mission: { label: "Sứ mệnh", text: "Kết nối nguồn lực Trung–Việt bằng logistics kỹ thuật số hóa, giúp dự án phức tạp được thực hiện hiệu quả và đáng tin cậy hơn." },
+      vision: { label: "Tầm nhìn", text: "Xây dựng nền tảng logistics kỹ thuật chuyên nghiệp, trở thành đối tác đáng tin cậy của doanh nghiệp Trung Quốc." },
+      values: [
+        { name: "Đáng tin cậy", body: "Rõ ràng và có trách nhiệm về phạm vi dịch vụ, tiến độ và nhu cầu khách hàng." },
+        { name: "Chuyên nghiệp", body: "Hiểu các mắt xích then chốt của logistics kỹ thuật, hải quan và thương mại." },
+        { name: "Phối hợp", body: "Kết nối nguồn lực Trung Quốc và Việt Nam, giảm chi phí trao đổi." },
+        { name: "Thực tế", body: "Giải quyết vấn đề thực bằng phương án khả thi." },
+      ],
+    },
+    howItWorks: {
+      eyebrow: "Quy trình báo giá",
+      title: "Bốn bước làm rõ vận chuyển phức tạp",
+      intro: "Từ địa chỉ đến loại xe rồi đến phương án chính thức: hệ thống đưa ra ước tính có thể kiểm tra, sau đó quản lý dự án rà soát.",
+      steps: [
+        { title: "Nhập tuyến & hàng", body: "Điểm đi–đến, trọng lượng và loại hàng — hệ thống khớp xe khả dụng." },
+        { title: "Tính tuyến thời gian thực", body: "OSRM tính khoảng cách, thời gian và các tuyến thay thế." },
+        { title: "Tách chi phí", body: "Cước, nhiên liệu, phí đường và cửa khẩu được tách theo điều kiện dự án." },
+        { title: "Quản lý rà soát", body: "Báo giá chính thức vẫn cần xác nhận điều kiện hiện trường và chứng từ." },
+      ],
+    },
     quickQuote: {
       eyebrow: "Báo giá trực tuyến",
       title: "Nhập điểm đi–đến, nhận ngay ước tính chi phí vận chuyển",
@@ -91,6 +118,16 @@ export const vi: Translations = {
         { sector: "Dự án hạ tầng", title: "Thiết bị & vật liệu kỹ thuật", body: "Kết nối vận chuyển xuyên biên giới và bàn giao thiết bị, vật liệu kỹ thuật cho các dự án đường, cầu." },
         { sector: "Dự án điện", title: "Vận chuyển thiết bị điện", body: "Tổ chức vận chuyển máy biến áp và thiết bị điện lớn cùng điều phối hiện trường cho nhiệt điện và công trình phụ trợ." },
         { sector: "Năng lượng mới", title: "Cánh quạt & tháp gió", body: "Vận chuyển cánh quạt, tháp và thiết bị lớn của tua-bin gió bằng xe chuyên dụng cho các dự án điện gió." },
+      ],
+    },
+    vehicles: {
+      eyebrow: "Thiết bị",
+      title: "Thiết bị chuyên dụng cho tình huống vận chuyển phức tạp",
+      intro: "Cho nhu cầu vận chuyển thiết bị năng lượng mới và công trình lớn, JIUNENG trang bị xe chuyên dụng và khớp nguồn lực theo tuyến, kích thước và hiện trường.",
+      items: [
+        { title: "Xe chuyên dụng vận chuyển tua-bin gió", body: "Dùng cho thiết bị tua-bin và bộ phận lớn.", spec: "Phù hợp: tua-bin / bộ phận lớn" },
+        { title: "Xe nâng cánh tua-bin", body: "Đáp ứng vận chuyển cánh quạt trên đường khó.", spec: "Phù hợp: cánh quạt / đường khó" },
+        { title: "Nguồn lực vận chuyển bổ trợ", body: "Khớp xe và nguồn lực theo tuyến, kích thước và hiện trường.", spec: "Theo dự án" },
       ],
     },
     network: {

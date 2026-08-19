@@ -103,10 +103,10 @@ export default function BatchPage() {
           <h2 className="mb-4 text-base font-bold text-[var(--surface-800)]">{t.batch.title}</h2>
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="outline" onClick={downloadTemplate}>
-              📥 {t.batch.downloadTemplate}
+              {t.batch.downloadTemplate}
             </Button>
             <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
-              📂 {t.batch.chooseFile}
+              {t.batch.chooseFile}
             </Button>
             <input
               ref={fileInputRef}
@@ -130,7 +130,7 @@ export default function BatchPage() {
           {/* Parse errors */}
           {parseErrors.length > 0 && (
             <div className="mt-4 rounded-lg border border-amber-200 bg-[var(--warning-bg)] p-3.5">
-              <p className="text-sm font-semibold text-amber-800">⚠️ {t.batch.parseErrorsTitle}</p>
+              <p className="text-sm font-semibold text-amber-800">{t.batch.parseErrorsTitle}</p>
               <ul className="mt-1.5 list-inside list-disc text-sm text-amber-700 space-y-0.5">
                 {parseErrors.map((msg, i) => (
                   <li key={i}>{msg}</li>
@@ -159,7 +159,7 @@ export default function BatchPage() {
                   <option value="failed">{t.batch.filterFailed}</option>
                 </select>
                 <Button variant="outline" size="sm" onClick={handleExport}>
-                  📤 {t.batch.export}
+                  {t.batch.export}
                 </Button>
               </div>
             </div>

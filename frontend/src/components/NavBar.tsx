@@ -21,8 +21,8 @@ export default function NavBar({ variant = "light" }: { variant?: "light" | "dar
     { href: "/#contact", label: t.site.nav.contact },
   ];
   const toolItems = [
-    { href: "/quote", label: t.site.nav.quote, icon: "🧮" },
-    { href: "/batch", label: t.nav.batch, icon: "📊" },
+    { href: "/quote", label: t.site.nav.quote },
+    { href: "/batch", label: t.nav.batch },
   ];
 
   const dark = variant === "dark";
@@ -41,9 +41,9 @@ export default function NavBar({ variant = "light" }: { variant?: "light" | "dar
                 dark
                   ? active
                     ? "text-white"
-                    : "text-[var(--brand-100)]/70 hover:text-[var(--teal-400)]"
+                    : "text-white/70 hover:text-[var(--cyan)]"
                   : active
-                    ? "bg-white text-[var(--brand-700)] shadow-[var(--shadow-sm)]"
+                    ? "bg-white text-[var(--navy)] shadow-[var(--shadow-sm)]"
                     : "text-[var(--surface-500)] hover:bg-white/50 hover:text-[var(--surface-700)]"
               }`}
             >
@@ -64,14 +64,13 @@ export default function NavBar({ variant = "light" }: { variant?: "light" | "dar
               className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-150 ${
                 dark
                   ? active
-                    ? "bg-[var(--teal-500)]/20 text-[var(--teal-300)]"
-                    : "text-[var(--brand-100)]/70 hover:text-[var(--teal-400)]"
+                    ? "bg-[var(--blue)] text-white"
+                    : "text-white/70 hover:text-white"
                   : active
-                    ? "bg-white text-[var(--brand-700)] shadow-[var(--shadow-sm)]"
+                    ? "bg-white text-[var(--navy)] shadow-[var(--shadow-sm)]"
                     : "text-[var(--surface-500)] hover:bg-white/50 hover:text-[var(--surface-700)]"
               }`}
             >
-              <span className="text-sm">{item.icon}</span>
               {item.label}
             </Link>
           );

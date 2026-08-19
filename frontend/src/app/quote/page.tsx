@@ -9,7 +9,7 @@ import ResultsPanel from "@/components/ResultsPanel";
 import BottomDrawer from "@/components/BottomDrawer";
 import type { ChatRouteCoords } from "@/hooks/useAIChat";
 import type { RouteGeometry, LatLng } from "@/lib/types";
-import { API_BASE } from "@/lib/api";
+import { fetchRoute } from "@/lib/api";
 
 const MapView = dynamic(() => import("@/components/MapView"), { ssr: false });
 
@@ -32,11 +32,9 @@ export default function HomePage() {
     setChatDest(coords.destination);
     setChatRouteGeometry(null);
     try {
-      const url = `${API_BASE}/route?origin_lat=${coords.origin.lat}&origin_lng=${coords.origin.lng}&dest_lat=${coords.destination.lat}&dest_lng=${coords.destination.lng}`;
-      const resp = await fetch(url);
-      if (resp.ok) {
-        const data = await resp.json();
-        setChatRouteGeometry(data.geometry as RouteGeometry);
+      const data = await fetchRoute(coords.origin, coords.destination);
+      if (data.geometry) {
+        setChatRouteGeometry(data.geometry);
         bumpRoute();
       }
     } catch {
@@ -193,7 +191,7 @@ export default function HomePage() {
 
       {error && (
         <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[900] rounded-xl bg-red-50 border border-red-200 px-4 py-2.5 text-sm text-red-700 shadow-lg">
-          ⚠️ {error}
+          {error}
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { geocodeAddress, getVehicleModels, quoteCost, type GeocodeResult } from "@/lib/api";
+import { fetchRoute, geocodeAddress, getVehicleModels, quoteCost, type GeocodeResult } from "@/lib/api";
 import { useLocale } from "@/lib/i18n/LocaleContext";
 import { useIsMobile } from "@/hooks/useMediaQuery";
 import { formatVnd } from "@/lib/format";
@@ -56,6 +56,7 @@ function AddressPicker({
       skipRef.current = false;
       return;
     }
+    const controller = new AbortController();
     const timer = setTimeout(async () => {
       if (query.trim().length < 2) {
         setResults([]);
@@ -63,16 +64,19 @@ function AddressPicker({
       }
       setLoading(true);
       try {
-        const found = await geocodeAddress(query);
+        const found = await geocodeAddress(query, controller.signal);
         setResults(found);
         setOpen(true);
-      } catch {
-        setResults([]);
+      } catch (err) {
+        if ((err as { name?: string }).name !== "AbortError") setResults([]);
       } finally {
         setLoading(false);
       }
     }, 400);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [query]);
 
   return (
@@ -93,7 +97,7 @@ function AddressPicker({
         <div className="absolute right-3 top-[34px] text-xs text-[var(--teal-400)]">…</div>
       )}
       {open && results.length > 0 && (
-        <div className="absolute z-30 mt-1 max-h-52 w-full overflow-y-auto overscroll-contain rounded-xl border border-white/15 bg-[#0f2b4a] shadow-xl">
+        <div className="absolute z-30 mt-1 max-h-52 w-full overflow-y-auto overscroll-contain rounded-xl border border-white/15 bg-[#001030] shadow-xl">
           {results.map((r, i) => (
             <button
               key={i}
@@ -173,14 +177,8 @@ export default function QuickQuote() {
 
   const loadRoute = useCallback(async (o: LatLng, d: LatLng) => {
     try {
-      const url = `${
-        process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api/v1"
-      }/route?origin_lat=${o.lat}&origin_lng=${o.lng}&dest_lat=${d.lat}&dest_lng=${d.lng}`;
-      const resp = await fetch(url);
-      if (resp.ok) {
-        const data = await resp.json();
-        setMapRoute(data.geometry as RouteGeometry);
-      }
+      const data = await fetchRoute(o, d);
+      if (data.geometry) setMapRoute(data.geometry);
     } catch {
       // ignore
     }
@@ -257,15 +255,15 @@ export default function QuickQuote() {
   const s = t.site.quickQuote;
 
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-white/15 bg-[#0f2b4a]/90 shadow-2xl backdrop-blur-md">
+    <div className="w-full overflow-hidden rounded-2xl border border-white/15 bg-[#001030]/88 shadow-2xl backdrop-blur-md">
       {/* Tab 栏（移动端隐藏：AI 由悬浮气泡承担，地图并入 /quote 工具页） */}
       <div className={`items-stretch border-b border-white/10 ${isMobile ? "hidden" : "flex"}`}>
         {(
           [
-            { key: "quote", icon: "🧮", label: s.tabQuote },
-            { key: "ai", icon: "💬", label: s.tabAI },
-            { key: "map", icon: "🗺️", label: s.tabMap },
-          ] as { key: TabKey; icon: string; label: string }[]
+            { key: "quote", label: s.tabQuote },
+            { key: "ai", label: s.tabAI },
+            { key: "map", label: s.tabMap },
+          ] as { key: TabKey; label: string }[]
         ).map((item) => (
           <button
             key={item.key}
@@ -273,11 +271,10 @@ export default function QuickQuote() {
             onClick={() => setTab(item.key)}
             className={`flex flex-1 items-center justify-center gap-1.5 px-3 py-3 text-sm font-semibold transition-colors ${
               tab === item.key
-                ? "border-b-2 border-[var(--teal-500)] bg-white/5 text-[var(--teal-300)]"
-                : "text-[var(--brand-100)]/60 hover:bg-white/5 hover:text-[var(--brand-100)]"
+                ? "border-b-2 border-[var(--cyan)] bg-white/5 text-white"
+                : "text-white/60 hover:bg-white/5 hover:text-white"
             }`}
           >
-            <span>{item.icon}</span>
             {item.label}
           </button>
         ))}
@@ -287,9 +284,9 @@ export default function QuickQuote() {
         {/* ═══════ 报价表单 ═══════ */}
         <div className={isMobile || tab === "quote" ? "" : "hidden"}>
           <div className="mb-4 flex items-center gap-3">
-              <span className="h-8 w-1 rounded-full bg-[var(--teal-500)]" />
+              <span className="h-8 w-1 rounded-full bg-[var(--cyan)]" />
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-[var(--teal-400)]">
+                <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
                   {s.eyebrow}
                 </p>
                 <h3 className="mt-0.5 text-lg font-bold leading-snug text-white">{s.title}</h3>
@@ -330,7 +327,7 @@ export default function QuickQuote() {
                   {s.typeLabel}
                 </label>
                 <select
-                  className="w-full rounded-xl border border-white/15 bg-[#122f52] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[var(--teal-400)] focus:outline-none"
+                  className="w-full rounded-xl border border-white/15 bg-[#0a1b3c] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[var(--cyan)] focus:outline-none"
                   value={cargoType}
                   onChange={(e) => setCargoType(e.target.value)}
                 >
@@ -347,7 +344,7 @@ export default function QuickQuote() {
                   {s.vehicleLabel}
                 </label>
                 <select
-                  className="w-full rounded-xl border border-white/15 bg-[#122f52] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[var(--teal-400)] focus:outline-none"
+                  className="w-full rounded-xl border border-white/15 bg-[#0a1b3c] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[var(--cyan)] focus:outline-none"
                   value={vehicleModelId}
                   onChange={(e) => setVehicleModelId(e.target.value)}
                 >
@@ -368,7 +365,7 @@ export default function QuickQuote() {
               type="button"
               disabled={submitting}
               onClick={handleSubmit}
-              className="mt-4 w-full rounded-xl bg-[var(--teal-500)] px-4 py-3 text-sm font-bold text-[#06281f] shadow-lg shadow-[#08c792]/20 transition-all hover:bg-[var(--teal-400)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-4 w-full rounded-xl bg-[var(--blue)] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0040c0]/25 transition-all hover:bg-[var(--blue-hover)] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {submitting ? s.calculating : s.submit}
             </button>
@@ -380,14 +377,14 @@ export default function QuickQuote() {
             )}
 
             {result && (
-              <div className="mt-4 rounded-xl border border-[var(--teal-500)]/25 bg-[var(--teal-500)]/8 p-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-[var(--teal-400)]">
+              <div className="mt-4 rounded-xl border border-[var(--cyan)]/25 bg-[var(--blue)]/15 p-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
                   {s.resultTitle}
                 </p>
                 <div className="mt-2 flex items-end justify-between gap-3">
                   <div>
                     <p className="text-xs text-[var(--brand-100)]/60">{s.totalLabel}</p>
-                    <p className="text-2xl font-bold tabular-nums text-[var(--teal-300)]">
+                    <p className="text-2xl font-bold tabular-nums text-white">
                       {formatVnd(result.total)}
                     </p>
                   </div>
@@ -405,7 +402,7 @@ export default function QuickQuote() {
                 <div className="mt-3 flex gap-2">
                   <Link
                     href="/quote"
-                    className="flex-1 rounded-lg bg-white/5 py-2 text-center text-sm font-semibold text-[var(--teal-300)] transition-colors hover:bg-white/10 hover:text-[var(--teal-200)]"
+                    className="flex-1 rounded-lg bg-white/5 py-2 text-center text-sm font-semibold text-[var(--cyan)] transition-colors hover:bg-white/10 hover:text-white"
                   >
                     {s.fullTool} →
                   </Link>
@@ -413,9 +410,9 @@ export default function QuickQuote() {
                     <button
                       type="button"
                       onClick={() => setTab("map")}
-                      className="flex-1 rounded-lg bg-[var(--teal-500)]/15 py-2 text-center text-sm font-semibold text-[var(--teal-300)] transition-colors hover:bg-[var(--teal-500)]/25"
+                      className="flex-1 rounded-lg bg-[var(--blue)]/20 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-[var(--blue)]/30"
                     >
-                      🗺️ {s.tabMap} →
+                      {s.tabMap} →
                     </button>
                   )}
                 </div>
@@ -434,7 +431,7 @@ export default function QuickQuote() {
         <div className={tab === "map" && !isMobile ? "" : "hidden"}>
           <div className="mb-3 flex items-center justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--teal-400)]">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
                 {s.tabMap}
               </p>
               <h3 className="mt-0.5 text-base font-bold text-white">
@@ -444,7 +441,7 @@ export default function QuickQuote() {
             {(mapOrigin || mapDest) && (
               <Link
                 href="/quote"
-                className="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-[var(--teal-300)] transition-colors hover:bg-white/10"
+                className="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-[var(--cyan)] transition-colors hover:bg-white/10"
               >
                 {s.fullTool} →
               </Link>
@@ -462,7 +459,7 @@ export default function QuickQuote() {
           </div>
           {(origin || dest) && !mapOrigin && (
             <p className="mt-3 text-center text-xs text-[var(--brand-100)]/50">
-              💡 在「{s.tabQuote}」或「{s.tabAI}」中选择起终点并计算后，路线将显示在这里
+              {s.tabQuote} / {s.tabAI} → {s.tabMap}
             </p>
           )}
         </div>

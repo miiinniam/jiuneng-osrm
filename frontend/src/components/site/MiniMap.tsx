@@ -7,7 +7,7 @@ import type { LatLng, RouteGeometry } from "@/lib/types";
 
 const originIcon = L.divIcon({
   className: "",
-  html: `<div style="width:22px;height:22px;border-radius:50%;background:#08c792;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);"></div>`,
+  html: `<div style="width:22px;height:22px;border-radius:50%;background:#2080f8;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,16,48,.35);"></div>`,
   iconSize: [22, 22],
   iconAnchor: [11, 11],
 });
@@ -88,7 +88,7 @@ export default function MiniMap({
         <GeoJSON
           data={routeGeometry as unknown as GeoJSON.GeoJsonObject}
           style={{
-            color: "#08c792",
+            color: "#0040c0",
             weight: 4,
             opacity: 0.9,
           }}

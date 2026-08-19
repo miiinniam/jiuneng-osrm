@@ -55,8 +55,22 @@ export interface GeocodeResult {
   display_name: string;
 }
 
-export function geocodeAddress(query: string): Promise<GeocodeResult[]> {
-  return apiGet(`/geocode?q=${encodeURIComponent(query)}&limit=6`);
+export async function geocodeAddress(
+  query: string,
+  signal?: AbortSignal,
+): Promise<GeocodeResult[]> {
+  return handleResponse(
+    await fetch(`${API_BASE}/geocode?q=${encodeURIComponent(query)}&limit=6`, { signal }),
+  );
+}
+
+export function fetchRoute(
+  origin: { lat: number; lng: number },
+  dest: { lat: number; lng: number },
+): Promise<{ geometry?: import("./types").RouteGeometry }> {
+  return apiGet(
+    `/route?origin_lat=${origin.lat}&origin_lng=${origin.lng}&dest_lat=${dest.lat}&dest_lng=${dest.lng}`,
+  );
 }
 
 export function quoteCost(request: QuoteRequest): Promise<QuoteResponse> {

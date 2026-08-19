@@ -34,6 +34,20 @@ export interface Translations {
       badge2: string;
       badge3: string;
     };
+    about: {
+      eyebrow: string;
+      title: string;
+      body: string[];
+      mission: { label: string; text: string };
+      vision: { label: string; text: string };
+      values: { name: string; body: string }[];
+    };
+    howItWorks: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      steps: { title: string; body: string }[];
+    };
     quickQuote: {
       eyebrow: string;
       title: string;
@@ -71,6 +85,12 @@ export interface Translations {
       title: string;
       intro: string;
       items: { sector: string; title: string; body: string }[];
+    };
+    vehicles: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      items: { title: string; body: string; spec: string }[];
     };
     network: {
       eyebrow: string;

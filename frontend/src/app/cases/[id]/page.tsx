@@ -29,7 +29,7 @@ export default function CaseDetailPage() {
     return (
       <div className="min-h-[60vh] bg-white pt-28 pb-20 text-center">
         <p className="text-lg text-[var(--surface-500)]">项目不存在</p>
-        <Link href="/#cases" className="mt-4 inline-block text-sm font-semibold text-[var(--teal-600)] hover:underline">
+        <Link href="/#cases" className="mt-4 inline-block text-sm font-semibold text-[var(--blue)] hover:underline">
           ← {t.site.cases.back}
         </Link>
       </div>
@@ -46,12 +46,12 @@ export default function CaseDetailPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8">
           <Link
             href="/#cases"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--surface-500)] transition-colors hover:text-[var(--teal-600)]"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--surface-500)] transition-colors hover:text-[var(--blue)]"
           >
             <ArrowLeft />
             {t.site.cases.back}
           </Link>
-          <Link href="/" className="text-sm font-semibold text-[var(--surface-400)] hover:text-[var(--teal-600)]">
+          <Link href="/" className="text-sm font-semibold text-[var(--surface-400)] hover:text-[var(--blue)]">
             JIUNENG logistics
           </Link>
         </div>
@@ -63,14 +63,14 @@ export default function CaseDetailPage() {
         <div className="max-w-3xl">
           <div className="flex items-center gap-2.5">
             <span className="h-0.5 w-8 bg-[var(--teal-500)]" />
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--teal-600)]">{item.type}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--blue)]">{item.type}</p>
           </div>
           <h1 className="mt-3.5 text-3xl font-bold tracking-tight text-[var(--brand-900)] sm:text-4xl">
             {item.title}
           </h1>
           <div className="mt-4 flex flex-wrap gap-2">
             {item.tags.map((tag, i) => (
-              <span key={i} className="rounded-md bg-[var(--teal-500)]/10 px-2.5 py-1 text-xs font-medium text-[var(--teal-700)]">
+              <span key={i} className="rounded-md bg-[var(--blue)]/10 px-2.5 py-1 text-xs font-medium text-[var(--blue)]">
                 {tag}
               </span>
             ))}
@@ -94,7 +94,7 @@ export default function CaseDetailPage() {
                 onClick={() => setActiveImg(i)}
                 className={`overflow-hidden rounded-xl border-2 transition-all ${
                   activeImg === i
-                    ? "border-[var(--teal-500)] shadow-md"
+                    ? "border-[var(--blue)] shadow-md"
                     : "border-[var(--surface-200)] opacity-70 hover:opacity-100"
                 }`}
               >
@@ -115,7 +115,7 @@ export default function CaseDetailPage() {
             <ul className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {item.services.map((s, i) => (
                 <li key={i} className="flex items-center gap-2.5 rounded-lg bg-[var(--surface-50)] px-3.5 py-2.5 text-sm font-medium text-[var(--surface-700)]">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--teal-500)]/15 text-[var(--teal-600)]">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--blue)]/10 text-[var(--blue)]">
                     <CheckIcon />
                   </span>
                   {s}
@@ -128,7 +128,7 @@ export default function CaseDetailPage() {
             <ul className="mt-4 space-y-2.5">
               {item.results.map((r, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-[var(--surface-600)]">
-                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--teal-500)]" />
+                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--blue)]" />
                   {r}
                 </li>
               ))}
@@ -148,9 +148,9 @@ export default function CaseDetailPage() {
             </dl>
             <Link
               href="/quote"
-              className="mt-6 block rounded-xl bg-[var(--teal-500)] px-4 py-3 text-center text-sm font-bold text-[#06281f] shadow-lg shadow-[#08c792]/20 transition-all hover:bg-[var(--teal-400)]"
+              className="mt-6 block rounded-xl bg-[var(--blue)] px-4 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#0040c0]/25 transition-all hover:bg-[var(--blue-hover)]"
             >
-              🧮 在线报价 →
+              {t.site.nav.quote}
             </Link>
           </aside>
         </div>
@@ -174,7 +174,7 @@ export default function CaseDetailPage() {
                     />
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-[var(--teal-600)]">{rc.type}</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-[var(--blue)]">{rc.type}</p>
                     <h3 className="mt-1.5 text-base font-bold text-[var(--brand-900)]">{rc.title}</h3>
                     <p className="mt-1.5 text-sm text-[var(--surface-500)] line-clamp-2">{rc.body}</p>
                   </div>

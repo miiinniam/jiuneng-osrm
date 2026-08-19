@@ -42,7 +42,7 @@ export default function AIChatFAB() {
         onClick={() => setOpen(true)}
         aria-label={s.fabLabel}
         title={s.fabLabel}
-        className="fixed right-5 z-[1500] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[var(--teal-400)] to-[var(--teal-600)] text-[#06281f] shadow-xl shadow-[#08c792]/30 transition-transform active:scale-95 lg:hidden"
+        className="fixed right-5 z-[1500] flex h-14 w-14 items-center justify-center rounded-full bg-[var(--blue)] text-white shadow-xl shadow-[#0040c0]/35 transition-transform active:scale-95 lg:hidden"
         style={{ bottom: "calc(1.25rem + env(safe-area-inset-bottom))" }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +56,7 @@ export default function AIChatFAB() {
         <div className="fixed inset-0 z-[1600] flex flex-col bg-white lg:hidden">
           <div className="flex shrink-0 items-center justify-between border-b border-[var(--surface-100)] px-4 py-3">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--teal-400)] to-[var(--teal-600)] text-[#06281f]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--blue)] text-white">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
