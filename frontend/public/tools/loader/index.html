@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>货车装载 3D 规划工具</title>
+<style>
+  :root {
+    --bg: #14171c; --panel: #1d2229; --border: #2c333d;
+    --fg: #e8ecf1; --muted: #8b95a3;
+    --accent: #4da3ff; --green: #2ecc71; --orange: #f39c12; --red: #e74c3c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* 全局隐藏滚动条(保留滚动功能) */
+  * { scrollbar-width: none; -ms-overflow-style: none; }
+  *::-webkit-scrollbar { width: 0; height: 0; display: none; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--fg); overflow: hidden;
+  }
+  /* 3D 场景: 全屏铺满 */
+  #scene-container {
+    position: fixed; inset: 0; z-index: 0;
+    background: #101318;
+  }
+  #scene-container canvas { display: block; }
+  /* 顶部工具条: 常驻, 面板折叠后功能不丢 */
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; padding: 0 14px;
+    background: linear-gradient(180deg, rgba(26,30,37,.96), rgba(20,23,28,.88));
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 14px rgba(0,0,0,.4);
+  }
+  .tb-left, .tb-right { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .app-title { font-size: 14px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .tb-sep { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
+  .tb-select {
+    background: #14181f; border: 1px solid var(--border); color: var(--fg);
+    border-radius: 6px; padding: 6px 8px; font-size: 12px; max-width: 360px;
+  }
+  .tb-unit { max-width: 110px; }
+  .tb-btn { margin-bottom: 0; padding: 6px 12px; font-size: 12px; white-space: nowrap; }
+  /* 控制面板: 右侧悬浮毛玻璃抽屉, 可折叠 */
+  #panel {
+    position: fixed; top: 52px; right: 0; bottom: 0; z-index: 20;
+    width: 340px; min-width: 340px;
+    background: rgba(29,34,41,.92);
+    backdrop-filter: blur(12px);
+    border-left: 1px solid var(--border);
+    overflow-y: auto; padding: 10px 14px 30px;
+    transform: translateX(0);
+    transition: transform .28s ease;
+  }
+  body.panel-collapsed #panel { transform: translateX(105%); }
+  /* 折叠/展开按钮 (右侧) */
+  #panelToggle {
+    position: fixed; top: 60px; right: 12px; z-index: 30;
+    background: rgba(13,16,20,.72); border: 1px solid var(--border);
+    color: var(--fg); border-radius: 8px; padding: 7px 11px;
+    cursor: pointer; font-size: 14px; line-height: 1;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+    transition: border-color .2s, color .2s, transform .15s ease;
+  }
+  #panelToggle:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  /* 悬浮统计圆环卡 (面板折叠后依然可见) */
+  #statsRing {
+    position: fixed; top: 60px; right: 356px; z-index: 25;
+    width: 168px;
+    background: rgba(20,23,28,.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border); border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.45), 0 0 0 1px rgba(77,163,255,.05);
+    transition: right .28s ease;
+  }
+  body.panel-collapsed #statsRing { right: 12px; }
+  .ring-wrap { position: relative; width: 120px; height: 120px; margin: 0 auto; }
+  .ring-svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+  .ring-bg { fill: none; stroke: #2a313b; stroke-width: 10; }
+  .ring-fg { fill: none; stroke: var(--green); stroke-width: 10; stroke-linecap: round;
+             stroke-dasharray: 326.7; stroke-dashoffset: 326.7; transition: stroke-dashoffset .5s ease, stroke .3s; }
+  .ring-fg.mid { stroke: var(--orange); }
+  .ring-fg.low { stroke: #4a5361; }
+  .ring-fg.over { stroke: var(--red); }
+  .ring-center { position: absolute; inset: 0; display: flex; flex-direction: column;
+                 align-items: center; justify-content: center; pointer-events: none; }
+  .ring-center b { font-size: 22px; line-height: 1.1; }
+  .ring-center span { font-size: 10px; color: var(--muted); }
+  .ring-rows { margin-top: 8px; font-size: 11px; color: var(--muted); }
+  .ring-rows .rr { display: flex; justify-content: space-between; padding: 2px 0; }
+  .ring-rows .rr b { color: var(--fg); font-weight: 600; }
+  .ring-rows .rr.over b { color: var(--red); animation: blink 1s infinite; }
+  .ring-cg { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border);
+             font-size: 11px; line-height: 1.5; color: var(--muted); }
+  .ring-cg b { color: var(--orange); font-weight: 600; }
+  .ring-cg.ok b { color: var(--green); }
+  /* 场景提示: 底部居中紧凑胶囊 (不遮挡左下待拖区) */
+  #sceneHint {
+    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); z-index: 5;
+    color: var(--muted); font-size: 11px; line-height: 1.6; text-align: center;
+    background: rgba(13,16,20,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(44,51,61,.8);
+    padding: 6px 14px; border-radius: 999px;
+    pointer-events: none; white-space: nowrap;
+    max-width: calc(100vw - 380px); overflow: hidden; text-overflow: ellipsis;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  body.panel-collapsed #sceneHint { max-width: calc(100vw - 40px); }
+  .panel-section { border-bottom: 1px solid var(--border); padding: 12px 0; }
+  .panel-section h3 { font-size: 14px; margin-bottom: 8px; color: var(--fg); }
+  input[type=text], input[type=number], select {
+    width: 100%; background: #14181f; border: 1px solid var(--border);
+    color: var(--fg); border-radius: 6px; padding: 7px 9px; font-size: 13px;
+    margin-bottom: 6px;
+  }
+  input:focus, select:focus { outline: 1px solid var(--accent); }
+  .row2 { display: flex; gap: 6px; } .row2 > * { flex: 1; }
+  .row3 { display: flex; gap: 6px; } .row3 > * { flex: 1; }
+  .btn {
+    border: none; border-radius: 6px; padding: 8px 10px; font-size: 13px;
+    cursor: pointer; color: #fff; margin-bottom: 6px;
+  }
+  .btn-primary { background: var(--accent); }
+  .btn-accent { background: var(--green); font-weight: 600; }
+  .btn-ghost { background: #2a313b; }
+  .btn:hover { filter: brightness(1.15); }
+  .w100 { width: 100%; }
+  .hidden { display: none !important; }
+  .truck-info {
+    margin-top: 6px; background: #14181f; border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px; font-size: 13px;
+  }
+  .ti-row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .ti-row span { color: var(--muted); }
+  .quick-sizes { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .chip {
+    background: #232a34; border: 1px solid var(--border); color: var(--fg);
+    border-radius: 20px; padding: 4px 10px; font-size: 12px; cursor: pointer;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chk { display: block; font-size: 12px; color: var(--muted); margin-bottom: 8px; cursor: pointer; }
+  .chk input { margin-right: 4px; vertical-align: -1px; }
+  .fld label { display: block; font-size: 11px; color: var(--muted); margin: 2px 0 3px; }
+  .fld input, .fld select { margin-bottom: 8px; }
+  .hint { font-size: 11px; color: var(--muted); line-height: 1.6; background: rgba(77,163,255,.08); border: 1px solid rgba(77,163,255,.25); border-radius: 6px; padding: 6px 8px; margin-bottom: 8px; }
+  .hint b { color: var(--accent); }
+  .unit-bar { display: flex; gap: 8px; margin-bottom: 4px; }
+  .unit-bar .fld { flex: 1; }
+  .cargo-list { list-style: none; margin-top: 8px; }
+  .cargo-list .empty { color: var(--muted); font-size: 13px; padding: 6px 0; }
+  .batch-bar { display: flex; align-items: center; gap: 8px; margin: 8px 0 4px; }
+  .strategy-bar { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .strategy-chip.active { border-color: var(--green); color: var(--green); background: rgba(46,204,113,.12); }
+  .strategy-chip { font-size: 11px; }
+  .group-bar { margin: 6px 0 2px; }
+  .group-title { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .group-chips { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .gchip { font-size: 11px; background: rgba(77,163,255,.12); border: 1px solid rgba(77,163,255,.35); color: var(--fg); border-radius: 14px; padding: 3px 8px; }
+  .gchip b { cursor: pointer; color: var(--red); margin-left: 4px; }
+  .g-badge { font-size: 10px; color: var(--accent); border: 1px solid rgba(77,163,255,.4); border-radius: 8px; padding: 0 5px; margin-left: 4px; }
+  .empty-hint { font-size: 11px; color: var(--muted); }
+  .chk-inline { margin-bottom: 0; }
+  .btn-danger { background: var(--red); }
+  .btn-xs { padding: 5px 10px; font-size: 12px; margin-bottom: 0; }
+  .btn-danger:disabled { opacity: .4; cursor: not-allowed; }
+  .ci-check { width: 15px; height: 15px; accent-color: var(--accent); flex-shrink: 0; cursor: pointer; }
+  .cargo-item { display: flex; align-items: center; gap: 8px;
+    background: #14181f; border: 1px solid var(--border); border-radius: 8px;
+    padding: 7px 9px; margin-bottom: 6px; transition: border-color .2s, background .2s; }
+  .cargo-item.sel { border-color: var(--accent); background: rgba(77,163,255,.08); }
+  .swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+  .ci-main { flex: 1; min-width: 0; }
+  .ci-name { font-size: 13px; font-weight: 600; display: block; }
+  .ci-sub { font-size: 12px; color: var(--muted); display: block; }
+  .over-badge { display: block; font-size: 11px; color: var(--red); font-weight: 600; margin: 1px 0; }
+  .ci-actions { display: flex; gap: 4px; flex-shrink: 0; }
+  .mini {
+    background: #2a313b; border: none; color: var(--fg); border-radius: 5px;
+    width: 24px; height: 24px; cursor: pointer; font-size: 12px;
+  }
+  .mini.danger:hover { background: var(--red); }
+  .stat-row { display: flex; justify-content: space-between; font-size: 13px; padding: 3px 0; }
+  .stat-row span { color: var(--muted); }
+  .stat-row .good { color: var(--green); }
+  .stat-row .mid { color: var(--orange); }
+  .stat-row .low { color: var(--muted); }
+  .stat-row.over b { color: var(--red); font-weight: 700; animation: blink 1s infinite; }
+  .stat-row .over-ok { color: var(--green); }
+  .stat-row .over-no { color: var(--red); }
+  @keyframes blink { 50% { opacity: .35; } }
+  .util-bar { height: 8px; background: #14181f; border-radius: 4px; overflow: hidden; margin: 4px 0 8px; }
+  .util-fill { height: 100%; border-radius: 4px; transition: width .3s; }
+  .util-fill.good { background: var(--green); }
+  .util-fill.mid { background: var(--orange); }
+  .util-fill.low { background: #4a5361; }
+  .unplaced { margin-top: 8px; background: rgba(231,76,60,.1); border: 1px solid rgba(231,76,60,.4); border-radius: 8px; padding: 8px 10px; font-size: 12px; }
+  .ub-title { color: var(--red); font-weight: 600; margin-bottom: 4px; }
+  .ub-row { color: var(--muted); }
+
+  /* 打印: 只输出摘要表 */
+  @media print {
+    body { display: block; overflow: visible; }
+    #panel, #scene-container, #topbar, #statsRing, #panelToggle { display: none; }
+    #printSheet { display: block !important; }
+  }
+  #printSheet { display: none; font-size: 12px; color: #000; }
+</style>
+</head>
+<body>
+  <!-- 顶部常驻工具条: 面板折叠后功能不丢 -->
+  <div id="topbar">
+    <div class="tb-left">
+      <span class="app-title">🚚 装货规划</span>
+      <span class="tb-sep"></span>
+      <select id="truckSelect" class="tb-select" title="选择车型"></select>
+      <select id="unitLen" class="tb-select tb-unit" title="尺寸单位">
+        <option value="m">米 (m)</option><option value="cm">厘米 (cm)</option>
+      </select>
+      <select id="unitWt" class="tb-select tb-unit" title="重量单位">
+        <option value="kg">千克 (kg)</option><option value="t">吨 (t)</option>
+      </select>
+    </div>
+    <div class="tb-right">
+      <button id="btnUndo" class="btn btn-ghost tb-btn" disabled title="撤销 (Ctrl/Cmd+Z)">↩️</button>
+      <button id="btnRedo" class="btn btn-ghost tb-btn" disabled title="重做 (Ctrl/Cmd+Shift+Z)">↪️</button>
+      <button id="btnImport" class="btn btn-ghost tb-btn" title="从 CSV/Excel 导入货物">📥 导入</button>
+      <input type="file" id="importFile" accept=".csv,.xlsx,.xls" style="display:none">
+      <button id="btnPack" class="btn btn-accent tb-btn">🤖 自动装载</button>
+      <button id="btnClear" class="btn btn-ghost tb-btn">🧹 清空</button>
+      <button id="btnExport" class="btn btn-ghost tb-btn">📄 导出</button>
+      <button id="btnPrint" class="btn btn-ghost tb-btn">🖨️ 打印</button>
+    </div>
+  </div>
+
+  <button id="panelToggle" title="收起/展开货物面板">✕</button>
+  <aside id="panel"></aside>
+
+  <main id="scene-container">
+    <div id="sceneHint">🖱 左键拖动：旋转视角 · 滚轮：缩放<br>📦 拖箱子：放入车厢 / 移出删除 · R：旋转朝向<br>✕ 收起右侧面板可全屏查看</div>
+  </main>
+
+  <!-- 悬浮统计圆环卡 -->
+  <div id="statsRing"></div>
+
+  <!-- 打印用摘要 (ui.js 填充) -->
+  <div id="printSheet"></div>
+
+  <!-- Three.js (r128, 全局 THREE; @car-box-01 如需换版本请只改此处) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/DragControls.js"></script>
+
+  <!-- 数据层 / 算法 / UI (02) -->
+  <script src="js/data.js"></script>
+  <script src="js/packer.js"></script>
+  <script src="js/ui.js"></script>
+
+  <!-- Excel 解析 (SheetJS CDN; 加载失败仅 CSV 可用) -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+  <!-- 3D 场景 (01) -->
+  <script src="js/scene3d.js"></script>
+
+  <!-- 初始化接线 -->
+  <script src="js/main.js"></script>
+
+  <!-- 官网桥接 (货运一站式): ?vehicle= 车型映射 + postMessage 装载方案导入 -->
+  <script src="js/loader-adapter.js"></script>
+</body>
+</html>

@@ -23,6 +23,7 @@ export default function NavBar({ variant = "light" }: { variant?: "light" | "dar
   const toolItems = [
     { href: "/quote", label: t.site.nav.quote },
     { href: "/batch", label: t.nav.batch },
+    { href: "/tools/loader", label: t.tools.navLabel },
   ];
 
   const dark = variant === "dark";

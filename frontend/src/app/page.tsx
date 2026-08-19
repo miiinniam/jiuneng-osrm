@@ -404,6 +404,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════════ 在线工具 — 双卡入口 ═══════════ */}
+      <section id="tools" className="scroll-mt-16 bg-[var(--surface-50)] py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <SectionHeading eyebrow={t.tools.sectionEyebrow} title={t.tools.sectionTitle} />
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* 运费报价 */}
+            <article className="relative overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+              <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--cyan)] to-[var(--blue)]" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-50)] text-xl shadow-[inset_0_0_0_1px_var(--brand-200)]">🚚</div>
+              <h3 className="mt-4 flex flex-wrap items-center gap-2 text-lg font-semibold text-[var(--navy)]">
+                {t.tools.quoteTitle}
+                <span className="rounded-full border border-[var(--brand-300)] px-2 py-0.5 text-[10px] font-semibold text-[var(--cyan)]">
+                  {t.tools.quoteBadge}
+                </span>
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{t.tools.quoteDesc}</p>
+              <Link
+                href="/quote"
+                className="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-[var(--blue)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--blue-hover)]"
+              >
+                {t.tools.quoteCta} →
+              </Link>
+            </article>
+            {/* 3D 装载规划 */}
+            <article className="relative overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+              <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--cyan)] to-[var(--blue)]" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-50)] text-xl shadow-[inset_0_0_0_1px_var(--brand-200)]">📦</div>
+              <h3 className="mt-4 flex flex-wrap items-center gap-2 text-lg font-semibold text-[var(--navy)]">
+                {t.tools.loaderTitle}
+                <span className="rounded-full border border-[var(--brand-300)] px-2 py-0.5 text-[10px] font-semibold text-[var(--cyan)]">
+                  {t.tools.loaderBadge}
+                </span>
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{t.tools.loaderDesc}</p>
+              <Link
+                href="/tools/loader"
+                className="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-[var(--cyan)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-500)]"
+              >
+                {t.tools.loaderCta} →
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════ AI 物流助手 ═══════════ */}
       <AIChatSection />
 

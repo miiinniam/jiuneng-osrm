@@ -13,6 +13,25 @@ export interface Translations {
     home: string;
     quote: string;
   };
+  tools: {
+    navLabel: string;
+    pageTitle: string;
+    pageSubtitle: string;
+    breadcrumbHome: string;
+    breadcrumbTools: string;
+    openNewWindow: string;
+    iframeLoading: string;
+    sectionEyebrow: string;
+    sectionTitle: string;
+    quoteTitle: string;
+    quoteDesc: string;
+    loaderTitle: string;
+    loaderDesc: string;
+    quoteBadge: string;
+    loaderBadge: string;
+    quoteCta: string;
+    loaderCta: string;
+  };
   site: {
     nav: {
       about: string;
