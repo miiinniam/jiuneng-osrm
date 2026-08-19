@@ -33,6 +33,27 @@ export interface Translations {
     loaderCta: string;
     quoteTo3dCta: string;
   };
+  planner: {
+    title: string;
+    subtitle: string;
+    placeholder: string;
+    send: string;
+    exampleA: string;
+    thinking: string;
+    parseFailed: string;
+    planFailed: string;
+    vehicleLabel: string;
+    loadRateLabel: string;
+    placedLabel: string;
+    weightLabel: string;
+    cgLabel: string;
+    unplacedLabel: string;
+    costLabel: string;
+    changeVehicle: string;
+    openWorkbench: string;
+    exportCsv: string;
+    exported: string;
+  };
   site: {
     nav: {
       about: string;

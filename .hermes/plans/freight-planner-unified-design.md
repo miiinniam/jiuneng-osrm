@@ -161,3 +161,39 @@
 1. **入口形态**：主页是否加一个「货运方案」主导航？（现在是 报价/批量/案例 三入口）
 2. **方案卡语言**：中越双语一次出，还是默认中文？
 3. **二期 Node 桥 vs Python 移植**：先打通链路（Node 桥，快）还是直接移植（Python，彻底）？
+   —— **已拍板（@codex-02/@codex-03/@web-design-01 一致）：直接 Python 移植，packer.py 已落地 + golden 全绿**。
+
+## 8. /planner 三接口契约（v2，@codex-03 审查修订）
+
+```jsonc
+// POST /api/planner/parse  自然语言 → 货物清单（AI 结构化解析）
+// 请求: { "text": "3托盘120×80×120,800kg + 200箱60×40×40,25kg,友谊关到河内" }
+// 响应: {
+//   "cargo_items": [ {name, count, length_m, width_m, height_m, weight_kg, stackable} ],
+//   "route":       {origin: "友谊关", destination: "河内"} | null,   // 可空,AI 识别不到就不给
+//   "raw_origin": "友谊关", "raw_dest": "河内"                        // 原文,供后续 geocode
+// }
+// 字段命名与 OSRM++ CargoItemInput 完全一致(复用 schema),前端直接透传
+
+// POST /api/planner/plan  货物清单 + 车型 → 装载方案（调 packer.py）
+// 请求: { "cargo_items": [...], "vehicle_model_id": "container_40hc",
+//         "strategy": "balanced" | "volume" | "weight" | "priority" }
+// 响应: {
+//   "vehicle": {model_id, name, L_cm, W_cm, H_cm, max_weight_kg, type},   // type: container/van/flatbed
+//   "placements": [ {id, cargoId, name, x,y,z, dx,dy,dz, weight, color} ],   // cm/kg,与 Carbox 读模式契约一致
+//   "stats": {placedCount, totalQty, totalWeight, volumeUtilPct, overweight,
+//             cgX, cgY, cgZ, frontPct, rearPct},
+//   "unplaced": [ {cargoId, name, reason} ]
+// }
+// 契约修订（@codex-03 审查，2026-08-19）：
+//   ① allowOverflow 显式传 {allowOverflow: vehicle.type==='flatbed', strategy}
+//      —— 绝不能传空 {}（packer.js 隐蔽语义: {} truthy → allowOverflow 恒 false）
+//   ② 口径写死：H = max_cargo_height_m（非外尺寸 height_m），maxWeight = max_load_ton×1000
+//   ③ stats.cgX/cgY/cgZ/frontPct/rearPct 需移植 calculateCG/axleLoads 两个纯函数进 packer.py
+//      （data.js 中独立于 getStats；axleLoads 用 chassisSpec 轴位, 半挂 -175/-55 前轴组中点 + 后轴组中点）
+
+// POST /api/planner/quote  货物清单 + 车型 + 路线 → 报价（复用 cost_engine）
+// 请求: { "cargo_items": [...], "vehicle_model_id": "container_40hc",
+//         "origin": "友谊关", "destination": "河内", "loading_mode": "full_truck" }
+// 响应: 复用现有 QuoteResponse 结构(distance_km/duration_h/cost_breakdown 等)
+```

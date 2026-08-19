@@ -33,7 +33,7 @@ services:
       - ./backend:/app
       # 车辆型号库 CSV（用户在 Excel 维护，不在 backend/ 下，需要单独挂载）
       - type: bind
-        source: D:/01_业务/玖能/OSRM/OSRM++/车辆型号库
+        source: D:/01_业务/立三方/货运一站式/OSRM++/车辆型号库
         target: /vehicle_registry
         read_only: false
     environment:
