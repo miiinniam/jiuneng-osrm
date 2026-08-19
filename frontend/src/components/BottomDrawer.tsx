@@ -4,6 +4,7 @@ import { useCallback, useRef, useState, useEffect } from "react";
 import { formatVnd, formatHours } from "@/lib/format";
 import { useLocale } from "@/lib/i18n/LocaleContext";
 import type { LoadingMode, QuoteResponse } from "@/lib/types";
+import Loader3DCTA from "@/components/Loader3DCTA";
 
 const SNAP_POINTS = {
   collapsed: 80,    // 仅显示总价摘要
@@ -269,6 +270,7 @@ export default function BottomDrawer({
               </span>
             )}
           </div>
+          <Loader3DCTA vehicleModelId={breakdown.matched_vehicle_model_id} />
 
           {/* Cost breakdown bars */}
           {costBars.length > 1 && (

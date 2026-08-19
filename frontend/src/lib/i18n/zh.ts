@@ -25,6 +25,7 @@ export const zh: Translations = {
     loaderBadge: "免费工具",
     quoteCta: "开始报价",
     loaderCta: "打开 3D 装载",
+    quoteTo3dCta: "用此车型去 3D 装柜",
   },
   site: {
     nav: {

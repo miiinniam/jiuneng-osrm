@@ -31,6 +31,7 @@ export interface Translations {
     loaderBadge: string;
     quoteCta: string;
     loaderCta: string;
+    quoteTo3dCta: string;
   };
   site: {
     nav: {

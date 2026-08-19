@@ -6,6 +6,7 @@ import { useLocale } from "@/lib/i18n/LocaleContext";
 import type { DDPFullResult, LoadingMode, QuoteResponse } from "@/lib/types";
 import { fetchExchangeRate } from "@/lib/api";
 import RouteOptions from "@/components/RouteOptions";
+import Loader3DCTA from "@/components/Loader3DCTA";
 
 interface Props {
   result: QuoteResponse;
@@ -255,6 +256,8 @@ export default function ResultsPanel(p: Props) {
                 <span className="text-sm font-bold text-[var(--brand-600)] bg-[var(--brand-100)] rounded-lg px-2 py-1">{vc}辆</span>
               )}
             </div>
+            {/* 互跳 CTA: 映射命中显示, 未命中(冷链/高栏/45尺等)不渲染 */}
+            <Loader3DCTA vehicleModelId={breakdown.matched_vehicle_model_id} />
           </div>
 
           {/* ──── 4. 费用明细 ──── */}

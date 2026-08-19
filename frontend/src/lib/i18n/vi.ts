@@ -25,6 +25,7 @@ export const vi: Translations = {
     loaderBadge: "Miễn phí",
     quoteCta: "Báo giá ngay",
     loaderCta: "Mở công cụ 3D",
+    quoteTo3dCta: "Dùng xe này lập kế hoạch 3D",
   },
   site: {
     nav: {

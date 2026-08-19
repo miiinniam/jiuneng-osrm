@@ -25,6 +25,7 @@ export const en: Translations = {
     loaderBadge: "Free tool",
     quoteCta: "Start quote",
     loaderCta: "Open 3D loader",
+    quoteTo3dCta: "Plan loading in 3D",
   },
   site: {
     nav: {
