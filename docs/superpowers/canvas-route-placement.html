@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>路线母题落点对比 — 玖能官网</title>
+<style>
+  :root{
+    --navy:#001030; --blue:#0040c0; --cyan:#2080f8; --cyan-on-dark:#4da3ff;
+    --ink:#0a1628; --muted:#4a5b73; --bg:#eef3f9; --surface:#fff; --line:#d5deea;
+    --wire:#e3ebf5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:transparent;
+    font-family:"IBM Plex Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    color:var(--ink);font-size:13px;line-height:1.6}
+  .wrap{max-width:1180px}
+  h1{font-size:19px;font-weight:300;letter-spacing:-.03em;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:12.5px;margin:0 0 20px;font-weight:300}
+
+  .row{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+  .col{flex:1 1 240px;min-width:230px;max-width:330px}
+  .col-hd{display:flex;align-items:baseline;gap:8px;margin-bottom:9px}
+  .tag{font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+  .col-hd h2{font-size:14.5px;font-weight:400;margin:0}
+  .rec{font-size:10px;font-weight:500;color:#0a6b4d;background:#e6f6ef;border:1px solid #b7e3d1;border-radius:999px;padding:1px 7px}
+
+  /* 页面骨架 */
+  .page{border:1px solid var(--line);border-radius:9px;background:var(--surface);overflow:hidden;position:relative}
+  .blk{border-bottom:1px solid var(--wire);position:relative}
+  .blk:last-child{border-bottom:0}
+  .hero{background:var(--navy);height:118px;display:flex;gap:7px;padding:11px;align-items:center}
+  .hero .l{flex:1.05;display:flex;flex-direction:column;gap:5px}
+  .hero .r{flex:.95;height:74px;border-radius:5px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}
+  .ln{height:5px;border-radius:2px;background:rgba(255,255,255,.34)}
+  .ln.w70{width:70%} .ln.w50{width:50%} .ln.w85{width:85%}
+  .ln.big{height:11px;background:rgba(255,255,255,.62)}
+  .sec{padding:9px 11px;display:flex;flex-direction:column;gap:5px}
+  .bar{height:4px;border-radius:2px;background:var(--wire)}
+  .bar.t{height:7px;width:44%;background:#cfdcea}
+  .bar.s{width:78%} .bar.m{width:62%} .bar.l{width:90%}
+  .cards{display:flex;gap:5px;margin-top:2px}
+  .card{flex:1;height:30px;border-radius:4px;background:#f4f8fd;border:1px solid var(--wire)}
+
+  /* 路线线 */
+  .rt{position:absolute;inset:0;pointer-events:none;overflow:visible}
+  .rt path{fill:none;stroke:var(--cyan-on-dark);stroke-width:1.6;stroke-linecap:round}
+  .rt path.dim{stroke:rgba(32,128,248,.34);stroke-width:1.1}
+  .dot{fill:var(--cyan-on-dark)}
+  .pt{fill:var(--navy);stroke:var(--cyan-on-dark);stroke-width:1.6}
+
+  /* hero 内干线带 */
+  .band{position:relative;height:34px;background:rgba(0,16,48,.9);border-top:1px solid rgba(255,255,255,.1)}
+  .band svg{display:block;width:100%;height:34px}
+  .band .cap{position:absolute;left:9px;right:9px;top:50%;transform:translateY(-50%);
+    display:flex;justify-content:space-between;font-size:8px;letter-spacing:.04em;color:rgba(244,247,251,.55);pointer-events:none}
+  .badge-rt{position:absolute;right:5px;bottom:5px;width:26px;height:15px;opacity:.85}
+  .badge-rt svg{width:100%;height:100%}
+
+  ul{margin:11px 0 0;padding-left:15px;color:var(--muted);font-size:12px}
+  li{margin:3px 0}
+  .con{color:#8a5a12}
+  .pro{color:#0a6b4d}
+  .note{margin-top:22px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:12.5px;color:var(--muted)}
+  .note b{color:var(--ink);font-weight:500}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;background:#eef3f9;padding:1px 4px;border-radius:3px;color:#26405e}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>路线母题落点对比</h1>
+  <p class="sub">同一个签名元素（凭祥友谊关 → 河内）放在不同深度，决定它只是"一张图"还是"一个母题"。骨架按首页真实结构画：hero（左文案／右工作台）→ 若干 section → 页脚。</p>
+
+  <div class="row">
+
+    <!-- 方案 1 -->
+    <div class="col">
+      <div class="col-hd"><span class="tag">方案 1</span><h2>只在 Hero 一条带</h2></div>
+      <div class="page">
+        <div class="hero">
+          <div class="l">
+            <div class="ln big w70"></div>
+            <div class="ln w85"></div>
+            <div class="ln w50"></div>
+          </div>
+          <div class="r"></div>
+        </div>
+        <div class="band">
+          <svg viewBox="0 0 300 34" preserveAspectRatio="none">
+            <path id="p1" d="M6,25 C60,25 78,10 128,12 C178,14 196,24 240,22 C266,21 280,15 294,16"/>
+            <circle cx="6" cy="25" r="3" class="pt"/>
+            <circle cx="294" cy="16" r="3" class="pt"/>
+            <circle r="2.6" class="dot"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+          </svg>
+          <div class="cap"><span>友谊关</span><span>河内 · 173.6 km</span></div>
+        </div>
+        <div class="blk sec"><div class="bar t"></div><div class="bar l"></div><div class="bar m"></div></div>
+        <div class="blk sec"><div class="bar t"></div><div class="cards"><div class="card"></div><div class="card"></div><div class="card"></div></div></div>
+        <div class="blk sec"><div class="bar t"></div><div class="bar s"></div></div>
+        <div class="blk sec"><div class="bar t"></div><div class="cards"><div class="card"></div><div class="card"></div></div></div>
+      </div>
+      <ul>
+        <li class="pro">改动最小，零结构风险，一次做完</li>
+        <li class="con"><b>不构成母题</b>——只在首屏出现一次，滚动过就忘了，达不到"记忆点"</li>
+      </ul>
+    </div>
+
+    <!-- 方案 2 -->
+    <div class="col">
+      <div class="col-hd"><span class="tag">方案 2</span><h2>全站贯穿</h2><span class="rec">推荐</span></div>
+      <div class="page">
+        <div class="hero">
+          <div class="l">
+            <div class="ln big w70"></div>
+            <div class="ln w85"></div>
+            <div class="ln w50"></div>
+          </div>
+          <div class="r"></div>
+        </div>
+        <div class="band">
+          <svg viewBox="0 0 300 34" preserveAspectRatio="none">
+            <path id="p2" d="M6,25 C60,25 78,10 128,12 C178,14 196,24 240,22 C266,21 280,15 294,16"/>
+            <circle cx="6" cy="25" r="3" class="pt"/>
+            <circle cx="294" cy="16" r="3" class="pt"/>
+            <circle r="2.6" class="dot"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+          </svg>
+          <div class="cap"><span>友谊关</span><span>河内 · 173.6 km</span></div>
+        </div>
+        <!-- 贯穿细线：从 hero 带延续，穿过各 section 左缘 -->
+        <svg class="rt" viewBox="0 0 300 400" preserveAspectRatio="none">
+          <path class="dim" d="M14,152 L14,392"/>
+        </svg>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="bar l"></div><div class="bar m"></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="cards"><div class="card"></div><div class="card"></div><div class="card"></div></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="bar s"></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="cards"><div class="card"></div><div class="card"></div></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+          <div class="badge-rt"><svg viewBox="0 0 26 15"><path d="M2,11 C7,11 9,4 13,5 C17,6 19,11 24,9" fill="none" stroke="var(--cyan)" stroke-width="1.3"/></svg></div>
+        </div>
+      </div>
+      <ul>
+        <li class="pro">重复才成母题：左缘一条干线贯穿全站，各 section 是线上的"站点"</li>
+        <li class="pro">案例卡带微缩路线角标，把"这条线"和"我们的实绩"绑在一起</li>
+        <li class="con">要处理移动端降级（窄屏上左缘线会让内容内缩）</li>
+      </ul>
+    </div>
+
+    <!-- 方案 3 -->
+    <div class="col">
+      <div class="col-hd"><span class="tag">方案 3</span><h2>贯穿 + 报价联动</h2></div>
+      <div class="page">
+        <div class="hero">
+          <div class="l">
+            <div class="ln big w70"></div>
+            <div class="ln w85"></div>
+            <div class="ln w50"></div>
+          </div>
+          <div class="r"></div>
+        </div>
+        <div class="band" style="background:rgba(0,16,48,.9)">
+          <svg viewBox="0 0 300 34" preserveAspectRatio="none">
+            <path id="p3" d="M6,25 C60,25 78,10 128,12 C178,14 196,24 240,22 C266,21 280,15 294,16"/>
+            <circle cx="6" cy="25" r="3" class="pt"/>
+            <circle cx="294" cy="16" r="3" class="pt"/>
+            <circle r="2.6" class="dot"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+          </svg>
+          <div class="cap"><span>凭祥 · 友谊关</span><span>北宁 · 176.4 km · 2 车</span></div>
+        </div>
+        <svg class="rt" viewBox="0 0 300 400" preserveAspectRatio="none">
+          <path class="dim" d="M14,152 L14,392"/>
+        </svg>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="bar l"></div><div class="bar m"></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="cards"><div class="card"></div><div class="card"></div><div class="card"></div></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="bar s"></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+        <div class="blk sec" style="padding-left:30px"><div class="bar t"></div><div class="cards"><div class="card"></div><div class="card"></div></div>
+          <span style="position:absolute;left:9px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--navy);border:1.4px solid var(--cyan)"></span>
+        </div>
+      </div>
+      <ul>
+        <li class="pro">在方案 2 之上，跑报价后 hero 那条线变成<b>本次报价的真实路线与真实里程</b></li>
+        <li class="pro">签名元素不再是装饰——它显示的是用户自己的货</li>
+        <li class="con">数据链路要打通（OSRM geometry → 简化 → 前端渲染），工作量最大</li>
+        <li class="con">建议作为方案 2 的<b>第二阶段</b>，先让母题落地，再接通报价</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b>推荐方案 2。</b>理由：签名元素靠<b>重复</b>成立——只在首屏出现一次的图，用户滚两屏就忘了。方案 2 让同一条干线贯穿全站（左缘延续 + 站点圆点 + 案例卡角标），才真正形成"玖能 = 这条中越干线"的记忆绑定。方案 3 的报价联动很有价值，但它依赖 <code>route geometry</code> 的简化与渲染链路，建议先落地母题、再单独接。
+  </div>
+</div>
+</body>
+</html>

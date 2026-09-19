@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>签名元素方向对比 — 玖能官网</title>
+<style>
+  /* 这是 mockup，按规范允许覆盖主题（需要展示真实品牌色） */
+  :root{
+    --navy:#001030; --navy-mid:#0a1b3c; --blue:#0040c0; --cyan:#2080f8;
+    --cyan-on-dark:#4da3ff; --ink:#0a1628; --muted:#4a5b73;
+    --bg:#f4f7fb; --surface:#fff; --line:#d5deea;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:transparent;
+    font-family:"IBM Plex Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    color:var(--ink); font-size:14px; line-height:1.6;
+  }
+  .wrap{max-width:1180px}
+  h1{font-size:20px;font-weight:300;letter-spacing:-.03em;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:12.5px;margin:0 0 22px;font-weight:300}
+
+  .opt{margin:0 0 26px}
+  .opt-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+  .tag{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+  .opt-hd h2{font-size:16px;font-weight:400;margin:0;letter-spacing:-.01em}
+  .rec{font-size:10.5px;font-weight:500;color:#0a6b4d;background:#e6f6ef;border:1px solid #b7e3d1;border-radius:999px;padding:1px 8px}
+
+  /* 深色 hero 展示条 */
+  .strip{
+    position:relative;overflow:hidden;border-radius:10px;
+    background:var(--navy);padding:22px 26px;min-height:132px;
+    display:flex;flex-direction:column;justify-content:center;gap:12px;
+  }
+  .strip::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 100% 0%,rgba(32,128,248,.22),transparent 58%)}
+  .eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-on-dark);position:relative;z-index:1}
+  .h{font-size:26px;font-weight:300;letter-spacing:-.035em;color:#fff;line-height:1.12;position:relative;z-index:1;max-width:15em}
+
+  /* A：路线母题 */
+  .route{position:relative;z-index:1;height:56px}
+  .route svg{display:block;width:100%;height:56px;overflow:visible}
+  .rlabel{display:flex;justify-content:space-between;font-size:10.5px;color:rgba(244,247,251,.62);margin-top:-4px;position:relative;z-index:1;letter-spacing:.02em}
+  .rmeta{font-size:11px;color:var(--cyan-on-dark);font-variant-numeric:tabular-nums;position:relative;z-index:1}
+
+  /* B：数据母题 */
+  .datagrid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid rgba(255,255,255,.14);border-radius:8px;overflow:hidden;background:rgba(0,16,48,.42)}
+  .datagrid div{padding:10px 12px;border-right:1px solid rgba(255,255,255,.14)}
+  .datagrid div:last-child{border-right:0}
+  .datagrid b{display:block;font-size:19px;font-weight:300;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums}
+  .datagrid span{display:block;font-size:10.5px;color:rgba(244,247,251,.6);margin-top:2px}
+  .scanline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(32,128,248,.55),transparent);z-index:2}
+
+  /* C：工业材质 */
+  .corr{position:absolute;inset:0;z-index:0;opacity:.5;
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.055) 0 3px,transparent 3px 9px)}
+  .hazard{height:5px;border-radius:2px;position:relative;z-index:1;
+    background:repeating-linear-gradient(45deg,#2080f8 0 9px,#001030 9px 18px)}
+
+  ul{margin:10px 0 0;padding-left:16px;color:var(--muted);font-size:12.5px}
+  li{margin:3px 0}
+  .con{color:#8a5a12}
+  .note{margin-top:20px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:12.5px;color:var(--muted)}
+  .note b{color:var(--ink);font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>签名元素方向对比</h1>
+  <p class="sub">现状：首页有 13 个线性图标、11 张实景图、8 处渐变，但没有任何一个能当"记忆点"——整体读起来是干净的通用企业站。「友谊关 → 河内」在文案里反复出现，却没有任何视觉呈现。</p>
+
+  <!-- A -->
+  <section class="opt">
+    <div class="opt-hd">
+      <span class="tag">方向 A</span>
+      <h2>跨境路线母题</h2>
+      <span class="rec">推荐</span>
+    </div>
+    <div class="strip">
+      <p class="eyebrow">工程物流 · 进出口报关 · 国际贸易</p>
+      <h3 class="h">面向中国企业的工程物流平台</h3>
+      <div class="route">
+        <svg viewBox="0 0 700 56" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="rg" x1="0" x2="1">
+              <stop offset="0" stop-color="#2080f8" stop-opacity=".25"/>
+              <stop offset=".55" stop-color="#4da3ff" stop-opacity=".95"/>
+              <stop offset="1" stop-color="#2080f8" stop-opacity=".3"/>
+            </linearGradient>
+          </defs>
+          <!-- 路线（示意形状，实际用 OSRM 返回的 geometry） -->
+          <path id="rt" d="M14,42 C120,42 150,14 240,16 C330,18 350,40 430,36 C520,31 560,20 686,22"
+                fill="none" stroke="url(#rg)" stroke-width="2" stroke-linecap="round"/>
+          <!-- 端点 -->
+          <circle cx="14" cy="42" r="5.5" fill="#001030" stroke="#4da3ff" stroke-width="2.5"/>
+          <circle cx="686" cy="22" r="5.5" fill="#001030" stroke="#4da3ff" stroke-width="2.5"/>
+          <!-- 沿路光点 -->
+          <circle r="4" fill="#4da3ff">
+            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#rt"/>
+            </animateMotion>
+          </circle>
+          <circle r="9" fill="#4da3ff" opacity=".22">
+            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#rt"/>
+            </animateMotion>
+          </circle>
+        </svg>
+        <div class="rlabel"><span>凭祥 · 友谊关</span><span>河内</span></div>
+      </div>
+      <p class="rmeta">173.6 km · 中越陆运干线</p>
+    </div>
+    <ul>
+      <li><b>唯一性最强</b>——同行不会用这条线，它是玖能独有的业务资产（真实口岸 + 真实终点）</li>
+      <li>素材现成：OSRM 已返回真实 route geometry，不是画出来的示意线</li>
+      <li>可扩展成母题：hero 主视觉 → section 间连接线 → 案例卡角标，全站一条线贯穿</li>
+      <li>纯 SVG，无外部依赖、可动画、可 i18n</li>
+      <li class="con">成本：需要把 geometry 简化（点数太多会卡），并做移动端降级</li>
+    </ul>
+  </section>
+
+  <!-- B -->
+  <section class="opt">
+    <div class="opt-hd">
+      <span class="tag">方向 B</span>
+      <h2>实时数据母题</h2>
+    </div>
+    <div class="strip">
+      <p class="eyebrow">工程物流 · 进出口报关 · 国际贸易</p>
+      <h3 class="h">面向中国企业的工程物流平台</h3>
+      <div class="datagrid">
+        <div><b>173.6</b><span>km 干线里程</span></div>
+        <div><b>31</b><span>专业车型</span></div>
+        <div><b>3,875.97</b><span>VND / RMB</span></div>
+        <div><b>8,853,457</b><span>VND 参考运费</span></div>
+      </div>
+      <p class="rmeta">数据每 5 分钟同步 · 四约束车数公式</p>
+    </div>
+    <ul>
+      <li>专业感强，与报价引擎天然呼应；数字全是真数据（不是编的）</li>
+      <li class="con">气质偏"金融仪表盘"，偏冷，且与现有 StatsBar（CN-VN / 3 / 30+ / 2024）功能重复</li>
+      <li class="con">"实时数据"需要持续更新才有说服力，否则很快变成静态数字</li>
+    </ul>
+  </section>
+
+  <!-- C -->
+  <section class="opt">
+    <div class="opt-hd">
+      <span class="tag">方向 C</span>
+      <h2>工业材质母题</h2>
+    </div>
+    <div class="strip">
+      <div class="corr"></div>
+      <div class="hazard"></div>
+      <p class="eyebrow">工程物流 · 进出口报关 · 国际贸易</p>
+      <h3 class="h">面向中国企业的工程物流平台</h3>
+      <div class="hazard"></div>
+    </div>
+    <ul>
+      <li>行业感最直接（集装箱瓦楞 / 限高杆条纹），视觉冲击强</li>
+      <li class="con">容易显"重/旧"，与刚定稿的细字重排版（weight 300）气质冲突</li>
+      <li class="con">不是"可讲述的资产"——任何物流公司都能用，记忆点弱</li>
+    </ul>
+  </section>
+
+  <div class="note">
+    <b>我的推荐是 A。</b>理由不是它更好看，而是它是三者中唯一<b>别人抄不走</b>的：B 的仪表盘和 C 的条纹任何物流站都能做，而「凭祥友谊关 → 河内」是玖能的真实业务干线，且数据已经在系统里（OSRM 返回）。B 和 C 可以作为 A 的补充细节，但不该当主签名。
+  </div>
+</div>
+</body>
+</html>
