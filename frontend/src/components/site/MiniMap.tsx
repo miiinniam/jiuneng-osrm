@@ -2,6 +2,10 @@
 
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON, useMap } from "react-leaflet";
 import L from "leaflet";
+// ⚠️ 必须导入 Leaflet 的 CSS：缺它则 .leaflet-tile 没有 position:absolute，
+// 瓦片会按文档流竖直堆叠（实测相对偏移 0/256/512/768/1024/1280 = 0~5×256），
+// 表现即"地图只有左上角一小块、其余空白"。MapView.tsx 有这行，MiniMap 原先漏了。
+import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
 import type { LatLng, RouteGeometry } from "@/lib/types";
 
