@@ -64,9 +64,11 @@ export default function MiniMap({
       zoomControl={false}
       attributionControl={false}
     >
+      {/* 瓦片源：{s}.tile.openstreetmap.org 实测 HTTP 000（连接失败）→
+          CARTO Voyager 有「API KEY REQUIRED」水印 → 最终 ArcGIS World Street Map */}
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="Tiles &copy; Esri"
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
         // 小窗口低缩放即可，降低瓦片尺寸与数量
         maxZoom={16}
         keepBuffer={0}

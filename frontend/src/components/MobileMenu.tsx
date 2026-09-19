@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "@/lib/i18n/LocaleContext";
@@ -13,6 +14,12 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
   const { t } = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // 抽屉必须 portal 到 body：header 带 backdrop-blur-*，而 backdrop-filter 会成为
+  // position:fixed 后代的 containing block —— 抽屉会被"关"在 header 盒内
+  // （实测 390px 视口下抽屉只有 390×56，即 header 高度，撑不满视口）。
+  useEffect(() => setMounted(true), []);
 
   // 路由变化时关闭菜单
   useEffect(() => {
@@ -68,8 +75,9 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
         </svg>
       </button>
 
-      {/* 抽屉遮罩 + 面板 */}
-      {open && (
+      {/* 抽屉遮罩 + 面板（portal 到 body：header 的 backdrop-filter 会成为
+          position:fixed 的 containing block，不 portal 抽屉就撑不满视口） */}
+      {mounted && open && createPortal(
         <div className="fixed inset-0 z-[1100] lg:hidden">
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -140,7 +148,8 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
               </nav>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );

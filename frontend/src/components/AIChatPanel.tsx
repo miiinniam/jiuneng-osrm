@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import ChatMessageItem from "@/components/ChatMessage";
 import { useAIChat, type ChatRouteCoords } from "@/hooks/useAIChat";
+import { useLocale } from "@/lib/i18n/LocaleContext";
 
 const SUGGESTIONS = [
   { icon: "💱", label: "今日汇率", text: "今天人民币兑越南盾汇率是多少？" },
@@ -21,6 +22,7 @@ export default function AIChatPanel({ onRouteFound, onAction, autoFocus, hideHea
   hideHeader?: boolean;
 }) {
   const [input, setInput] = useState("");
+  const { t } = useLocale();
   const [isPopout, setIsPopout] = useState(false);
   const [popoutSize, setPopoutSize] = useState({ w: 680, h: 0 });
   const resizeRef = useRef<{ startX: number; startY: number; startW: number; startH: number } | null>(null);
@@ -122,19 +124,29 @@ export default function AIChatPanel({ onRouteFound, onAction, autoFocus, hideHea
       {/* Messages */}
       <div data-chat-scroll className="flex-1 overflow-y-auto overscroll-contain rounded-lg">
         {messages.length === 0 ? (
-          <div className="flex h-full flex-col items-center justify-center gap-3 px-4 py-6 text-center">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--brand-100)] to-[var(--brand-50)]">
-              <svg className="h-5 w-5 text-[var(--brand-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
+          <div className="flex h-full flex-col items-center justify-center gap-4 px-5 py-6 text-center">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--brand-100)] to-[var(--brand-50)]">
+              <svg className="h-6 w-6 text-[var(--brand-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
               </svg>
             </div>
-            <p className="text-xs text-[var(--surface-500)]">输入运输问题，AI 实时计算运费</p>
-            <div className="flex flex-col gap-1.5 w-full">
+
+            {/* 标题层级：原来只有一行说明，没有入口标题（用现成三语 key，无新增文案） */}
+            <div className="space-y-1">
+              <p className="text-sm font-medium tracking-[-0.01em] text-[var(--brand-900)]">
+                {t.site.aiAssistant.eyebrow}
+              </p>
+              <p className="text-xs text-[var(--surface-500)]">{t.site.aiAssistant.title}</p>
+            </div>
+
+            {/* 建议改为内容宽度药丸 + 居中换行：原来是全宽行，
+                标签后拖 700+px 空白，看起来像表单字段而非可点建议 */}
+            <div className="flex flex-wrap justify-center gap-2">
               {SUGGESTIONS.map((s) => (
                 <button key={s.label} onClick={() => sendMessage(s.text)} disabled={loading}
-                  className="flex items-center gap-2 rounded-lg border border-[var(--surface-200)] bg-white px-3 py-1.5 text-left text-[11px] text-[var(--surface-600)] hover:border-[var(--brand-300)] hover:bg-[var(--brand-50)] disabled:opacity-50">
-                  <span className="text-sm">{s.icon}</span>
-                  <span className="font-medium text-[var(--surface-700)] text-[11px]">{s.label}</span>
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[var(--surface-200)] bg-white px-3 py-1.5 text-[11px] font-medium text-[var(--surface-700)] transition-colors hover:border-[var(--brand-300)] hover:bg-[var(--brand-50)] hover:text-[var(--brand-700)] disabled:opacity-50">
+                  <span className="text-[13px] leading-none">{s.icon}</span>
+                  <span>{s.label}</span>
                 </button>
               ))}
             </div>

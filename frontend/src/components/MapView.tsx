@@ -105,9 +105,13 @@ export default function MapView({ origin, destination, waypoints, routeGeometry,
       {/* Layer control with key refresh on locale change */}
       <LayersControl position="topright" key={locale}>
         <LayersControl.BaseLayer checked name={t.mapView.layers.street}>
+          {/* 瓦片源沿革：{s}.tile.openstreetmap.org 实测 HTTP 000（连接直接失败，
+              瓦片全空）→ 换 CARTO Voyager 后能加载，但实测**满屏
+              「API KEY REQUIRED」水印**（CARTO 免费端点现已要求 key）。
+              最终用 ArcGIS World Street Map：实测 200/28576B，无水印。 */}
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="Tiles &copy; Esri"
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
           />
         </LayersControl.BaseLayer>
         <LayersControl.BaseLayer name={t.mapView.layers.satellite}>
@@ -123,9 +127,10 @@ export default function MapView({ origin, destination, waypoints, routeGeometry,
           />
         </LayersControl.BaseLayer>
         <LayersControl.BaseLayer name={t.mapView.layers.dark}>
+          {/* CARTO dark_all 同样带「API KEY REQUIRED」水印，换 ArcGIS Dark Gray Canvas */}
           <TileLayer
-            attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            attribution="Tiles &copy; Esri"
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
           />
         </LayersControl.BaseLayer>
       </LayersControl>
