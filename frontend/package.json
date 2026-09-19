@@ -7,7 +7,8 @@
     "dev": "next dev -p 47820",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --test --experimental-strip-types src/lib/route/geometry.test.ts src/lib/route/trunkRoute.test.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
