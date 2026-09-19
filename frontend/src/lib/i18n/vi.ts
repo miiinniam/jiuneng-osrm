@@ -7,6 +7,14 @@ export const vi: Translations = {
     home: "Trang chủ",
     quote: "Báo giá trực tuyến",
   },
+  route: {
+    startSub: "Điểm đi · Trung Quốc",
+    startName: "Bằng Tường · Hữu Nghị",
+    endSub: "Điểm đến · Việt Nam",
+    endName: "Hà Nội",
+    distanceCaption: "km · tuyến bộ Trung–Việt",
+    badgeLabel: "Hữu Nghị → Hà Nội",
+  },
   tools: {
     navLabel: "Công cụ",
     pageTitle: "Công cụ lập kế hoạch xếp hàng 3D",

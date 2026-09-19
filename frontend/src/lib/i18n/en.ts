@@ -7,6 +7,14 @@ export const en: Translations = {
     home: "Home",
     quote: "Online Quote",
   },
+  route: {
+    startSub: "Origin · China",
+    startName: "Pingxiang · Friendship Pass",
+    endSub: "Destination · Vietnam",
+    endName: "Hanoi",
+    distanceCaption: "km · China–Vietnam trunk",
+    badgeLabel: "Friendship Pass → Hanoi",
+  },
   tools: {
     navLabel: "Online Tools",
     pageTitle: "3D Cargo Loading Planner",

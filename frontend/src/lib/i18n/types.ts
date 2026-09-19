@@ -13,6 +13,14 @@ export interface Translations {
     home: string;
     quote: string;
   };
+  route: {
+    startSub: string;
+    startName: string;
+    endSub: string;
+    endName: string;
+    distanceCaption: string;
+    badgeLabel: string;
+  };
   tools: {
     navLabel: string;
     pageTitle: string;

@@ -7,6 +7,14 @@ export const zh: Translations = {
     home: "官网首页",
     quote: "在线报价",
   },
+  route: {
+    startSub: "起点 · 中国",
+    startName: "凭祥 · 友谊关",
+    endSub: "终点 · 越南",
+    endName: "河内",
+    distanceCaption: "km · 中越陆运干线",
+    badgeLabel: "友谊关 → 河内",
+  },
   tools: {
     navLabel: "在线工具",
     pageTitle: "3D 货车装载规划工具",
