@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useLocale } from "@/lib/i18n/LocaleContext";
 import QuickQuote from "@/components/site/QuickQuote";
 import AIChatSection from "@/components/site/AIChatSection";
+import TrunkRouteBand from "@/components/site/TrunkRouteBand";
+import RouteSpine from "@/components/site/RouteSpine";
+import RouteBadge from "@/components/site/RouteBadge";
 import type { Entity } from "@/lib/i18n/types";
 
 /* ── 线性图标（K&N 风格：细线条、克制的瑞士设计语言） ── */
@@ -150,7 +153,7 @@ export default function HomePage() {
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="jn-site min-h-screen bg-white">
       {/* ═══════════ HERO — K&N 风格全屏 ═══════════ */}
       <section className="relative overflow-hidden bg-[var(--navy)]">
         <img
@@ -172,7 +175,7 @@ export default function HomePage() {
               />
               <div className="flex items-center gap-3">
                 <span className="h-0.5 w-8 bg-[var(--teal-500)] sm:w-10" />
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--cyan)] sm:text-xs sm:tracking-[0.22em]">{s.hero.eyebrow}</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--cyan-on-dark)] sm:text-xs sm:tracking-[0.22em]">{s.hero.eyebrow}</p>
               </div>
               <h1 className="mt-4 text-3xl font-bold leading-[1.14] tracking-tight text-white sm:mt-5 sm:text-4xl lg:text-[3.2rem]">
                 {s.hero.title}
@@ -217,13 +220,20 @@ export default function HomePage() {
             </div>
             </div>
 
+          {/* 路线干线带：签名元素（真实 OSRM 几何，运行时零请求） */}
+          <div className="mt-12">
+            <TrunkRouteBand />
+          </div>
+
           {/* 数字统计带 */}
-          <div className="mt-14">
+          <div className="mt-8">
             <StatsBar />
           </div>
         </div>
       </section>
 
+      {/* 路线母题：左缘贯穿 spine 包裹 hero 之后的全部 section（不含 footer） */}
+      <RouteSpine>
       {/* ═══════════ 关于玖能 ═══════════ */}
       <section id="about" className="scroll-mt-16 py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -369,7 +379,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
+                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan-on-dark)]">
                       {item.sector}
                     </p>
                     <h3 className="mt-1.5 text-base font-bold text-white">{item.title}</h3>
@@ -470,7 +480,7 @@ export default function HomePage() {
                 <p className="mt-1 text-xs text-white/70">CN origin</p>
               </div>
               <div className="text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--cyan)]">CN — VN</p>
+                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--cyan-on-dark)]">CN — VN</p>
                 <p className="mt-1 text-xs text-white/60">跨境运输 · 口岸协同</p>
               </div>
               <div className="text-center">
@@ -551,6 +561,7 @@ export default function HomePage() {
                       </svg>
                     </span>
                   </div>
+                  <RouteBadge className="mt-3 self-start" />
                 </div>
               </Link>
             ))}
@@ -578,7 +589,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-3">
                 <span className="h-0.5 w-10 bg-[var(--teal-500)]" />
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--cyan)]">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--cyan-on-dark)]">
                   {s.contact.eyebrow}
                 </p>
               </div>
@@ -633,6 +644,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </RouteSpine>
 
       {/* ═══════════ 页脚 ═══════════ */}
       <footer className="border-t border-white/10 bg-[var(--navy)] py-12">
