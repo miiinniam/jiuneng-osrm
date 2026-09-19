@@ -118,9 +118,9 @@ async def main():
                     fails.append(f"{label} {w}px 干线带尺寸为 0")
                 else:
                     ok.append(f"带 {v['bandW']:.0f}×{v['bandH']:.0f}")
-                    # 等比缩放校验：1160/168 ≈ 6.90
-                    if abs(v["bandAspect"] - 1160 / 168) > 0.05:
-                        fails.append(f"{label} {w}px 干线带比例失真 {v['bandAspect']:.2f}（应 6.90）")
+                    # 等比缩放校验：viewBox 含左右侧栏 (1160+190*2)/168 ≈ 9.17
+                    if abs(v["bandAspect"] - 1540 / 168) > 0.05:
+                        fails.append(f"{label} {w}px 干线带比例失真 {v['bandAspect']:.2f}（应 9.17）")
 
                 # 4) 端点标签
                 if v["labelVisible"] < 2:
