@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import AppShell from "@/components/AppShell";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -26,6 +26,11 @@ const plexMono = IBM_Plex_Mono({
 
 const DESCRIPTION =
   "玖能国际面向中国企业的工程物流平台。在线预估中越运输费用、匹配专业车型，并管理询价到交付全过程。";
+
+/* 2026-09 v0.7 明亮化：浏览器 UI/移动端状态栏改浅色（原先随深蓝 hero 为 #001030） */
+export const viewport: Viewport = {
+  themeColor: "#f8fbff",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -222,3 +222,29 @@ vX.Y  YYYY-MM-DD  改了什么（一句话）
 | `vehicle_registry.py` | CSV 加载器 | 开发者 |
 | `车辆型号库.csv` | 车型数据 | **用户（Excel 手动维护）** |
 | `DEVELOPMENT_GOALS.md` | 项目设计文档 | 开发者（参考用，可能与代码不同步） |
+
+---
+
+## 前端外观：2026-09 明亮化（v0.7）—— 改外观前必读，别改回深色满幅
+
+**官网就是本 Next 应用**（`jiuneng.space` / `www.jiuneng.space`）：`/` 是营销页，工具页是 `/quote` `/batch` `/planner` `/tools/loader` `/cases/[id]`。
+
+已定调的浅色骨架：
+- 底色 `--surface-50 = #f8fbff`、`--surface-100 = #eef4fd`（`frontend/src/app/globals.css`）
+- Hero：实景照片打底 + 白雾遮罩（文案侧 97% → 照片侧 34%）+ **深蓝标题**，不再用深蓝满幅
+- **全站已无深色满幅 section**；导航统一浅色（`AppShell.tsx` 里 `dark = false`，深色分支保留可回滚）
+- 浅底上的小字/标签只用 `--blue #0040c0` 或 `--surface-400 #5f7085`，**不要用 `--cyan #2080f8`**（对白仅 3.82:1，低于 WCAG AA 4.5:1）
+- `--cyan-on-dark` 仅留作将来重新加回深色块时使用
+- 主题色 `viewport.themeColor = #f8fbff`
+- 首页唯一偏暗的照片已换成白天跨境重卡图；`case-01-night-heavy-haul` 只留项目画廊
+
+改完外观必须跑（判据写死在脚本里，exit code 说话）：
+```bash
+cd frontend
+npx tsc --noEmit                            # exit 0（别用单文件 tsc，Windows 会误报 TS6053）
+npx next build --webpack                    # 本机 Turbopack 解析 next/font 会失败，用 --webpack
+next start -p 47820                         # 后端 CORS 白名单只有 47820，换端口报价段会整段失效
+node scripts/verify-light-theme.mjs         # 截图 + 区块测色 + 真跑报价；exit 1 = 有失败项
+python scripts/verify-light-brightness.py    # 200px 带亮度断言，任何带 <120 即判回归
+```
+部署：`cd frontend && npx --yes vercel@latest --prod --yes`。`git push` **不会**触发部署（GitHub 集成未连），且本机缓存的旧版 CLI 58.5.1 token 已失效 —— 必须 `@latest`。

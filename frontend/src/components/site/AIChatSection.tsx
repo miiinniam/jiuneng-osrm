@@ -19,27 +19,27 @@ export default function AIChatSection() {
   const openFullscreenChat = () => window.dispatchEvent(new Event(OPEN_AI_CHAT_EVENT));
 
   return (
-    <section id="ai-assistant" className="scroll-mt-16 bg-[var(--navy)] py-20">
+    <section id="ai-assistant" className="scroll-mt-16 bg-[var(--surface-100)] py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* ═══════ 移动端：精简入口卡 ═══════ */}
         <div className="lg:hidden">
           <div className="flex items-center gap-3">
             <span className="h-0.5 w-8 bg-[var(--teal-500)]" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--cyan)]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--blue)]">
               {s.eyebrow}
             </p>
           </div>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-white">{s.title}</h2>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--brand-100)]/65">{s.intro}</p>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-[var(--brand-900)]">{s.title}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--surface-500)]">{s.intro}</p>
           <div className="mt-6 space-y-2.5">
             {[s.hint1, s.hint2, s.hint3].map((hint, i) => (
               <div key={i} className="flex items-center gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-[var(--cyan)]">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--blue)]/10 text-[var(--blue)]">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
                     <path d="m5 12 5 5 9-10" />
                   </svg>
                 </span>
-                <span className="text-sm font-medium text-[var(--brand-100)]/80">{hint}</span>
+                <span className="text-sm font-medium text-[var(--surface-600)]">{hint}</span>
               </div>
             ))}
           </div>
@@ -62,14 +62,14 @@ export default function AIChatSection() {
           <div>
             <div className="flex items-center gap-3">
               <span className="h-0.5 w-8 bg-[var(--teal-500)] sm:w-10" />
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--cyan)] sm:text-xs sm:tracking-[0.22em]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--blue)] sm:text-xs sm:tracking-[0.22em]">
                 {s.eyebrow}
               </p>
             </div>
-            <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:mt-5 sm:text-3xl">
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-[var(--brand-900)] sm:mt-5 sm:text-3xl">
               {s.title}
             </h2>
-            <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--brand-100)]/65">
+            <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--surface-500)]">
               {s.intro}
             </p>
 
@@ -77,27 +77,27 @@ export default function AIChatSection() {
             <div className="mt-7 space-y-3">
               {[s.hint1, s.hint2, s.hint3].map((hint, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-[var(--cyan)]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--blue)]/10 text-[var(--blue)]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
                       <path d="m5 12 5 5 9-10" />
                     </svg>
                   </span>
-                  <span className="text-sm font-medium text-[var(--brand-100)]/80">{hint}</span>
+                  <span className="text-sm font-medium text-[var(--surface-600)]">{hint}</span>
                 </div>
               ))}
             </div>
 
             {/* 示例提问 */}
-            <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-white/40">
+            <div className="mt-8 rounded-xl border border-[var(--surface-200)] bg-white p-4 shadow-[var(--shadow-sm)]">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--surface-400)]">
                 Example
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--brand-100)]/80">{s.example}</p>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--surface-600)]">{s.example}</p>
             </div>
           </div>
 
           {/* 右：AI 聊天卡片 */}
-          <div className="h-[540px] overflow-hidden overscroll-contain rounded-2xl border border-white/15 bg-white p-4 shadow-2xl shadow-black/20">
+          <div className="h-[540px] overflow-hidden overscroll-contain rounded-2xl border border-[var(--surface-200)] bg-white p-4 shadow-[var(--shadow-lg)]">
             <AIChatPanel />
           </div>
         </div>

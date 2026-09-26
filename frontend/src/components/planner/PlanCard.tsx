@@ -117,7 +117,7 @@ export default function PlanCard({
             <Link
               href={`/tools/loader?vehicle=${encodeURIComponent(plan.vehicle.model_id)}`}
               target="_blank"
-              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-[var(--cyan)] px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[var(--brand-500)]"
+              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-[var(--blue)] px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[var(--brand-500)]"
             >
               {t.planner.openWorkbench} ↗
             </Link>

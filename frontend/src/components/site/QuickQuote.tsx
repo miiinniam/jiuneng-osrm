@@ -81,12 +81,12 @@ function AddressPicker({
 
   return (
     <div className="relative">
-      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--brand-200)]">
+      <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--surface-500)]">
         {label}
       </label>
       <input
         type="text"
-        className="w-full rounded-xl border border-white/15 bg-white/10 px-3.5 py-2.5 text-sm text-white placeholder:text-[var(--brand-200)]/60 backdrop-blur-sm transition-colors focus:border-[var(--teal-400)] focus:bg-white/15 focus:outline-none"
+        className="w-full rounded-xl border border-[var(--surface-200)] bg-white px-3.5 py-2.5 text-sm text-[var(--navy)] placeholder:text-[var(--surface-400)] transition-colors focus:border-[var(--cyan)] focus:outline-none"
         placeholder={placeholder}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -94,15 +94,15 @@ function AddressPicker({
         onBlur={() => setTimeout(() => setOpen(false), 150)}
       />
       {loading && (
-        <div className="absolute right-3 top-[34px] text-xs text-[var(--teal-400)]">…</div>
+        <div className="absolute right-3 top-[34px] text-xs text-[var(--blue)]">…</div>
       )}
       {open && results.length > 0 && (
-        <div className="absolute z-30 mt-1 max-h-52 w-full overflow-y-auto overscroll-contain rounded-xl border border-white/15 bg-[#001030] shadow-xl">
+        <div className="absolute z-30 mt-1 max-h-52 w-full overflow-y-auto overscroll-contain rounded-xl border border-[var(--surface-200)] bg-white shadow-[var(--shadow-lg)]">
           {results.map((r, i) => (
             <button
               key={i}
               type="button"
-              className="block w-full px-3.5 py-2 text-left text-sm text-[var(--brand-100)] transition-colors hover:bg-[var(--teal-500)]/15 hover:text-white"
+              className="block w-full px-3.5 py-2 text-left text-sm text-[var(--surface-600)] transition-colors hover:bg-[var(--brand-50)] hover:text-[var(--navy)]"
               onMouseDown={(e) => {
                 e.preventDefault();
                 onSelect(r);
@@ -255,9 +255,9 @@ export default function QuickQuote() {
   const s = t.site.quickQuote;
 
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-white/15 bg-[#001030]/88 shadow-2xl backdrop-blur-md">
+    <div className="w-full overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white/95 shadow-[var(--shadow-lg)] backdrop-blur-md">
       {/* Tab 栏（移动端隐藏：AI 由悬浮气泡承担，地图并入 /quote 工具页） */}
-      <div className={`items-stretch border-b border-white/10 ${isMobile ? "hidden" : "flex"}`}>
+      <div className={`items-stretch border-b border-[var(--surface-200)] ${isMobile ? "hidden" : "flex"}`}>
         {(
           [
             { key: "quote", label: s.tabQuote },
@@ -271,8 +271,8 @@ export default function QuickQuote() {
             onClick={() => setTab(item.key)}
             className={`flex flex-1 items-center justify-center gap-1.5 px-3 py-3 text-sm font-semibold transition-colors ${
               tab === item.key
-                ? "border-b-2 border-[var(--cyan)] bg-white/5 text-white"
-                : "text-white/60 hover:bg-white/5 hover:text-white"
+                ? "border-b-2 border-[var(--cyan)] bg-[var(--brand-50)] text-[var(--navy)]"
+                : "text-[var(--surface-500)] hover:bg-[var(--surface-50)] hover:text-[var(--navy)]"
             }`}
           >
             {item.label}
@@ -286,13 +286,13 @@ export default function QuickQuote() {
           <div className="mb-4 flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-[var(--cyan)]" />
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
+                <p className="text-xs font-bold uppercase tracking-widest text-[var(--blue)]">
                   {s.eyebrow}
                 </p>
-                <h3 className="mt-0.5 text-lg font-bold leading-snug text-white">{s.title}</h3>
+                <h3 className="mt-0.5 text-lg font-bold leading-snug text-[var(--navy)]">{s.title}</h3>
               </div>
             </div>
-            <p className="mb-4 text-[13px] leading-relaxed text-[var(--brand-100)]/70">{s.intro}</p>
+            <p className="mb-4 text-[13px] leading-relaxed text-[var(--surface-500)]">{s.intro}</p>
 
             <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
               <AddressPicker
@@ -308,7 +308,7 @@ export default function QuickQuote() {
                 onSelect={setDest}
               />
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--brand-200)]">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--surface-500)]">
                   {s.weightLabel}
                 </label>
                 <input
@@ -316,18 +316,18 @@ export default function QuickQuote() {
                   min="0.1"
                   step="0.5"
                   inputMode="decimal"
-                  className="w-full rounded-xl border border-white/15 bg-white/10 px-3.5 py-2.5 text-sm text-white placeholder:text-[var(--brand-200)]/60 backdrop-blur-sm transition-colors focus:border-[var(--teal-400)] focus:bg-white/15 focus:outline-none"
+                  className="w-full rounded-xl border border-[var(--surface-200)] bg-white px-3.5 py-2.5 text-sm text-[var(--navy)] placeholder:text-[var(--surface-400)] transition-colors focus:border-[var(--cyan)] focus:outline-none"
                   placeholder={s.weightPlaceholder}
                   value={weightTon}
                   onChange={(e) => setWeightTon(e.target.value)}
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--brand-200)]">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--surface-500)]">
                   {s.typeLabel}
                 </label>
                 <select
-                  className="w-full rounded-xl border border-white/15 bg-[#0a1b3c] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[var(--cyan)] focus:outline-none"
+                  className="w-full rounded-xl border border-[var(--surface-200)] bg-white px-3.5 py-2.5 text-sm text-[var(--navy)] transition-colors focus:border-[var(--cyan)] focus:outline-none"
                   value={cargoType}
                   onChange={(e) => setCargoType(e.target.value)}
                 >
@@ -340,11 +340,11 @@ export default function QuickQuote() {
               </div>
               {/* 车型选择（含自动匹配） */}
               <div className="sm:col-span-2">
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--brand-200)]">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-[var(--surface-500)]">
                   {s.vehicleLabel}
                 </label>
                 <select
-                  className="w-full rounded-xl border border-white/15 bg-[#0a1b3c] px-3.5 py-2.5 text-sm text-white transition-colors focus:border-[var(--cyan)] focus:outline-none"
+                  className="w-full rounded-xl border border-[var(--surface-200)] bg-white px-3.5 py-2.5 text-sm text-[var(--navy)] transition-colors focus:border-[var(--cyan)] focus:outline-none"
                   value={vehicleModelId}
                   onChange={(e) => setVehicleModelId(e.target.value)}
                 >
@@ -356,7 +356,7 @@ export default function QuickQuote() {
                   ))}
                 </select>
                 {vehicleModelId === "" && filteredModels().length === 0 && allModels().length === 0 && (
-                  <p className="mt-1 text-[11px] text-[var(--brand-100)]/40">车型库加载中…</p>
+                  <p className="mt-1 text-[11px] text-[var(--surface-400)]">车型库加载中…</p>
                 )}
               </div>
             </div>
@@ -371,38 +371,38 @@ export default function QuickQuote() {
             </button>
 
             {error && (
-              <div className="mt-3.5 rounded-lg border border-red-400/30 bg-red-500/15 px-3.5 py-2.5 text-sm text-red-200">
+              <div className="mt-3.5 rounded-lg border border-red-200 bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
                 {error}
               </div>
             )}
 
             {result && (
-              <div className="mt-4 rounded-xl border border-[var(--cyan)]/25 bg-[var(--blue)]/15 p-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
+              <div className="mt-4 rounded-xl border border-[var(--cyan)]/30 bg-[var(--brand-50)] p-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-[var(--blue)]">
                   {s.resultTitle}
                 </p>
                 <div className="mt-2 flex items-end justify-between gap-3">
                   <div>
-                    <p className="text-xs text-[var(--brand-100)]/60">{s.totalLabel}</p>
-                    <p className="text-2xl font-bold tabular-nums text-white">
+                    <p className="text-xs text-[var(--surface-500)]">{s.totalLabel}</p>
+                    <p className="text-2xl font-bold tabular-nums text-[var(--navy)]">
                       {formatVnd(result.total)}
                     </p>
                   </div>
-                  <div className="text-right text-xs text-[var(--brand-100)]/60">
+                  <div className="text-right text-xs text-[var(--surface-500)]">
                     <p>
                       {s.distanceLabel}:{" "}
-                      <span className="font-semibold text-white">{result.distanceKm.toFixed(1)} km</span>
+                      <span className="font-semibold text-[var(--navy)]">{result.distanceKm.toFixed(1)} km</span>
                     </p>
                     <p>
                       {s.modelLabel}:{" "}
-                      <span className="font-semibold text-white">{result.vehicleName}</span>
+                      <span className="font-semibold text-[var(--navy)]">{result.vehicleName}</span>
                     </p>
                   </div>
                 </div>
                 <div className="mt-3 flex gap-2">
                   <Link
                     href="/quote"
-                    className="flex-1 rounded-lg bg-white/5 py-2 text-center text-sm font-semibold text-[var(--cyan)] transition-colors hover:bg-white/10 hover:text-white"
+                    className="flex-1 rounded-lg bg-[var(--surface-50)] py-2 text-center text-sm font-semibold text-[var(--blue)] transition-colors hover:bg-[var(--surface-100)] hover:text-[var(--navy)]"
                   >
                     {s.fullTool} →
                   </Link>
@@ -410,7 +410,7 @@ export default function QuickQuote() {
                     <button
                       type="button"
                       onClick={() => setTab("map")}
-                      className="flex-1 rounded-lg bg-[var(--blue)]/20 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-[var(--blue)]/30"
+                      className="flex-1 rounded-lg bg-[var(--blue)]/10 py-2 text-center text-sm font-semibold text-[var(--blue)] transition-colors hover:bg-[var(--blue)]/20"
                     >
                       {s.tabMap} →
                     </button>
@@ -419,7 +419,7 @@ export default function QuickQuote() {
               </div>
             )}
 
-            <p className="mt-3.5 text-xs leading-relaxed text-[var(--brand-100)]/50">{s.note}</p>
+            <p className="mt-3.5 text-xs leading-relaxed text-[var(--surface-400)]">{s.note}</p>
         </div>
 
         {/* ═══════ AI 聊天（移动端隐藏，由悬浮气泡承担） ═══════ */}
@@ -431,23 +431,23 @@ export default function QuickQuote() {
         <div className={tab === "map" && !isMobile ? "" : "hidden"}>
           <div className="mb-3 flex items-center justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan)]">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--blue)]">
                 {s.tabMap}
               </p>
-              <h3 className="mt-0.5 text-base font-bold text-white">
+              <h3 className="mt-0.5 text-base font-bold text-[var(--navy)]">
                 {mapOrigin ? "中越运输路线" : "选择起终点后自动显示路线"}
               </h3>
             </div>
             {(mapOrigin || mapDest) && (
               <Link
                 href="/quote"
-                className="rounded-lg bg-white/5 px-3 py-1.5 text-xs font-semibold text-[var(--cyan)] transition-colors hover:bg-white/10"
+                className="rounded-lg bg-[var(--surface-50)] px-3 py-1.5 text-xs font-semibold text-[var(--blue)] transition-colors hover:bg-[var(--surface-100)]"
               >
                 {s.fullTool} →
               </Link>
             )}
           </div>
-          <div className="h-[320px] overflow-hidden rounded-xl border border-white/15">
+          <div className="h-[320px] overflow-hidden rounded-xl border border-[var(--surface-200)]">
             {/* 仅在地图 tab 激活时挂载，避免页面加载即初始化 Leaflet 拉取瓦片 */}
             {tab === "map" && (
               <MiniMap
@@ -458,7 +458,7 @@ export default function QuickQuote() {
             )}
           </div>
           {(origin || dest) && !mapOrigin && (
-            <p className="mt-3 text-center text-xs text-[var(--brand-100)]/50">
+            <p className="mt-3 text-center text-xs text-[var(--surface-400)]">
               {s.tabQuote} / {s.tabAI} → {s.tabMap}
             </p>
           )}

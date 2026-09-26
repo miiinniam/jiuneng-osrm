@@ -42,9 +42,9 @@ export default function TrunkRouteBand({ className = "" }: { className?: string 
         >
           <defs>
             <linearGradient id="trunk-route-grad" x1="0" x2="1">
-              <stop offset="0" stopColor="#2080f8" stopOpacity="0.3" />
-              <stop offset="0.5" stopColor="#4da3ff" stopOpacity="0.98" />
-              <stop offset="1" stopColor="#2080f8" stopOpacity="0.38" />
+              <stop offset="0" stopColor="#2080f8" stopOpacity="0.35" />
+              <stop offset="0.5" stopColor="#0040c0" stopOpacity="0.95" />
+              <stop offset="1" stopColor="#2080f8" stopOpacity="0.4" />
             </linearGradient>
           </defs>
 
@@ -60,17 +60,17 @@ export default function TrunkRouteBand({ className = "" }: { className?: string 
           />
 
           {/* 两端点：处理完全一致 */}
-          <circle cx={start.x} cy={start.y} r={6} fill="#001030" stroke="#4da3ff" strokeWidth={2.8} />
-          <circle cx={end.x} cy={end.y} r={6} fill="#001030" stroke="#4da3ff" strokeWidth={2.8} />
+          <circle cx={start.x} cy={start.y} r={6} fill="#ffffff" stroke="#2080f8" strokeWidth={2.8} />
+          <circle cx={end.x} cy={end.y} r={6} fill="#ffffff" stroke="#2080f8" strokeWidth={2.8} />
 
           {/* 沿真实路径移动的光点（增强，非信息载体） */}
           <g className="trunk-route-dot">
-            <circle r={10} fill="#4da3ff" opacity={0.2}>
+            <circle r={10} fill="#2080f8" opacity={0.22}>
               <animateMotion dur="9s" repeatCount="indefinite">
                 <mpath href="#trunk-route-path" />
               </animateMotion>
             </circle>
-            <circle r={3.4} fill="#ffffff">
+            <circle r={3.4} fill="#0040c0">
               <animateMotion dur="9s" repeatCount="indefinite">
                 <mpath href="#trunk-route-path" />
               </animateMotion>
@@ -90,10 +90,10 @@ export default function TrunkRouteBand({ className = "" }: { className?: string 
             transform: "translateY(-50%)",
           }}
         >
-          <span className="text-[9.5px] font-medium uppercase tracking-[0.14em] text-[var(--cyan-on-dark)]">
+          <span className="text-[9.5px] font-medium uppercase tracking-[0.14em] text-[var(--blue)]">
             {t.route.startSub}
           </span>
-          <span className="text-xs leading-snug text-white">{t.route.startName}</span>
+          <span className="text-xs leading-snug text-[var(--navy)]">{t.route.startName}</span>
         </div>
 
         {/* ≥768px：右端点标签，锚定 end 坐标，垂直居中于圆点，位于右侧栏 */}
@@ -106,19 +106,19 @@ export default function TrunkRouteBand({ className = "" }: { className?: string 
             transform: "translateY(-50%)",
           }}
         >
-          <span className="text-[9.5px] font-medium uppercase tracking-[0.14em] text-[var(--cyan-on-dark)]">
+          <span className="text-[9.5px] font-medium uppercase tracking-[0.14em] text-[var(--blue)]">
             {t.route.endSub}
           </span>
-          <span className="text-xs leading-snug text-white">{t.route.endName}</span>
+          <span className="text-xs leading-snug text-[var(--navy)]">{t.route.endName}</span>
         </div>
 
         {/* ≥768px：里程，数字与单位同行（规格 §9 缺陷 1、3） */}
         <div className="pointer-events-none absolute left-1/2 top-0 hidden -translate-x-1/2 text-center md:block">
           <p className="flex items-baseline justify-center gap-1.5">
-            <span className="text-[23px] font-light tracking-[-0.03em] text-white tabular-nums">
+            <span className="text-[23px] font-light tracking-[-0.03em] text-[var(--navy)] tabular-nums">
               {distanceKm.toFixed(1)}
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--cyan-on-dark)]">
+            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--blue)]">
               {t.route.distanceCaption}
             </span>
           </p>
@@ -128,24 +128,24 @@ export default function TrunkRouteBand({ className = "" }: { className?: string 
       {/* <768px：带下方一行（侧栏太窄放不下，且带仅 38px 高，里程放带内会压线） */}
       <div className="mt-2 flex items-start justify-between gap-3 md:hidden">
         <div className="flex flex-col gap-0.5">
-          <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[var(--cyan-on-dark)]">
+          <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[var(--blue)]">
             {t.route.startSub}
           </span>
-          <span className="text-[11px] leading-snug text-white">{t.route.startName}</span>
+          <span className="text-[11px] leading-snug text-[var(--navy)]">{t.route.startName}</span>
         </div>
         <div className="flex flex-col items-center gap-0.5">
-          <span className="text-base font-light leading-none tracking-[-0.03em] text-white tabular-nums">
+          <span className="text-base font-light leading-none tracking-[-0.03em] text-[var(--navy)] tabular-nums">
             {distanceKm.toFixed(1)}
           </span>
-          <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[var(--cyan-on-dark)]">
+          <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[var(--blue)]">
             {t.route.distanceCaption}
           </span>
         </div>
         <div className="flex flex-col items-end gap-0.5 text-right">
-          <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[var(--cyan-on-dark)]">
+          <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-[var(--blue)]">
             {t.route.endSub}
           </span>
-          <span className="text-[11px] leading-snug text-white">{t.route.endName}</span>
+          <span className="text-[11px] leading-snug text-[var(--navy)]">{t.route.endName}</span>
         </div>
       </div>
     </div>

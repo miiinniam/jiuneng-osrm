@@ -45,11 +45,15 @@
 
   /* Surface */
   --surface-0: #ffffff;
-  --surface-50: #f4f7fb;
-  --surface-100: #e8eef6;
+  --surface-50: #f8fbff;
+  --surface-100: #eef4fd;
   --surface-200: #d5deea;
   --surface-300: #b7c4d6;
-  --surface-400: #7a8ba3;
+  /* 2026-09 v0.7：浅色化后 --surface-400 被大量用作次要文字/标签色，
+     原 #7a8ba3 对白仅 3.47:1、对 #eef4fd 仅 3.14:1（低于 WCAG AA 4.5:1，实测 25 处失分）。
+     调深一档到 #5f7085：白 5.07 / #f8fbff 4.88 / #eef4fd 4.58 / #eef4ff 4.59，四底全过。
+     改 token 一处，全站（含 /quote /batch /planner 工具页）一并达标。 */
+  --surface-400: #5f7085;
   --surface-500: #4a5b73;
   --surface-600: #243044;
   --surface-700: #142033;
@@ -152,7 +156,10 @@ body {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: var(--surface-200);
+  /* v0.7：原 --surface-200 (#d5deea) 对白仅 1.36:1，浅色页面上轨道线读不出来，
+     只剩孤立圆点 → 母题断裂。提到 --brand-300（#7aa6ff，对白约 2.4:1）：
+     2px 装饰线在浅底清晰可辨，又不至于抢正文。实测全页 11 个站点圆点均正常渲染。 */
+  background: var(--brand-300);
   z-index: 0;
 }
 
@@ -163,7 +170,8 @@ body {
   top: 0;
   width: 2px;
   height: calc(var(--spine-fill, 0) * 100%);
-  background: linear-gradient(180deg, var(--blue), var(--cyan-on-dark));
+  /* v0.7：尾色原用 --cyan-on-dark（深色底专用，对白仅 2.63:1），浅底改 --cyan */
+  background: linear-gradient(180deg, var(--blue), var(--cyan));
   z-index: 1;
   transition: height 120ms linear;
 }
@@ -187,12 +195,10 @@ body {
   z-index: 2;
 }
 
-/* 深色底 section（solutions / contact）：圆点底色与描边切换。
-   描边用 --cyan-on-dark —— --cyan 对深蓝仅 4.44:1，低于 WCAG AA。 */
-.route-spine > section.bg-\[var\(--navy\)\]::before {
-  background: var(--navy);
-  border-color: var(--cyan-on-dark);
-}
+/* 2026-09 v0.7 明亮化：全站已无深色满幅 section，
+   原「深色底圆点切换」规则（.route-spine > section.bg-[var(--navy)]）随之删除——
+   默认白底 + 青蓝描边对浅色骨架就是正确形态。若将来加回深色块，
+   需同时恢复该规则并使用 --cyan-on-dark。 */
 
 /* 窄屏隐藏 spine（避免内容内缩挤压），规格 §6 */
 @media (max-width: 767px) {
