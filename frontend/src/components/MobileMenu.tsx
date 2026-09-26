@@ -146,6 +146,20 @@ export default function MobileMenu({ variant = "dark" }: { variant?: "light" | "
                   </Link>
                 ))}
               </nav>
+
+              {/* AI 数字员工：独立官网外链 */}
+              <nav className="space-y-0.5 pt-5">
+                <a
+                  href="https://site.jiuneng.space/ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-between rounded-xl px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/5"
+                >
+                  {t.site.nav.aiEmployee}
+                  <span aria-hidden className="text-xs text-[var(--brand-100)] opacity-30">↗</span>
+                </a>
+              </nav>
             </div>
           </div>
         </div>,

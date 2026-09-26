@@ -65,6 +65,7 @@ export const vi: Translations = {
       network: "Mạng lưới",
       contact: "Liên hệ",
       quote: "Báo giá trực tuyến",
+      aiEmployee: "Nhân viên AI",
     },
     hero: {
       eyebrow: "Logistics kỹ thuật · Hải quan · Thương mại quốc tế",
@@ -316,6 +317,7 @@ export const vi: Translations = {
       toolsTitle: "Công cụ trực tuyến",
       contactTitle: "Liên hệ",
       rights: "© 2026 JIUNENG logistics · 玖能国际",
+      officialSite: "Trang web chính thức",
     },
   },
   header: {

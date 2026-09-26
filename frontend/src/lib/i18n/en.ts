@@ -65,6 +65,7 @@ export const en: Translations = {
       network: "Network",
       contact: "Contact",
       quote: "Online Quote",
+      aiEmployee: "AI Digital Employee",
     },
     hero: {
       eyebrow: "Engineering Logistics · Customs · International Trade",
@@ -316,6 +317,7 @@ export const en: Translations = {
       toolsTitle: "Online Tools",
       contactTitle: "Contact",
       rights: "© 2026 JIUNENG logistics · 玖能国际",
+      officialSite: "Official Website",
     },
   },
   header: {

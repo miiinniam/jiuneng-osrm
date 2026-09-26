@@ -71,6 +71,7 @@ export interface Translations {
       network: string;
       contact: string;
       quote: string;
+      aiEmployee: string;
     };
     hero: {
       eyebrow: string;
@@ -202,6 +203,7 @@ export interface Translations {
       toolsTitle: string;
       contactTitle: string;
       rights: string;
+      officialSite: string;
     };
   };
   header: {

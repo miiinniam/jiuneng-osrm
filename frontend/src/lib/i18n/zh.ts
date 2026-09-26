@@ -65,6 +65,7 @@ export const zh: Translations = {
       network: "中越网络",
       contact: "联系我们",
       quote: "在线报价",
+      aiEmployee: "AI 数字员工",
     },
     hero: {
       eyebrow: "工程物流 · 进出口报关 · 国际贸易",
@@ -317,6 +318,7 @@ export const zh: Translations = {
       toolsTitle: "在线工具",
       contactTitle: "联系方式",
       rights: "© 2026 JIUNENG logistics · 玖能国际",
+      officialSite: "玖能官网",
     },
   },
   header: {

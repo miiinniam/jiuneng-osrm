@@ -94,18 +94,19 @@ function StatsBar() {
   const { t } = useLocale();
   const stats = t.site.hero.stats;
   return (
-    <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/15 bg-white/5 sm:grid-cols-4">
+    <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white/85 shadow-[var(--shadow-sm)] backdrop-blur-sm sm:grid-cols-4">
       {stats.map((s, i) => (
-        <div key={s.label} className={`bg-[#001030]/70 px-5 py-4 sm:px-6 sm:py-5 ${i < stats.length - 1 ? "border-r border-white/10" : ""}`}>
-          <p className="text-2xl font-semibold tabular-nums tracking-tight text-white sm:text-3xl">{s.value}</p>
-          <p className="mt-1 text-sm text-white/70">{s.label}</p>
+        <div key={s.label} className={`px-5 py-4 sm:px-6 sm:py-5 ${i < stats.length - 1 ? "border-r border-[var(--surface-100)]" : ""}`}>
+          <p className="text-2xl font-semibold tabular-nums tracking-tight text-[var(--navy)] sm:text-3xl">{s.value}</p>
+          <p className="mt-1 text-sm text-[var(--surface-500)]">{s.label}</p>
         </div>
       ))}
     </div>
   );
 }
 
-function SectionHeading({ eyebrow, title, intro, light }: { eyebrow: string; title: string; intro?: string; light?: boolean }) {
+/* 2026-09 v0.7 明亮化：全站已无深色满幅 section，原先的 light 深色分支随之删除。 */
+function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
       <div className="flex items-center justify-center gap-2.5">
@@ -113,11 +114,11 @@ function SectionHeading({ eyebrow, title, intro, light }: { eyebrow: string; tit
         <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--teal-600)]">{eyebrow}</p>
         <span className="h-px w-8 bg-[var(--teal-500)]" />
       </div>
-      <h2 className={`mt-3.5 text-2xl font-bold tracking-tight sm:text-[2rem] ${light ? "text-white" : "text-[var(--brand-900)]"}`}>
+      <h2 className="mt-3.5 text-2xl font-bold tracking-tight text-[var(--brand-900)] sm:text-[2rem]">
         {title}
       </h2>
       {intro && (
-        <p className={`mt-3.5 text-[15px] leading-relaxed ${light ? "text-[var(--brand-100)]/65" : "text-[var(--surface-500)]"}`}>
+        <p className="mt-3.5 text-[15px] leading-relaxed text-[var(--surface-500)]">
           {intro}
         </p>
       )}
@@ -155,13 +156,15 @@ export default function HomePage() {
   return (
     <div className="jn-site min-h-screen bg-white">
       {/* ═══════════ HERO — K&N 风格全屏 ═══════════ */}
-      <section className="relative overflow-hidden bg-[var(--navy)]">
+      <section className="relative overflow-hidden bg-[var(--surface-100)]">
+        {/* 明亮版 Hero：实景照片打底，白雾遮罩从文案侧 97% 渐隐到照片侧 34%，
+            底部再淡入页底色 —— 文字侧保持 WCAG AA 对比，照片侧仍看得见实景。 */}
         <img
           src="/assets/hero-wind-tower.webp"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(0,16,48,0.94)_0%,rgba(0,16,48,0.78)_46%,rgba(0,16,48,0.42)_100%),linear-gradient(180deg,rgba(0,16,48,0.18)_0%,rgba(0,16,48,0.88)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(100deg,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.93)_40%,rgba(255,255,255,0.34)_100%),linear-gradient(180deg,rgba(255,255,255,0.32)_0%,rgba(248,251,255,0.96)_100%)]" />
 
         <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-20 sm:px-8 lg:pb-20 lg:pt-28">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
@@ -169,18 +172,18 @@ export default function HomePage() {
             <div>
               {/* 品牌 logo */}
               <img
-                src="/assets/logo/logo-horizontal-white.png"
+                src="/assets/logo/logo-horizontal.webp"
                 alt="JIUNENG logistics"
-                className="mb-6 h-9 w-auto opacity-90"
+                className="mb-6 h-9 w-auto"
               />
               <div className="flex items-center gap-3">
                 <span className="h-0.5 w-8 bg-[var(--teal-500)] sm:w-10" />
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--cyan-on-dark)] sm:text-xs sm:tracking-[0.22em]">{s.hero.eyebrow}</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--blue)] sm:text-xs sm:tracking-[0.22em]">{s.hero.eyebrow}</p>
               </div>
-              <h1 className="mt-4 text-3xl font-bold leading-[1.14] tracking-tight text-white sm:mt-5 sm:text-4xl lg:text-[3.2rem]">
+              <h1 className="mt-4 text-3xl font-bold leading-[1.14] tracking-tight text-[var(--navy)] sm:mt-5 sm:text-4xl lg:text-[3.2rem]">
                 {s.hero.title}
               </h1>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[var(--brand-100)]/70 sm:mt-6 sm:text-base lg:text-lg">
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[var(--surface-500)] sm:mt-6 sm:text-base lg:text-lg">
                 {s.hero.lead}
               </p>
 
@@ -194,7 +197,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10 sm:px-7 sm:py-3.5"
+                  className="inline-flex items-center gap-2 rounded-xl border border-[var(--surface-200)] bg-white/70 px-5 py-3 text-sm font-semibold text-[var(--navy)] backdrop-blur-sm transition-all hover:border-[var(--surface-300)] hover:bg-white sm:px-7 sm:py-3.5"
                 >
                   {s.hero.secondary}
                 </Link>
@@ -205,7 +208,7 @@ export default function HomePage() {
                 {[s.hero.badge1, s.hero.badge2, s.hero.badge3].map((b, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 sm:px-3.5 sm:text-xs"
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--surface-200)] bg-white/75 px-3 py-1.5 text-[11px] font-medium text-[var(--surface-600)] sm:px-3.5 sm:text-xs"
                   >
                     <span className="h-1 w-1 rounded-full bg-[var(--cyan)]" />
                     {b}
@@ -355,9 +358,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ 解决方案（深蓝区） ═══════════ */}
-      <section id="solutions" className="scroll-mt-16 bg-[var(--navy)] py-20">
+      <section id="solutions" className="scroll-mt-16 bg-[var(--surface-100)] py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading eyebrow={s.solutions.eyebrow} title={s.solutions.title} intro={s.solutions.intro} light />
+          <SectionHeading eyebrow={s.solutions.eyebrow} title={s.solutions.title} intro={s.solutions.intro} />
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {s.solutions.items.map((item, i) => {
               const Icon = solutionIcons[i] ?? TruckIcon;
@@ -365,7 +368,7 @@ export default function HomePage() {
               return (
                 <div
                   key={i}
-                  className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-[var(--cyan)]/40 hover:bg-white/8"
+                  className="group overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white shadow-[var(--shadow-sm)] transition-all hover:-translate-y-1 hover:border-[var(--cyan)]/50 hover:shadow-[var(--shadow-md)]"
                 >
                   <div className="relative h-28 overflow-hidden">
                     <img
@@ -373,17 +376,17 @@ export default function HomePage() {
                       alt={item.title}
                       className="h-full w-full object-cover opacity-70 transition-all duration-300 group-hover:scale-105 group-hover:opacity-90"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#001030] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#001030]/45 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-4 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--blue)] text-white shadow-lg">
                       <Icon />
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--cyan-on-dark)]">
+                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--blue)]">
                       {item.sector}
                     </p>
-                    <h3 className="mt-1.5 text-base font-bold text-white">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--brand-100)]/60">{item.body}</p>
+                    <h3 className="mt-1.5 text-base font-bold text-[var(--navy)]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{item.body}</p>
                   </div>
                 </div>
               );
@@ -425,7 +428,7 @@ export default function HomePage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-50)] text-xl shadow-[inset_0_0_0_1px_var(--brand-200)]">🚚</div>
               <h3 className="mt-4 flex flex-wrap items-center gap-2 text-lg font-semibold text-[var(--navy)]">
                 {t.tools.quoteTitle}
-                <span className="rounded-full border border-[var(--brand-300)] px-2 py-0.5 text-[10px] font-semibold text-[var(--cyan)]">
+                <span className="rounded-full border border-[var(--brand-300)] px-2 py-0.5 text-[10px] font-semibold text-[var(--blue)]">
                   {t.tools.quoteBadge}
                 </span>
               </h3>
@@ -443,14 +446,14 @@ export default function HomePage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-50)] text-xl shadow-[inset_0_0_0_1px_var(--brand-200)]">📦</div>
               <h3 className="mt-4 flex flex-wrap items-center gap-2 text-lg font-semibold text-[var(--navy)]">
                 {t.tools.loaderTitle}
-                <span className="rounded-full border border-[var(--brand-300)] px-2 py-0.5 text-[10px] font-semibold text-[var(--cyan)]">
+                <span className="rounded-full border border-[var(--brand-300)] px-2 py-0.5 text-[10px] font-semibold text-[var(--blue)]">
                   {t.tools.loaderBadge}
                 </span>
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[var(--surface-500)]">{t.tools.loaderDesc}</p>
               <Link
                 href="/tools/loader"
-                className="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-[var(--cyan)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-500)]"
+                className="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-[var(--blue)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--blue-hover)]"
               >
                 {t.tools.loaderCta} →
               </Link>
@@ -473,19 +476,19 @@ export default function HomePage() {
               alt="中越跨境物流"
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#001030]/88 via-[#001030]/42 to-[#001030]/88" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.88)_0%,rgba(255,255,255,0.55)_50%,rgba(255,255,255,0.88)_100%)]" />
             <div className="absolute inset-0 flex items-center justify-between px-8 sm:px-14">
               <div className="text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-white sm:text-base">China</p>
-                <p className="mt-1 text-xs text-white/70">CN origin</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--navy)] sm:text-base">China</p>
+                <p className="mt-1 text-xs text-[var(--surface-500)]">CN origin</p>
               </div>
               <div className="text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--cyan-on-dark)]">CN — VN</p>
-                <p className="mt-1 text-xs text-white/60">跨境运输 · 口岸协同</p>
+                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--blue)]">CN — VN</p>
+                <p className="mt-1 text-xs text-[var(--surface-500)]">跨境运输 · 口岸协同</p>
               </div>
               <div className="text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-white sm:text-base">Vietnam</p>
-                <p className="mt-1 text-xs text-white/70">VN delivery</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--navy)] sm:text-base">Vietnam</p>
+                <p className="mt-1 text-xs text-[var(--surface-500)]">VN delivery</p>
               </div>
             </div>
           </div>
@@ -537,7 +540,8 @@ export default function HomePage() {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#001030]/70 via-transparent to-transparent" />
-                  <span className="absolute left-4 top-3 text-xs font-bold uppercase tracking-widest text-white/90 drop-shadow">
+                  {/* v0.7：白字直接压照片实测 1.53–3.09:1（蓝天亮部几乎读不出）→ 加深色胶囊底 */}
+                  <span className="absolute left-4 top-3 rounded-full bg-[#001030]/65 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
                     {item.type}
                   </span>
                   <span className="absolute bottom-3 right-4 text-3xl font-bold text-white/25">
@@ -553,7 +557,7 @@ export default function HomePage() {
                         {tag}
                       </span>
                     ))}
-                    <span className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[var(--blue)] transition-colors group-hover:text-[var(--cyan)]">
+                    <span className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-[var(--blue)] transition-colors group-hover:text-[var(--blue-hover)]">
                       查看详情
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5">
                         <path d="M5 12h14" />
@@ -583,51 +587,52 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ 联系我们 ═══════════ */}
-      <section id="contact" className="scroll-mt-16 bg-[var(--navy)] py-20">
+      <section id="contact" className="scroll-mt-16 bg-gradient-to-b from-white to-[var(--surface-100)] py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div>
               <div className="flex items-center gap-3">
                 <span className="h-0.5 w-10 bg-[var(--teal-500)]" />
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--cyan-on-dark)]">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--blue)]">
                   {s.contact.eyebrow}
                 </p>
               </div>
-              <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+              <h2 className="mt-4 text-2xl font-bold tracking-tight text-[var(--navy)] sm:text-3xl">
                 {s.contact.title}
               </h2>
-              <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--brand-100)]/65">
+              <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[var(--surface-500)]">
                 {s.contact.intro}
               </p>
               <div className="mt-8 space-y-5">
                 {s.contact.details.map((d, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[var(--cyan)]">
+                    <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--blue)]/10 text-[var(--blue)]">
                       {i === 0 ? <MailIcon /> : i === 1 ? <PhoneIcon /> : <PinIcon />}
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-100)]/40">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--surface-400)]">
                         {d.label}
                       </p>
-                      <p className="mt-1 text-sm font-medium text-white">{d.value}</p>
+                      <p className="mt-1 text-sm font-medium text-[var(--navy)]">{d.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="overflow-hidden rounded-2xl border border-[var(--surface-200)] bg-white shadow-[var(--shadow-md)]">
+              {/* 2026-09 v0.7：原夜间大件照（亮度 40/255）在浅色页面上是唯一暗块，
+                  换成白天跨境重卡图；logo 不再压深色遮罩，改为白色胶囊上的彩色 logo。 */}
               <div className="relative h-56">
                 <img
-                  src="/assets/case-01-night-heavy-haul-D7KdM_lM.webp"
-                  alt="JIUNENG 大件设备运输"
+                  src="/assets/case-04-cross-border-heavy-truck-D0zxHgaL.webp"
+                  alt="JIUNENG 中越跨境运输"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001030]/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-6">
+                <div className="absolute bottom-4 left-6 rounded-lg bg-white/90 px-2.5 py-1.5 shadow-[var(--shadow-sm)] backdrop-blur-sm">
                   <img
-                    src="/assets/logo/logo-horizontal-white.png"
+                    src="/assets/logo/logo-horizontal.webp"
                     alt="JIUNENG logistics"
-                    className="h-8 w-auto"
+                    className="h-7 w-auto"
                   />
                 </div>
               </div>
@@ -647,23 +652,23 @@ export default function HomePage() {
       </RouteSpine>
 
       {/* ═══════════ 页脚 ═══════════ */}
-      <footer className="border-t border-white/10 bg-[var(--navy)] py-12">
+      <footer className="border-t border-[var(--surface-200)] bg-[var(--surface-100)] py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
             {/* 品牌 */}
             <div>
               <img
-                src="/assets/logo/logo-horizontal-white.png"
+                src="/assets/logo/logo-horizontal.webp"
                 alt="JIUNENG logistics"
                 className="h-9 w-auto"
               />
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--brand-100)]/60">
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--surface-500)]">
                 {s.footer.intro}
               </p>
             </div>
             {/* 官网导航 */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--brand-100)]/40">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--surface-400)]">
                 {s.footer.siteTitle}
               </h4>
               <ul className="mt-4 space-y-2.5">
@@ -675,31 +680,36 @@ export default function HomePage() {
                   { href: "/#contact", label: s.nav.contact },
                 ].map((l, i) => (
                   <li key={i}>
-                    <Link href={l.href} className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                    <Link href={l.href} className="text-sm text-[var(--surface-600)] transition-colors hover:text-[var(--blue)]">
                       {l.label}
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <a href="https://site.jiuneng.space" target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--surface-600)] transition-colors hover:text-[var(--blue)]">
+                    {s.footer.officialSite}
+                  </a>
+                </li>
               </ul>
             </div>
             {/* 在线工具 */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--brand-100)]/40">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--surface-400)]">
                 {s.footer.toolsTitle}
               </h4>
               <ul className="mt-4 space-y-2.5">
                 <li>
-                  <Link href="/quote" className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                  <Link href="/quote" className="text-sm text-[var(--surface-600)] transition-colors hover:text-[var(--blue)]">
                     {s.nav.quote}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/batch" className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                  <Link href="/batch" className="text-sm text-[var(--surface-600)] transition-colors hover:text-[var(--blue)]">
                     {t.nav.batch}
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#ai-assistant" className="text-sm text-white/70 transition-colors hover:text-[var(--cyan)]">
+                  <Link href="/#ai-assistant" className="text-sm text-[var(--surface-600)] transition-colors hover:text-[var(--blue)]">
                     {s.aiAssistant.eyebrow}
                   </Link>
                 </li>
@@ -707,13 +717,13 @@ export default function HomePage() {
             </div>
             {/* 联系方式 */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--brand-100)]/40">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--surface-400)]">
                 {s.footer.contactTitle}
               </h4>
               <ul className="mt-4 space-y-2.5">
                 {s.contact.details.map((d, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
-                    <span className="mt-0.5 text-[var(--cyan)]">
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-[var(--surface-600)]">
+                    <span className="mt-0.5 text-[var(--blue)]">
                       {i === 0 ? <MailIcon /> : i === 1 ? <PhoneIcon /> : <PinIcon />}
                     </span>
                     <span>{d.value}</span>
@@ -722,9 +732,9 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row">
-            <p className="text-xs text-[var(--brand-100)]/40">{s.footer.rights}</p>
-            <p className="text-xs text-[var(--brand-100)]/40">
+          <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[var(--surface-200)] pt-6 sm:flex-row">
+            <p className="text-xs text-[var(--surface-400)]">{s.footer.rights}</p>
+            <p className="text-xs text-[var(--surface-400)]">
               JIUNENG INTERNATIONAL COMPANY LIMITED · 0202235124
             </p>
           </div>

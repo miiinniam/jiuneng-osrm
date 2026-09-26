@@ -6,7 +6,8 @@ import { useLocale } from "@/lib/i18n/LocaleContext";
 
 /**
  * 统一导航：官网锚点（回到首页 sections）+ 工具路由（/quote /batch）
- * variant: dark 用于官网首页（深蓝 hero 上），light 用于工具页
+ * variant: dark 用于深色 hero（2026-09 v0.7 起官网首页已改浅色 hero，
+ * 全站实际都走 light；dark 分支保留，若 hero 改回深色满幅可直接复用）
  */
 export default function NavBar({ variant = "light" }: { variant?: "light" | "dark" }) {
   const pathname = usePathname();
@@ -76,6 +77,20 @@ export default function NavBar({ variant = "light" }: { variant?: "light" | "dar
             </Link>
           );
         })}
+        {/* AI 数字员工：独立官网外链（外部 URL 必须用原生 <a>，Link 会被客户端路由截走） */}
+        <a
+          href="https://site.jiuneng.space/ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-150 ${
+            dark
+              ? "text-white/70 hover:text-white"
+              : "text-[var(--surface-500)] hover:bg-white/50 hover:text-[var(--surface-700)]"
+          }`}
+        >
+          {t.site.nav.aiEmployee}
+          <span aria-hidden className="text-[10px]">↗</span>
+        </a>
       </div>
     </nav>
   );
